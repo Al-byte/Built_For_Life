@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="#191d19" name="theme-color"/>
+<title>Built For Life | Member Portal</title>
+<!-- Bootstrap 5, Bootstrap Icons, and fonts -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&amp;family=DM+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="assets/css/bfl.css" rel="stylesheet"/>
+<link rel="icon" href="assets/images/bfl-favicon.ico" sizes="16x16 32x32 48x48 64x64"/>
+<link rel="icon" type="image/png" sizes="64x64" href="assets/images/bfl-favicon.png"/>
+<link rel="icon" type="image/svg+xml" sizes="any" href="assets/images/bfl-favicon.svg"/>
+</head>
+<body class="bfl-page bfl-page--dashboard">
+<!-- LEFT SIDEBAR: fixed on desktop, slide-in menu on mobile. -->
+<aside aria-labelledby="bflSidebarTitle" class="offcanvas-lg offcanvas-start bfl-sidebar" data-bs-theme="dark" id="bflSidebar" tabindex="-1">
+<button aria-label="Close menu" class="bfl-mobile-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#bflSidebar" type="button">
+<i aria-hidden="true" class="bi bi-x"></i>
+</button>
+<div class="offcanvas-body">
+<a aria-label="Built For Life home" class="bfl-brand" href="index.html">
+<!-- Inline logo keeps this example self-contained; replace with your own logo if desired. -->
+<svg aria-hidden="true" class="bfl-brand-mark" focusable="false" viewbox="0 0 56 66">
+<path d="M0 0H56V48L28 66 0 48Z" fill="#f5d34f"></path>
+<text fill="#1b211a" font-family="Impact, 'Arial Narrow', sans-serif" font-size="25" font-weight="900" text-anchor="middle" x="28" y="36">BFL</text>
+</svg>
+<span>
+<span class="bfl-brand-name" id="bflSidebarTitle">BUILT FOR LIFE</span>
+<span class="bfl-brand-caption">TRAINING &amp; MENTORING</span>
+</span>
+</a>
+<nav aria-label="Member portal navigation" class="bfl-sidebar-nav">
+<div class="bfl-sidebar-group">
+<h2 class="bfl-sidebar-heading">Your journey</h2>
+<ul class="bfl-nav-list">
+<li><a aria-current="page" class="bfl-nav-link active" data-page="My dashboard" href="index.html"><i aria-hidden="true" class="bi bi-house-door"></i><span>My dashboard</span></a></li>
+<li><a class="bfl-nav-link" data-page="Our curriculum" href="pages/curriculum.html"><i aria-hidden="true" class="bi bi-book"></i><span>Our curriculum</span></a></li>
+<li><a class="bfl-nav-link" data-page="Weekly playbook" href="pages/weekly-playbook.html"><i aria-hidden="true" class="bi bi-play-btn"></i><span>Weekly playbook</span></a></li>
+<li><a class="bfl-nav-link" data-page="Progress &amp; goals" href="pages/progress-goals.html"><i aria-hidden="true" class="bi bi-bar-chart"></i><span>Progress &amp; goals</span></a></li>
+<li><a class="bfl-nav-link" data-page="The huddle" href="pages/huddle.html"><i aria-hidden="true" class="bi bi-people"></i><span>The huddle</span><span aria-label="New activity" class="bfl-unread"></span></a></li>
+</ul>
+</div>
+<div class="bfl-sidebar-group">
+<h2 class="bfl-sidebar-heading">Membership</h2>
+<ul class="bfl-nav-list">
+<li><a class="bfl-nav-link" data-page="Plans &amp; membership" href="pages/plans-membership.html"><i aria-hidden="true" class="bi bi-credit-card"></i><span>Plans &amp; membership</span></a></li>
+<li><a class="bfl-nav-link" data-page="Help &amp; FAQs" href="pages/help-faqs.html"><i aria-hidden="true" class="bi bi-question-circle"></i><span>Help &amp; FAQs</span></a></li>
+</ul>
+</div>
+</nav>
+<div class="bfl-sidebar-footer d-none d-lg-block">
+<i aria-hidden="true" class="bi bi-shield-check"></i>
+<p>Stronger on the field.<br/>Better prepared for life.</p>
+</div>
+</div>
+</aside>
+<div class="bfl-main">
+<!-- TOP NAVIGATION -->
+<header class="bfl-topbar">
+<!-- Desktop breadcrumb -->
+<div aria-label="Breadcrumb" class="bfl-breadcrumb d-none d-lg-flex">
+<a href="index.html">Member portal</a>
+<i aria-hidden="true" class="bi bi-chevron-right"></i>
+<span class="js-page-name">My dashboard</span>
+</div>
+<!-- Mobile hamburger + current page -->
+<div class="d-flex d-lg-none align-items-center gap-4">
+<button aria-controls="bflSidebar" aria-label="Open menu" class="bfl-menu-button" data-bs-target="#bflSidebar" data-bs-toggle="offcanvas" type="button">
+<i aria-hidden="true" class="bi bi-list"></i>
+</button>
+<span class="bfl-current-page js-page-name">My dashboard</span>
+</div>
+<div class="bfl-top-actions">
+<span class="bfl-private"><i aria-hidden="true" class="bi bi-lock"></i>Private prototype</span>
+<button aria-label="Notifications" class="bfl-icon-button" data-bs-toggle="modal" data-bs-target="#bflNotificationsModal" aria-haspopup="dialog" type="button">
+<i aria-hidden="true" class="bi bi-bell"></i><span class="bfl-notice-dot"></span>
+</button>
+<!-- Avatar shown in desktop screenshot, hidden on mobile -->
+<div class="d-none d-lg-block">
+<a aria-label="My account" class="bfl-avatar" href="pages/account.html">JC</a>
+</div>
+</div>
+</header>
+<!-- DEMO PAGE CONTENT: remove this <main> and insert your existing page content. -->
+<main class="bfl-content" id="mainContent">
+<div class="d-flex justify-content-between align-items-center gap-3">
+<div class="bfl-eyebrow">Built for life / Member portal</div>
+<div class="bfl-date d-none d-lg-block"><i aria-hidden="true" class="bi bi-calendar3"></i>Wednesday, October 28</div>
+</div>
+<h1 class="bfl-page-heading">Let’s build a little better today.</h1>
+<p class="bfl-welcome">Welcome back. Here’s what’s ahead for Jordan this week.</p>
+<section aria-label="Your weekly playbook" class="bfl-hero">
+<!-- Decorative arrow and curved lines reminiscent of the supplied screenshot -->
+<svg aria-hidden="true" class="bfl-hero-graphic" preserveaspectratio="xMidYMid slice" viewbox="0 0 520 400">
+<g fill="none" opacity=".65" stroke="#c0a750" stroke-width="1.2">
+<path d="M18 -70C-60 80 185 260 150 450"></path><path d="M50 -85C-30 75 215 285 190 455"></path>
+<path d="M83 -90C0 80 255 300 235 455"></path><path d="M115 -95C45 110 285 310 270 455"></path>
+<path d="M180 -90C80 80 365 260 330 455"></path><path d="M265 -70C185 85 430 285 390 450"></path>
+<path d="M320 -80C250 85 510 275 470 450"></path><path d="M400 -50C330 100 550 260 520 430"></path>
+</g>
+<path d="M155 342L360 120 316 137 348 85 290 103 311 118 270 168 328 163Z" fill="none" opacity=".94" stroke="#f5d34f" stroke-linejoin="miter" stroke-width="4"></path>
+<circle cx="155" cy="342" fill="#f5d34f" r="7"></circle>
+<text fill="#a1af94" font-family="Arial,sans-serif" font-size="10" letter-spacing="3" x="237" y="349">PROGRESS IS A DAILY PRACTICE</text>
+</svg>
+<div class="bfl-hero-copy">
+<div class="bfl-hero-overline">MORE THAN AN ATHLETE. BUILT FOR LIFE.</div>
+<h2>THE WORK YOU PUT IN.<span>THE PERSON YOU BECOME.</span></h2>
+<p>Build your strength. Develop your character.<br/>Take one purposeful step forward, every week.</p>
+<a class="bfl-hero-cta" href="pages/weekly-playbook.html">Open this week’s playbook <i aria-hidden="true" class="bi bi-arrow-right"></i></a>
+</div>
+</section>
+<section aria-label="Program summary" class="row g-3 mt-3">
+<div class="col-sm-6 col-xl-3"><div class="bfl-stat-card"><div class="bfl-stat-icon highlight"><i class="bi bi-book"></i></div><div><div class="bfl-stat-label">Lessons completed</div><div class="bfl-stat-value">1 <small>/ 4</small></div><div class="bfl-stat-note">This month’s playbook</div></div></div></div>
+<div class="col-sm-6 col-xl-3"><div class="bfl-stat-card"><div class="bfl-stat-icon"><i class="bi bi-bullseye"></i></div><div><div class="bfl-stat-label">Weekly goals</div><div class="bfl-stat-value">1 <small>/ 3</small></div><div class="bfl-stat-note">Small actions. Real growth.</div></div></div></div>
+<div class="col-sm-6 col-xl-3"><div class="bfl-stat-card"><div class="bfl-stat-icon"><i class="bi bi-fire"></i></div><div><div class="bfl-stat-label">Check-ins</div><div class="bfl-stat-value">0 <small>logged</small></div><div class="bfl-stat-note">Keep showing up</div></div></div></div>
+<div class="col-sm-6 col-xl-3"><div class="bfl-stat-card"><div class="bfl-stat-icon"><i class="bi bi-trophy"></i></div><div><div class="bfl-stat-label">Your pathway</div><div class="bfl-stat-value">15–17</div><div class="bfl-stat-note">Identity, habits &amp; purpose</div></div></div></div>
+</section>
+<!-- EXTRA DASHBOARD CONTENT: directly beneath the four summary cards. -->
+<section aria-label="Your mentoring activity" class="bfl-dashboard-detail">
+<div class="row g-4">
+<div class="col-12 col-xl-8">
+<!-- Upcoming weekly lesson -->
+<section aria-labelledby="nextStepHeading">
+<div class="bfl-section-head">
+<h2 id="nextStepHeading">Your next purposeful step</h2>
+<a class="bfl-section-link" href="pages/weekly-playbook.html">View playbook <i aria-hidden="true" class="bi bi-arrow-right"></i></a>
+</div>
+<article class="bfl-panel bfl-lesson-card">
+<div aria-label="Gifted to Productive illustrated lesson graphic" class="bfl-lesson-art" role="img">
+<div aria-hidden="true" class="bfl-art-words">
+<span class="word-large">GIFTED</span>
+<span class="word-small">TO</span>
+<span class="word-large">PRODUCTIVE</span>
+</div>
+</div>
+<div class="bfl-lesson-body">
+<span class="bfl-week-label">WEEK 2 · DO</span>
+<h3 class="bfl-lesson-title">Put your gifts to work</h3>
+<p class="bfl-lesson-description">Choose one strength. Turn it into a small, repeatable daily action.</p>
+<div class="bfl-lesson-meta">
+<span><i aria-hidden="true" class="bi bi-clock"></i> 10–15 min</span>
+<span><i aria-hidden="true" class="bi bi-flag"></i> Character &amp; purpose</span>
+</div>
+<a class="bfl-dark-button" href="#bflDashboardLessonModal" role="button" data-bs-toggle="modal" data-bs-target="#bflDashboardLessonModal">Continue your lesson <i aria-hidden="true" class="bi bi-arrow-right"></i></a>
+</div>
+</article>
+</section>
+<!-- Weekly commitments -->
+<section aria-labelledby="commitmentsHeading" class="bfl-commitment-section">
+<div class="bfl-section-head">
+<h2 id="commitmentsHeading">This week’s commitments</h2>
+<a class="bfl-section-link" href="pages/progress-goals.html">See your goals <i aria-hidden="true" class="bi bi-arrow-right"></i></a>
+</div>
+<div class="bfl-panel bfl-goals-card">
+<div class="bfl-goals-list" id="bflGoalsList">
+<div class="bfl-goal-row">
+<input aria-label="Mark Turn in every assignment complete" class="bfl-goal-check" id="bflGoal1" type="checkbox"/>
+<div class="bfl-goal-info">
+<div class="bfl-goal-heading"><label class="bfl-goal-name" for="bflGoal1">Turn in every assignment</label><span class="bfl-goal-count">3/5 days</span></div>
+<div aria-label="Turn in every assignment progress" aria-valuemax="5" aria-valuemin="0" aria-valuenow="3" class="bfl-goal-track" role="progressbar"><div class="bfl-goal-fill bfl-goal-fill--60"></div></div>
+</div>
+</div>
+<div class="bfl-goal-row">
+<input aria-label="Mark Move with purpose complete" class="bfl-goal-check" id="bflGoal2" type="checkbox"/>
+<div class="bfl-goal-info">
+<div class="bfl-goal-heading"><label class="bfl-goal-name" for="bflGoal2">Move with purpose</label><span class="bfl-goal-count">2/3 sessions</span></div>
+<div aria-label="Move with purpose progress" aria-valuemax="3" aria-valuemin="0" aria-valuenow="2" class="bfl-goal-track" role="progressbar"><div class="bfl-goal-fill bfl-goal-fill--two-thirds"></div></div>
+</div>
+</div>
+<div class="bfl-goal-row">
+<input aria-label="Mark Practice a pause before reacting complete" checked="" class="bfl-goal-check" id="bflGoal3" type="checkbox"/>
+<div class="bfl-goal-info">
+<div class="bfl-goal-heading"><label class="bfl-goal-name" for="bflGoal3">Practice a pause before reacting</label><span class="bfl-goal-count">5/5 days</span></div>
+<div aria-label="Practice a pause before reacting progress" aria-valuemax="5" aria-valuemin="0" aria-valuenow="5" class="bfl-goal-track" role="progressbar"><div class="bfl-goal-fill bfl-goal-fill--full"></div></div>
+</div>
+</div>
+</div>
+<button class="bfl-add-goal" data-bs-target="#bflAddGoalModal" data-bs-toggle="modal" type="button"><i aria-hidden="true" class="bi bi-plus-lg"></i> Set a new goal</button>
+</div>
+</section>
+</div>
+<div class="col-12 col-xl-4">
+<!-- Development pathway -->
+<section aria-labelledby="pathwayHeading" class="bfl-panel bfl-pathway-card">
+<div class="bfl-card-eyebrow">Your development pathway</div>
+<h2 class="bfl-pathway-title" id="pathwayHeading">The Preparation Years</h2>
+<div class="bfl-pathway-subtitle">Ages 15–17 · Live &amp; lead</div>
+<div class="bfl-pathway-progress">
+<div aria-label="Development pathway completion" aria-valuemax="100" aria-valuemin="0" aria-valuenow="25" class="bfl-progress-donut" role="progressbar">
+<div class="bfl-progress-donut-inner"><strong>25%</strong></div>
+</div>
+<div class="bfl-progress-copy">
+<strong>A little better, every week.</strong>
+<p>1 of 4 lessons complete<br/>This month: identity &amp; self-awareness</p>
+</div>
+</div>
+<div aria-label="Monthly pathway stages" class="bfl-week-timeline">
+<div class="bfl-timeline-step"><span class="bfl-week-dot done"><i aria-hidden="true" class="bi bi-check-lg"></i></span><span class="bfl-timeline-label">W1 · Learn</span></div>
+<div class="bfl-timeline-step current"><span class="bfl-week-dot current">2</span><span class="bfl-timeline-label">W2 · Do</span></div>
+<div class="bfl-timeline-step"><span class="bfl-week-dot"><i aria-hidden="true" class="bi bi-lock"></i></span><span class="bfl-timeline-label">W3 · Account</span></div>
+<div class="bfl-timeline-step"><span class="bfl-week-dot"><i aria-hidden="true" class="bi bi-lock"></i></span><span class="bfl-timeline-label">W4 · Reflect</span></div>
+</div>
+<div aria-label="Development areas" class="bfl-pathway-areas">
+<div class="bfl-pathway-area"><i aria-hidden="true" class="bi bi-shield-check"></i>Character</div>
+<div class="bfl-pathway-area"><i aria-hidden="true" class="bi bi-flag"></i>Leadership</div>
+<div class="bfl-pathway-area"><i aria-hidden="true" class="bi bi-mortarboard"></i>Academic success</div>
+<div class="bfl-pathway-area"><i aria-hidden="true" class="bi bi-activity"></i>Physical development</div>
+</div>
+</section>
+<!-- Upcoming events -->
+<section aria-labelledby="horizonHeading" class="bfl-panel bfl-horizon-card">
+<div class="bfl-horizon-head"><h2 id="horizonHeading">On the horizon</h2><i aria-hidden="true" class="bi bi-calendar3"></i></div>
+<div class="bfl-event-list">
+<div class="bfl-event">
+<div class="bfl-event-date"><span class="bfl-event-month">OCT</span><span class="bfl-event-day">30</span></div>
+<div><div class="bfl-event-name">Friday accountability check-in</div><div class="bfl-event-note">Sample event · Parent + youth</div></div>
+</div>
+<div class="bfl-event">
+<div class="bfl-event-date"><span class="bfl-event-month">NOV</span><span class="bfl-event-day">02</span></div>
+<div><div class="bfl-event-name">Week 3: Own your effort</div><div class="bfl-event-note">Next playbook unlock · Demo schedule</div></div>
+</div>
+</div>
+</section>
+<!-- A note from your coach -->
+<section aria-labelledby="coachNoteHeading" class="bfl-coach-card">
+<h2 class="bfl-coach-eyebrow" id="coachNoteHeading">A note from your coach</h2>
+<blockquote class="bfl-coach-quote">“Your gifts may open the door, but your production determines how far you go.”</blockquote>
+<div class="bfl-coach-byline">
+<div aria-hidden="true" class="bfl-coach-mark">BFL</div>
+<div>
+<p class="bfl-coach-name">Coach Rodney Washington</p>
+<p class="bfl-coach-role">Built For Life · Program director</p>
+</div>
+</div>
+</section>
+</div>
+</div>
+</section>
+</main>
+<!-- Shared footer: retain on every BFL portal page -->
+<footer class="bfl-page-footer" role="contentinfo">
+<p>© 2026 Built For Life™ Training &amp; Mentoring</p>
+<p class="bfl-page-footer-tagline"><i aria-hidden="true" class="bi bi-shield-check"></i> Athletics Serving a Greater Purpose.</p>
+</footer>
+</div>
+<!-- Working prototype modal for the "Set a new goal" control; not connected to a database yet. -->
+<div class="modal fade bfl-goal-dialog" id="bflAddGoalModal" tabindex="-1" aria-labelledby="bflAddGoalTitle" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered"><form class="modal-content" id="bflAddGoalForm">
+<header class="bfl-goal-dialog-header"><p>Goal &amp; accountability</p><h2 id="bflAddGoalTitle">Start with one small action.</h2><button type="button" class="bfl-goal-dialog-close" data-bs-dismiss="modal" aria-label="Close"><i class="bi bi-x-lg" aria-hidden="true"></i></button></header>
+<div class="bfl-goal-dialog-body">
+<label for="bflNewGoalName">What will you work on?</label><input id="bflNewGoalName" class="form-control" maxlength="70" placeholder="Example: Read for 15 minutes" required/>
+<label for="bflNewGoalCategory">Development pillar</label><select id="bflNewGoalCategory" class="form-select"><option>Character</option><option>Academic success</option><option>Physical development</option><option>Leadership</option></select>
+<div class="row gx-4"><div class="col-sm-6"><label for="bflNewGoalTarget">Weekly target (1–20)</label><input id="bflNewGoalTarget" class="form-control" type="number" min="1" max="20" step="1" value="5" required/></div><div class="col-sm-6"><label for="bflNewGoalUnit">Measure in</label><select id="bflNewGoalUnit" class="form-select"><option>days</option><option>times</option><option>sessions</option><option>minutes</option></select></div></div>
+
+<button type="submit" class="bfl-goal-dialog-save">Save goal <i class="bi bi-check-lg" aria-hidden="true"></i></button>
+</div></form></div></div>
+<div class="modal fade bfl-dashboard-lesson" id="bflDashboardLessonModal" tabindex="-1" aria-labelledby="bflDashboardLessonTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <header class="bfl-dashboard-lesson-header">
+        <p class="bfl-dashboard-lesson-eyebrow">Week 2 · Do · 10 min</p>
+        <h2 id="bflDashboardLessonTitle">Put your gifts to work</h2>
+        <button class="bfl-dashboard-lesson-close" type="button" data-bs-dismiss="modal" aria-label="Close lesson"><i class="bi bi-x-lg" aria-hidden="true"></i></button>
+      </header>
+      <div class="bfl-dashboard-lesson-body">
+        <span class="bfl-dashboard-lesson-pathway">The foundation years · Ages 6–8</span>
+        <p>Choose one strength. Turn it into a small, repeatable daily action.</p>
+        <h3>Your challenge</h3>
+        <p>Choose one gift and put it to work. Keep the action small enough to repeat at home, at school, or with your team. Record your effort in your weekly goals.</p>
+        <aside class="bfl-dashboard-lesson-next">
+          <h4>Understand: your next step</h4>
+          <p>Name one thing you do well and one thing you want to practice.</p>
+        </aside>
+        <h3>Try it in real life</h3>
+        <ol>
+          <li>Name a specific action you can take.</li>
+          <li>Practice it and notice what happens.</li>
+          <li>Share one thing you learned with a trusted adult.</li>
+        </ol>
+        <label for="bflDashboardReflection">Your demo reflection</label>
+        <textarea id="bflDashboardReflection" rows="4" placeholder="What will you practice, and why does it matter?"></textarea>
+        <p class="bfl-dashboard-lesson-note">Text lesson preview · No video has been uploaded. Use fictional details.</p>
+        <p id="bflDashboardLessonStatus" role="status" hidden></p>
+        <div class="bfl-dashboard-lesson-actions">
+          <button type="button" id="bflDashboardCompleteLesson">Complete lesson <i class="bi bi-check-lg" aria-hidden="true"></i></button>
+          <a href="pages/weekly-playbook.html">Back to playbook</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="assets/js/pages/dashboard.js" type="module"></script></body>
+</html>

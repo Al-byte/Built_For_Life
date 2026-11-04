@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="#191d19" name="theme-color"/>
+<title>Built For Life | Weekly playbook</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&amp;family=DM+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/css/bfl.css" rel="stylesheet"/>
+<link rel="icon" href="../assets/images/bfl-favicon.ico" sizes="16x16 32x32 48x48 64x64"/>
+<link rel="icon" type="image/png" sizes="64x64" href="../assets/images/bfl-favicon.png"/>
+<link rel="icon" type="image/svg+xml" sizes="any" href="../assets/images/bfl-favicon.svg"/>
+</head>
+<body class="bfl-page bfl-page--playbook">
+<!-- LEFT SIDEBAR: fixed on desktop, slide-in menu on mobile. -->
+<aside aria-labelledby="bflSidebarTitle" class="offcanvas-lg offcanvas-start bfl-sidebar" data-bs-theme="dark" id="bflSidebar" tabindex="-1">
+<button aria-label="Close menu" class="bfl-mobile-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#bflSidebar" type="button">
+<i aria-hidden="true" class="bi bi-x"></i>
+</button>
+<div class="offcanvas-body">
+<a aria-label="Built For Life home" class="bfl-brand" href="../index.html">
+<!-- Inline logo keeps this example self-contained; replace with your own logo if desired. -->
+<svg aria-hidden="true" class="bfl-brand-mark" focusable="false" viewbox="0 0 56 66">
+<path d="M0 0H56V48L28 66 0 48Z" fill="#f5d34f"></path>
+<text fill="#1b211a" font-family="Impact, 'Arial Narrow', sans-serif" font-size="25" font-weight="900" text-anchor="middle" x="28" y="36">BFL</text>
+</svg>
+<span>
+<span class="bfl-brand-name" id="bflSidebarTitle">BUILT FOR LIFE</span>
+<span class="bfl-brand-caption">TRAINING &amp; MENTORING</span>
+</span>
+</a>
+<nav aria-label="Member portal navigation" class="bfl-sidebar-nav">
+<div class="bfl-sidebar-group">
+<h2 class="bfl-sidebar-heading">Your journey</h2>
+<ul class="bfl-nav-list">
+<li><a class="bfl-nav-link" data-page="My dashboard" href="../index.html"><i aria-hidden="true" class="bi bi-house-door"></i><span>My dashboard</span></a></li>
+<li><a class="bfl-nav-link" data-page="Our curriculum" href="curriculum.html"><i aria-hidden="true" class="bi bi-book"></i><span>Our curriculum</span></a></li>
+<li><a aria-current="page" class="bfl-nav-link active" data-page="Weekly playbook" href="weekly-playbook.html"><i aria-hidden="true" class="bi bi-play-btn"></i><span>Weekly playbook</span></a></li>
+<li><a class="bfl-nav-link" data-page="Progress &amp; goals" href="progress-goals.html"><i aria-hidden="true" class="bi bi-bar-chart"></i><span>Progress &amp; goals</span></a></li>
+<li><a class="bfl-nav-link" data-page="The huddle" href="huddle.html"><i aria-hidden="true" class="bi bi-people"></i><span>The huddle</span><span aria-label="New activity" class="bfl-unread"></span></a></li>
+</ul>
+</div>
+<div class="bfl-sidebar-group">
+<h2 class="bfl-sidebar-heading">Membership</h2>
+<ul class="bfl-nav-list">
+<li><a class="bfl-nav-link" data-page="Plans &amp; membership" href="plans-membership.html"><i aria-hidden="true" class="bi bi-credit-card"></i><span>Plans &amp; membership</span></a></li>
+<li><a class="bfl-nav-link" data-page="Help &amp; FAQs" href="help-faqs.html"><i aria-hidden="true" class="bi bi-question-circle"></i><span>Help &amp; FAQs</span></a></li>
+</ul>
+</div>
+</nav>
+<div class="bfl-sidebar-footer d-none d-lg-block">
+<i aria-hidden="true" class="bi bi-shield-check"></i>
+<p>Stronger on the field.<br/>Better prepared for life.</p>
+</div>
+</div>
+</aside>
+<div class="bfl-main">
+<!-- TOP NAVIGATION -->
+<header class="bfl-topbar">
+<!-- Desktop breadcrumb -->
+<div aria-label="Breadcrumb" class="bfl-breadcrumb d-none d-lg-flex">
+<a href="../index.html">Member portal</a>
+<i aria-hidden="true" class="bi bi-chevron-right"></i>
+<span class="js-page-name">Your weekly playbook</span>
+</div>
+<!-- Mobile hamburger + current page -->
+<div class="d-flex d-lg-none align-items-center gap-4">
+<button aria-controls="bflSidebar" aria-label="Open menu" class="bfl-menu-button" data-bs-target="#bflSidebar" data-bs-toggle="offcanvas" type="button">
+<i aria-hidden="true" class="bi bi-list"></i>
+</button>
+<span class="bfl-current-page js-page-name">Your weekly playbook</span>
+</div>
+<div class="bfl-top-actions">
+<span class="bfl-private"><i aria-hidden="true" class="bi bi-lock"></i>Private prototype</span>
+<button aria-label="Notifications" class="bfl-icon-button" data-bs-toggle="modal" data-bs-target="#bflNotificationsModal" aria-haspopup="dialog" type="button">
+<i aria-hidden="true" class="bi bi-bell"></i><span class="bfl-notice-dot"></span>
+</button>
+<!-- Avatar shown in desktop screenshot, hidden on mobile -->
+<div class="d-none d-lg-block">
+<a aria-label="My account" class="bfl-avatar" href="account.html">JC</a>
+</div>
+</div>
+</header>
+<!-- WEEKLY PLAYBOOK: page content; shared BFL shell remains unchanged. -->
+<main class="bfl-content" id="mainContent">
+<div class="bfl-eyebrow">Built For Life / Member portal</div>
+<h1 class="bfl-page-heading">Your weekly playbook.</h1>
+<p class="bfl-welcome">One lesson. One action. One step closer to who you’re becoming.</p>
+<section aria-label="Program status" class="bfl-playbook-header">
+<div class="bfl-playbook-meta">
+<span class="bfl-playbook-month">Month 01 · Identity &amp; self-awareness</span>
+<p class="bfl-playbook-pathway">The Foundation Years · Ages 6–8</p>
+</div>
+<button class="bfl-playbook-outline-button" data-bs-target="#bflUnlockModal" data-bs-toggle="modal" type="button">
+<i aria-hidden="true" class="bi bi-clock"></i> Preview unlocks
+        </button>
+</section>
+<div class="bfl-playbook-notice" role="note">
+<i aria-hidden="true" class="bi bi-clock"></i>
+<span>Demo date: October 28, 2026. Enrollment: October 19. Unlocks are simulated for this private prototype.</span>
+</div>
+<nav aria-label="Monthly playbook progress" class="bfl-playbook-timeline">
+<div class="bfl-playbook-timeline-step" data-state="done" data-timeline="1"><span class="bfl-playbook-timeline-dot"><i aria-hidden="true" class="bi bi-check-lg"></i></span><span class="bfl-playbook-timeline-label">W1 · Learn</span></div>
+<div aria-current="step" class="bfl-playbook-timeline-step" data-state="ready" data-timeline="2"><span class="bfl-playbook-timeline-dot">2</span><span class="bfl-playbook-timeline-label">W2 · Do</span></div>
+<div class="bfl-playbook-timeline-step" data-state="locked" data-timeline="3"><span class="bfl-playbook-timeline-dot"><i aria-hidden="true" class="bi bi-lock"></i></span><span class="bfl-playbook-timeline-label">W3 · Account</span></div>
+<div class="bfl-playbook-timeline-step" data-state="locked" data-timeline="4"><span class="bfl-playbook-timeline-dot"><i aria-hidden="true" class="bi bi-lock"></i></span><span class="bfl-playbook-timeline-label">W4 · Reflect</span></div>
+</nav>
+<section aria-label="This month’s four weekly lessons" class="bfl-playbook-grid">
+<article class="bfl-playbook-card" data-state="done" data-week="1">
+<div class="bfl-playbook-card-head">
+<span class="bfl-playbook-number">01</span>
+<span class="bfl-playbook-state"><i aria-hidden="true" class="bi bi-check-lg"></i><span data-status-text="">Completed</span></span>
+</div>
+<p class="bfl-playbook-overline">Week 1 · Learn</p>
+<h2 class="bfl-playbook-title">Being gifted vs. being productive</h2>
+<p class="bfl-playbook-description">Your gifts open the door. Your daily actions move you forward.</p>
+<p class="bfl-playbook-details"><i aria-hidden="true" class="bi bi-clock"></i> 12 min · Available from Oct 19, 2026</p>
+<div class="bfl-playbook-actions"><button class="bfl-playbook-primary" data-open-lesson="1" type="button">Review lesson <i aria-hidden="true" class="bi bi-arrow-right"></i></button></div>
+</article>
+<article class="bfl-playbook-card" data-state="ready" data-week="2">
+<div class="bfl-playbook-card-head">
+<span class="bfl-playbook-number">02</span>
+<span class="bfl-playbook-state"><i aria-hidden="true" class="bi bi-play-btn"></i><span data-status-text="">Ready for you</span></span>
+</div>
+<p class="bfl-playbook-overline">Week 2 · Do</p>
+<h2 class="bfl-playbook-title">Put your gifts to work</h2>
+<p class="bfl-playbook-description">Choose one strength. Turn it into a small, repeatable daily action.</p>
+<p class="bfl-playbook-details"><i aria-hidden="true" class="bi bi-clock"></i> 10 min · Available from Oct 26, 2026</p>
+<div class="bfl-playbook-actions"><button class="bfl-playbook-primary" data-open-lesson="2" type="button">Open lesson <i aria-hidden="true" class="bi bi-arrow-right"></i></button></div>
+</article>
+<article class="bfl-playbook-card" data-state="locked" data-week="3">
+<div class="bfl-playbook-card-head">
+<span class="bfl-playbook-number">03</span>
+<span class="bfl-playbook-state"><i aria-hidden="true" class="bi bi-lock"></i><span data-status-text="">Locked</span></span>
+</div>
+<p class="bfl-playbook-overline">Week 3 · Account</p>
+<h2 class="bfl-playbook-title">Own your effort</h2>
+<p class="bfl-playbook-description">Check your commitments and have an honest accountability conversation.</p>
+<p class="bfl-playbook-details"><i aria-hidden="true" class="bi bi-clock"></i> 15 min · Unlocks Nov 2, 2026</p>
+<div class="bfl-playbook-actions"><button class="bfl-playbook-outline-button" data-unlock-details="3" type="button">View unlock details <i aria-hidden="true" class="bi bi-lock"></i></button></div>
+</article>
+<article class="bfl-playbook-card" data-state="locked" data-week="4">
+<div class="bfl-playbook-card-head">
+<span class="bfl-playbook-number">04</span>
+<span class="bfl-playbook-state"><i aria-hidden="true" class="bi bi-lock"></i><span data-status-text="">Locked</span></span>
+</div>
+<p class="bfl-playbook-overline">Week 4 · Reflect</p>
+<h2 class="bfl-playbook-title">Progress with a purpose</h2>
+<p class="bfl-playbook-description">Recognize your growth, learn from a setback, and set your next standard.</p>
+<p class="bfl-playbook-details"><i aria-hidden="true" class="bi bi-clock"></i> 12 min · Unlocks Nov 9, 2026</p>
+<div class="bfl-playbook-actions"><button class="bfl-playbook-outline-button" data-unlock-details="4" type="button">View unlock details <i aria-hidden="true" class="bi bi-lock"></i></button></div>
+</article>
+</section>
+</main>
+<!-- Shared footer: retain on every BFL portal page -->
+<footer class="bfl-page-footer" role="contentinfo">
+<p>© 2026 Built For Life™ Training &amp; Mentoring</p>
+<p class="bfl-page-footer-tagline"><i aria-hidden="true" class="bi bi-shield-check"></i> Athletics Serving a Greater Purpose.</p>
+</footer>
+</div>
+<!-- Prototype interactive dialogs. No user records or progress are sent to a server. -->
+<div aria-hidden="true" aria-labelledby="bflUnlockModalTitle" class="modal fade bfl-playbook-modal" id="bflUnlockModal" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered"><div class="modal-content">
+<div class="modal-header border-0 px-4 pt-4"><h2 class="modal-title fs-5" id="bflUnlockModalTitle">Monthly lesson unlocks</h2><button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button></div>
+<div class="modal-body px-4 pb-4"><p class="text-secondary mb-2">This private prototype uses a demo date of October 28, 2026, with an October 19 enrollment date. Lessons unlock weekly in sequence.</p>
+<ul class="bfl-playbook-date-list"><li><strong>Week 1 · Learn</strong><span>Oct 19 · Completed</span></li><li><strong>Week 2 · Do</strong><span>Oct 26 · Available</span></li><li><strong>Week 3 · Account</strong><span>Nov 2 · Locked</span></li><li><strong>Week 4 · Reflect</strong><span>Nov 9 · Locked</span></li></ul>
+<p class="small text-secondary mt-3 mb-0">Actual release times and eligibility will be enforced by the backend when the portal is connected.</p>
+</div>
+</div></div>
+</div>
+<div class="modal fade bfl-dashboard-lesson" id="bflLessonModal" tabindex="-1" aria-labelledby="bflLessonModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <header class="bfl-dashboard-lesson-header">
+        <p class="bfl-dashboard-lesson-eyebrow" id="bflLessonModalWeek">Week 2 · Do · 10 min</p>
+        <h2 id="bflLessonModalTitle">Put your gifts to work</h2>
+        <button class="bfl-dashboard-lesson-close" type="button" data-bs-dismiss="modal" aria-label="Close lesson"><i class="bi bi-x-lg" aria-hidden="true"></i></button>
+      </header>
+      <div class="bfl-dashboard-lesson-body">
+        <span class="bfl-dashboard-lesson-pathway">The foundation years · Ages 6–8</span>
+        <p id="bflLessonModalDescription">Choose one strength. Turn it into a small, repeatable daily action.</p>
+        <h3 id="bflLessonSectionHeading">The idea</h3>
+        <p id="bflLessonModalPrompt">Choose one gift and put it to work. Keep the action small enough to repeat at home, at school, or with your team. Record your effort in your weekly goals.</p>
+        <aside class="bfl-dashboard-lesson-next">
+          <h4>Understand: your next step</h4>
+          <p>Name one thing you do well and one thing you want to practice.</p>
+        </aside>
+        <h3>Try it in real life</h3>
+        <ol>
+          <li>Name a specific action you can take.</li>
+          <li>Practice it and notice what happens.</li>
+          <li>Share one thing you learned with a trusted adult.</li>
+        </ol>
+        <label for="bflLessonReflection">Your demo reflection</label>
+        <textarea id="bflLessonReflection" rows="4" placeholder="What will you practice, and why does it matter?"></textarea>
+        <p class="bfl-dashboard-lesson-note">Text lesson preview · No video has been uploaded. Use fictional details.</p>
+        <p id="bflLessonSaveStatus" role="status" hidden></p>
+        <div class="bfl-dashboard-lesson-actions">
+          <button type="button" id="bflMarkCompleted">Complete lesson <i class="bi bi-check-lg" aria-hidden="true"></i></button>
+          <button type="button" data-bs-dismiss="modal" class="bfl-lesson-back">Back to playbook</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div aria-hidden="true" aria-labelledby="bflLockedLessonModalTitle" class="modal fade bfl-dashboard-lesson bfl-locked-lesson" id="bflLockedLessonModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered"><div class="modal-content">
+    <header class="bfl-dashboard-lesson-header">
+      <p class="bfl-dashboard-lesson-eyebrow">Timed content preview</p>
+      <h2 id="bflLockedLessonModalTitle">Growth has a rhythm.</h2>
+      <button aria-label="Close unlock details" class="bfl-dashboard-lesson-close" data-bs-dismiss="modal" type="button"><i class="bi bi-x-lg" aria-hidden="true"></i></button>
+    </header>
+    <div class="bfl-dashboard-lesson-body">
+      <div class="bfl-unlock-lock" aria-hidden="true"><i class="bi bi-lock"></i></div>
+      <p><strong id="bflLockedLessonName">Week 3: Own your effort</strong></p>
+      <p>This lesson unlocks on <strong id="bflLockedLessonDate">Nov 2, 2026</strong>, <span id="bflLockedLessonDays">14</span> days after demo enrollment. Keep practicing the current week’s challenge while you wait.</p>
+      <aside class="bfl-unlock-notice"><i class="bi bi-clock" aria-hidden="true"></i><span>You can test the schedule with the simulated timeline. No purchase is required.</span></aside>
+      <div class="bfl-dashboard-lesson-actions">
+        <button type="button" id="bflPreviewUnlockSchedule">Preview unlock schedule <i class="bi bi-calendar4" aria-hidden="true"></i></button>
+        <button type="button" class="bfl-lesson-back" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div></div>
+</div>
+<div class="toast-container position-fixed bottom-0 end-0 p-3 bfl-toast-container"><div aria-live="polite" class="toast bfl-playbook-toast" id="bflDemoToast" role="status"><div class="d-flex"><div class="toast-body" id="bflToastMessage"></div><button aria-label="Close" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" type="button"></button></div></div></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="../assets/js/pages/weekly-playbook.js" type="module"></script></body>
+</html>

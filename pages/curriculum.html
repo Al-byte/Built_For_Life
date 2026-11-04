@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="#191d19" name="theme-color"/>
+<title>Built For Life | Our curriculum</title>
+<!-- Bootstrap 5, Bootstrap Icons, and fonts -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&amp;family=DM+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/css/bfl.css" rel="stylesheet"/>
+<link rel="icon" href="../assets/images/bfl-favicon.ico" sizes="16x16 32x32 48x48 64x64"/>
+<link rel="icon" type="image/png" sizes="64x64" href="../assets/images/bfl-favicon.png"/>
+<link rel="icon" type="image/svg+xml" sizes="any" href="../assets/images/bfl-favicon.svg"/>
+</head>
+<body class="bfl-page bfl-page--curriculum">
+<!-- LEFT SIDEBAR: fixed on desktop, slide-in menu on mobile. -->
+<aside aria-labelledby="bflSidebarTitle" class="offcanvas-lg offcanvas-start bfl-sidebar" data-bs-theme="dark" id="bflSidebar" tabindex="-1">
+<button aria-label="Close menu" class="bfl-mobile-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#bflSidebar" type="button">
+<i aria-hidden="true" class="bi bi-x"></i>
+</button>
+<div class="offcanvas-body">
+<a aria-label="Built For Life home" class="bfl-brand" href="../index.html">
+<!-- Inline logo keeps this example self-contained; replace with your own logo if desired. -->
+<svg aria-hidden="true" class="bfl-brand-mark" focusable="false" viewbox="0 0 56 66">
+<path d="M0 0H56V48L28 66 0 48Z" fill="#f5d34f"></path>
+<text fill="#1b211a" font-family="Impact, 'Arial Narrow', sans-serif" font-size="25" font-weight="900" text-anchor="middle" x="28" y="36">BFL</text>
+</svg>
+<span>
+<span class="bfl-brand-name" id="bflSidebarTitle">BUILT FOR LIFE</span>
+<span class="bfl-brand-caption">TRAINING &amp; MENTORING</span>
+</span>
+</a>
+<nav aria-label="Member portal navigation" class="bfl-sidebar-nav">
+<div class="bfl-sidebar-group">
+<h2 class="bfl-sidebar-heading">Your journey</h2>
+<ul class="bfl-nav-list">
+<li><a class="bfl-nav-link" data-page="My dashboard" href="../index.html"><i aria-hidden="true" class="bi bi-house-door"></i><span>My dashboard</span></a></li>
+<li><a aria-current="page" class="bfl-nav-link active" data-page="Our curriculum" href="curriculum.html"><i aria-hidden="true" class="bi bi-book"></i><span>Our curriculum</span></a></li>
+<li><a class="bfl-nav-link" data-page="Weekly playbook" href="weekly-playbook.html"><i aria-hidden="true" class="bi bi-play-btn"></i><span>Weekly playbook</span></a></li>
+<li><a class="bfl-nav-link" data-page="Progress &amp; goals" href="progress-goals.html"><i aria-hidden="true" class="bi bi-bar-chart"></i><span>Progress &amp; goals</span></a></li>
+<li><a class="bfl-nav-link" data-page="The huddle" href="huddle.html"><i aria-hidden="true" class="bi bi-people"></i><span>The huddle</span><span aria-label="New activity" class="bfl-unread"></span></a></li>
+</ul>
+</div>
+<div class="bfl-sidebar-group">
+<h2 class="bfl-sidebar-heading">Membership</h2>
+<ul class="bfl-nav-list">
+<li><a class="bfl-nav-link" data-page="Plans &amp; membership" href="plans-membership.html"><i aria-hidden="true" class="bi bi-credit-card"></i><span>Plans &amp; membership</span></a></li>
+<li><a class="bfl-nav-link" data-page="Help &amp; FAQs" href="help-faqs.html"><i aria-hidden="true" class="bi bi-question-circle"></i><span>Help &amp; FAQs</span></a></li>
+</ul>
+</div>
+</nav>
+<div class="bfl-sidebar-footer d-none d-lg-block">
+<i aria-hidden="true" class="bi bi-shield-check"></i>
+<p>Stronger on the field.<br/>Better prepared for life.</p>
+</div>
+</div>
+</aside>
+<div class="bfl-main">
+<!-- TOP NAVIGATION -->
+<header class="bfl-topbar">
+<!-- Desktop breadcrumb -->
+<div aria-label="Breadcrumb" class="bfl-breadcrumb d-none d-lg-flex">
+<a href="../index.html">Member portal</a>
+<i aria-hidden="true" class="bi bi-chevron-right"></i>
+<span class="js-page-name">Explore the curriculum</span>
+</div>
+<!-- Mobile hamburger + current page -->
+<div class="d-flex d-lg-none align-items-center gap-4">
+<button aria-controls="bflSidebar" aria-label="Open menu" class="bfl-menu-button" data-bs-target="#bflSidebar" data-bs-toggle="offcanvas" type="button">
+<i aria-hidden="true" class="bi bi-list"></i>
+</button>
+<span class="bfl-current-page js-page-name">Explore the curriculum</span>
+</div>
+<div class="bfl-top-actions">
+<span class="bfl-private"><i aria-hidden="true" class="bi bi-lock"></i>Private prototype</span>
+<button aria-label="Notifications" class="bfl-icon-button" data-bs-toggle="modal" data-bs-target="#bflNotificationsModal" aria-haspopup="dialog" type="button">
+<i aria-hidden="true" class="bi bi-bell"></i><span class="bfl-notice-dot"></span>
+</button>
+<!-- Avatar shown in desktop screenshot, hidden on mobile -->
+<div class="d-none d-lg-block">
+<a aria-label="My account" class="bfl-avatar" href="account.html">JC</a>
+</div>
+</div>
+</header>
+<!-- OUR CURRICULUM: all navigation and footer elements stay shared. -->
+<main class="bfl-content" id="mainContent">
+<div class="bfl-eyebrow">Built For Life / Member Portal</div>
+<h1 class="bfl-page-heading">A pathway for every stage.</h1>
+<p class="bfl-welcome">Age-appropriate growth. One greater purpose.</p>
+<section aria-label="Explore curriculum filters" class="bfl-curriculum-filters">
+<div class="bfl-curriculum-age-scroll">
+<div aria-label="Choose age pathway" class="bfl-curriculum-tabs" role="group">
+<button aria-pressed="true" class="bfl-curriculum-tab" data-age="6–8" type="button">Ages 6–8</button>
+<button aria-pressed="false" class="bfl-curriculum-tab" data-age="9–11" type="button">Ages 9–11</button>
+<button aria-pressed="false" class="bfl-curriculum-tab" data-age="12–14" type="button">Ages 12–14</button>
+<button aria-pressed="false" class="bfl-curriculum-tab" data-age="15–17" type="button">Ages 15–17</button>
+</div>
+</div>
+<div aria-label="Choose curriculum type" class="bfl-curriculum-tabs" role="group">
+<button aria-pressed="false" class="bfl-curriculum-tab" data-track="Mentoring" type="button">Mentoring</button>
+<button aria-pressed="true" class="bfl-curriculum-tab" data-track="Training" type="button">Training</button>
+</div>
+</section>
+<section aria-labelledby="bflCurriculumBannerTitle" class="bfl-curriculum-banner">
+<div>
+<p class="bfl-curriculum-banner-overline" id="bflCurriculumOverline">Understand · Ages 6–8</p>
+<h2 id="bflCurriculumBannerTitle">The Foundation Years</h2>
+<p id="bflCurriculumBannerDescription">Build confidence through movement, kindness, listening, and simple everyday wins.</p>
+</div>
+<span aria-hidden="true" class="bfl-curriculum-banner-age" id="bflCurriculumBannerAge">6–8</span>
+</section>
+<aside aria-label="Prototype information" class="bfl-curriculum-notice">
+<i aria-hidden="true" class="bi bi-info-circle"></i>
+<span>Sample curriculum for exploration. Age changes personalize this demo’s pathway and weekly prompts.</span>
+</aside>
+<section aria-labelledby="bflCurriculumMonthHeading" class="bfl-curriculum-preview">
+<div class="bfl-curriculum-preview-head">
+<div>
+<div class="bfl-eyebrow">12-month curriculum preview</div>
+<h2 class="bfl-curriculum-section-title" id="bflCurriculumMonthHeading">Identity &amp; self-awareness</h2>
+</div>
+<label class="visually-hidden" for="bflCurriculumMonth">Select a month</label>
+<select class="form-select bfl-curriculum-month-select" id="bflCurriculumMonth">
+<option value="0">Month 1 · Identity &amp; self-awareness</option>
+<option value="1">Month 2 · Habits &amp; discipline</option>
+<option value="2">Month 3 · Respect &amp; character</option>
+<option value="3">Month 4 · Communication</option>
+<option value="4">Month 5 · Relationships &amp; teamwork</option>
+<option value="5">Month 6 · Leadership</option>
+<option value="6">Month 7 · Decision-making</option>
+<option value="7">Month 8 · Resilience</option>
+<option value="8">Month 9 · Responsibility</option>
+<option value="9">Month 10 · Goal setting</option>
+<option value="10">Month 11 · Service &amp; impact</option>
+<option value="11">Month 12 · Purpose &amp; preparation</option>
+</select>
+</div>
+<div class="bfl-curriculum-body" id="bflCurriculumWeeks">
+<article class="bfl-curriculum-card bfl-curriculum-week-card" data-week-card="0">
+<div class="bfl-curriculum-week-top">
+<span class="bfl-curriculum-week-label" data-week-label="">WEEK 01 / LEARN</span>
+<span class="bfl-curriculum-week-icon is-highlight"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><g transform="rotate(-45 12 12)"><path d="M6 12h12M4 9v6M7 7v10M17 7v10M20 9v6M2 12h2M20 12h2"/></g></svg></span>
+</div>
+<h3 class="bfl-curriculum-week-title" data-week-title="">Move with control</h3>
+<p class="bfl-curriculum-week-description" data-week-description="">Practice balance and body control with slow, steady movements.</p>
+<button class="bfl-curriculum-week-link" data-explore-week="0" type="button">Explore lesson <i aria-hidden="true" class="bi bi-arrow-right"></i></button>
+</article>
+<article class="bfl-curriculum-card bfl-curriculum-week-card" data-week-card="1">
+<div class="bfl-curriculum-week-top">
+<span class="bfl-curriculum-week-label" data-week-label="">WEEK 02 / DO</span>
+<span class="bfl-curriculum-week-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><g transform="rotate(-45 12 12)"><path d="M6 12h12M4 9v6M7 7v10M17 7v10M20 9v6M2 12h2M20 12h2"/></g></svg></span>
+</div>
+<h3 class="bfl-curriculum-week-title" data-week-title="">Build your engine</h3>
+<p class="bfl-curriculum-week-description" data-week-description="">Set a movement goal you can repeat consistently.</p>
+<button class="bfl-curriculum-week-link" data-explore-week="1" type="button">Explore lesson <i aria-hidden="true" class="bi bi-arrow-right"></i></button>
+</article>
+<article class="bfl-curriculum-card bfl-curriculum-week-card" data-week-card="2">
+<div class="bfl-curriculum-week-top">
+<span class="bfl-curriculum-week-label" data-week-label="">WEEK 03 / ACCOUNT</span>
+<span class="bfl-curriculum-week-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><g transform="rotate(-45 12 12)"><path d="M6 12h12M4 9v6M7 7v10M17 7v10M20 9v6M2 12h2M20 12h2"/></g></svg></span>
+</div>
+<h3 class="bfl-curriculum-week-title" data-week-title="">Strength with intention</h3>
+<p class="bfl-curriculum-week-description" data-week-description="">Focus on technique and controlled movement rather than maximum effort.</p>
+<button class="bfl-curriculum-week-link" data-explore-week="2" type="button">Explore lesson <i aria-hidden="true" class="bi bi-arrow-right"></i></button>
+</article>
+<article class="bfl-curriculum-card bfl-curriculum-week-card" data-week-card="3">
+<div class="bfl-curriculum-week-top">
+<span class="bfl-curriculum-week-label" data-week-label="">WEEK 04 / REFLECT</span>
+<span class="bfl-curriculum-week-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><g transform="rotate(-45 12 12)"><path d="M6 12h12M4 9v6M7 7v10M17 7v10M20 9v6M2 12h2M20 12h2"/></g></svg></span>
+</div>
+<h3 class="bfl-curriculum-week-title" data-week-title="">Compete as a teammate</h3>
+<p class="bfl-curriculum-week-description" data-week-description="">Encourage your teammates and practice communicating clearly.</p>
+<button class="bfl-curriculum-week-link" data-explore-week="3" type="button">Explore lesson <i aria-hidden="true" class="bi bi-arrow-right"></i></button>
+</article>
+</div>
+</section>
+<section aria-labelledby="bflCurriculumRhythmTitle" class="bfl-curriculum-rhythm bfl-curriculum-card">
+<div class="bfl-curriculum-rhythm-top">
+<h2 id="bflCurriculumRhythmTitle">The rhythm of real growth</h2>
+<span class="bfl-curriculum-rhythm-badge">Learn <span aria-hidden="true">→</span> Do <span aria-hidden="true">→</span> Account <span aria-hidden="true">→</span> Reflect</span>
+</div>
+<p>Each month connects a new idea to a practical challenge, an accountability conversation, and a reflection. Parents and mentors help youth connect what they learn to school, home, and the field.</p>
+</section>
+<!-- Prototype lesson details open when a preview card is selected. -->
+<div aria-hidden="true" aria-labelledby="bflCurriculumLessonModalTitle" class="modal fade" id="bflCurriculumLessonModal" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content border-0 rounded-4">
+<div class="modal-header border-0 px-4 pt-4">
+<div>
+<div class="bfl-eyebrow mb-2" id="bflCurriculumLessonModalOverline">Week 01 / Learn</div>
+<h2 class="modal-title fs-4 fw-bold" id="bflCurriculumLessonModalTitle">Know your strengths</h2>
+</div>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body px-4 pb-4">
+<p class="mb-3 text-secondary" id="bflCurriculumLessonModalDescription">Name one thing you do well and one thing you want to practice.</p>
+<div class="rounded-3 p-3 bfl-curriculum-sample-note">
+                Sample curriculum preview. Complete lesson content will be available when the weekly playbook is connected.
+              </div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Shared footer: retain on every BFL portal page -->
+<footer class="bfl-page-footer" role="contentinfo">
+<p>© 2026 Built For Life™ Training &amp; Mentoring</p>
+<p class="bfl-page-footer-tagline"><i aria-hidden="true" class="bi bi-shield-check"></i> Athletics Serving a Greater Purpose.</p>
+</footer>
+</div>
+<div class="modal fade bfl-dashboard-lesson" id="bflTrainingPreview" tabindex="-1" aria-labelledby="bflTrainingTitle" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered"><div class="modal-content">
+<header class="bfl-dashboard-lesson-header"><p class="bfl-dashboard-lesson-eyebrow" id="bflTrainingTheme"></p><h2 id="bflTrainingTitle"></h2><button class="bfl-dashboard-lesson-close" type="button" data-bs-dismiss="modal" aria-label="Close"><i class="bi bi-x-lg" aria-hidden="true"></i></button></header>
+<div class="bfl-dashboard-lesson-body">
+<span class="bfl-dashboard-lesson-pathway" id="bflTrainingAge"></span>
+<p id="bflTrainingDescription"></p>
+<aside class="bfl-dashboard-lesson-next"><h4>Discuss it</h4><p>Where could you practice this at school, at home, or on the field?</p></aside>
+<h3>Your take-home challenge</h3><p>Choose one action, practice it this week, and ask a trusted adult to help you reflect on your effort.</p>
+<div class="bfl-dashboard-lesson-actions"><button id="bflRelatedGoal" type="button">Set a related goal <i class="bi bi-bullseye" aria-hidden="true"></i></button><button class="bfl-lesson-back" type="button" data-bs-dismiss="modal">Close preview</button></div>
+</div></div></div></div>
+<div class="modal fade bfl-goal-dialog" id="bflRelatedGoalModal" tabindex="-1" aria-labelledby="bflRelatedGoalTitle" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered"><form class="modal-content" id="bflRelatedGoalForm">
+<header class="bfl-goal-dialog-header"><p>Goal &amp; accountability</p><h2 id="bflRelatedGoalTitle">Start with one small action.</h2><button type="button" class="bfl-goal-dialog-close" data-bs-dismiss="modal" aria-label="Close"><i class="bi bi-x-lg" aria-hidden="true"></i></button></header>
+<div class="bfl-goal-dialog-body">
+<label for="bflRelatedGoalName">What will you work on?</label><input id="bflRelatedGoalName" class="form-control" maxlength="70" placeholder="Example: Read for 15 minutes" required/>
+<label for="bflRelatedGoalCategory">Development pillar</label><select id="bflRelatedGoalCategory" class="form-select"><option>Character</option><option>Academic success</option><option>Physical development</option><option>Leadership</option></select>
+<div class="row gx-4"><div class="col-sm-6"><label for="bflRelatedGoalTarget">Weekly target (1–20)</label><input id="bflRelatedGoalTarget" class="form-control" type="number" min="1" max="20" step="1" value="5" required/></div><div class="col-sm-6"><label for="bflRelatedGoalUnit">Measure in</label><select id="bflRelatedGoalUnit" class="form-select"><option>days</option><option>times</option><option>sessions</option><option>minutes</option></select></div></div>
+
+<p id="bflRelatedGoalStatus" role="status" hidden></p><button type="submit" class="bfl-goal-dialog-save">Save goal <i class="bi bi-check-lg" aria-hidden="true"></i></button>
+</div></form></div></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="../assets/js/pages/curriculum.js" type="module"></script></body>
+</html>

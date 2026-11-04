@@ -1,0 +1,4519 @@
+/* ==========================================================================
+   BUILT FOR LIFE — CONSOLIDATED STYLESHEET
+   Bootstrap 5 | BFL shared design system + individual page components
+
+   Source: the seven approved BFL prototype pages.
+   Order: Bootstrap CSS → Bootstrap Icons → Google Fonts → this stylesheet.
+
+   Shared classes and responsive breakpoints appear only once.
+   Progress & Goals uses page-scoped goal-bar overrides to avoid collisions
+   with the dashboard. Preserve bfl- class names in HTML and JavaScript.
+   ========================================================================== */
+
+/* 01 — Design tokens, shared navigation, top bar, dashboard and standard footer */
+
+:root {
+  --bfl-dark: #191d19;
+  --bfl-green: #20291e;
+  --bfl-yellow: #f5d34f;
+  --bfl-yellow-hover: #f9db6a;
+  --bfl-ink: #202420;
+  --bfl-muted: #7d8777;
+  --bfl-page: #f5f6f1;
+  --bfl-sidebar-width: 324px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--bfl-ink);
+  font-family: "DM Sans", Arial, sans-serif;
+  background: var(--bfl-page);
+}
+
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  text-decoration: none;
+}
+
+.bfl-sidebar {
+  --bs-offcanvas-width: 260px;
+  background: var(--bfl-dark) !important;
+  color: #f7f8f4;
+  border: 0 !important;
+  overflow-x: hidden;
+}
+
+.bfl-sidebar .offcanvas-body {
+  display: block;
+  padding: 0;
+  overflow-y: auto;
+}
+
+.bfl-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: white;
+  width: max-content;
+}
+
+.bfl-brand:hover, .bfl-brand:focus {
+  color: white;
+}
+
+.bfl-brand-mark {
+  width: 56px;
+  height: 66px;
+  flex: 0 0 auto;
+}
+
+.bfl-brand-name {
+  display: block;
+  font: 800 28px/1 "Barlow Condensed", Impact, sans-serif;
+  white-space: nowrap;
+  letter-spacing: -.2px;
+}
+
+.bfl-brand-caption {
+  display: block;
+  margin-top: 9px;
+  color: #b3b9ae;
+  font-size: 9px;
+  letter-spacing: 1.75px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.bfl-sidebar-heading {
+  margin: 0 0 14px;
+  color: #858e80;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+}
+
+.bfl-sidebar-nav {
+  padding: 0 27px;
+}
+
+.bfl-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bfl-nav-link {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  min-height: 61px;
+  padding: 0 18px;
+  border-radius: 11px;
+  color: #aab0a5;
+  font-weight: 600;
+  font-size: 16px;
+  transition: background-color .15s, color .15s;
+}
+
+.bfl-nav-link i {
+  width: 25px;
+  font-size: 21px;
+  text-align: center;
+  line-height: 1;
+}
+
+.bfl-nav-link:hover, .bfl-nav-link:focus-visible {
+  color: white;
+  background: #2a3029;
+}
+
+.bfl-nav-link.active, .bfl-nav-link.active:hover, .bfl-nav-link.active:focus-visible {
+  color: #1a211a;
+  background: var(--bfl-yellow);
+}
+
+.bfl-unread {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--bfl-yellow);
+  margin-left: auto;
+}
+
+.bfl-sidebar-group + .bfl-sidebar-group {
+  margin-top: 31px;
+}
+
+.bfl-sidebar-footer {
+  margin: 42px 40px 24px;
+  padding-top: 32px;
+  border-top: 1px solid #343b32;
+}
+
+.bfl-sidebar-footer i {
+  color: var(--bfl-yellow);
+  font-size: 27px;
+}
+
+.bfl-sidebar-footer p {
+  color: #b9c0b4;
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 14px 0 0;
+}
+
+.bfl-mobile-close {
+  position: absolute;
+  top: 13px;
+  right: 12px;
+  border: 0;
+  background: transparent;
+  color: #969e93;
+  padding: 3px 6px;
+  line-height: 1;
+  font-size: 19px;
+  z-index: 2;
+}
+
+.bfl-mobile-close:hover {
+  color: white;
+}
+
+.bfl-main {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.bfl-topbar {
+  background: #fff;
+  height: 108px;
+  border-bottom: 1px solid #e6e9df;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 51px;
+  gap: 16px;
+}
+
+.bfl-breadcrumb {
+  display: flex;
+  gap: 23px;
+  align-items: center;
+  color: #535b51;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+.bfl-breadcrumb a {
+  color: #929b8c;
+}
+
+.bfl-breadcrumb a:hover {
+  color: #444e42;
+}
+
+.bfl-breadcrumb i {
+  color: #919b8c;
+  font-size: 21px;
+}
+
+.bfl-top-actions {
+  display: flex;
+  align-items: center;
+  gap: 29px;
+  margin-left: auto;
+}
+
+.bfl-private {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border: 1px solid #e0e6d4;
+  border-radius: 99px;
+  color: #687662;
+  background: #f3f5ee;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.bfl-private i {
+  font-size: 14px;
+}
+
+.bfl-icon-button {
+  border: 0;
+  background: none;
+  padding: 3px;
+  position: relative;
+  color: #69785d;
+  font-size: 25px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bfl-icon-button:hover {
+  color: var(--bfl-ink);
+}
+
+.bfl-notice-dot {
+  position: absolute;
+  right: 3px;
+  top: 3px;
+  width: 7px;
+  height: 7px;
+  border-radius: 100%;
+  background: #ddba35;
+  box-shadow: 0 0 0 2px white;
+}
+
+.bfl-avatar {
+  text-decoration: none;
+  display: inline-grid;
+  place-items: center;
+  height: 47px;
+  width: 47px;
+  background: #e7ebcb;
+  color: #414b35;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 50%;
+  border: 0;
+}
+
+.bfl-menu-button {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  color: #718066;
+  font-size: 28px;
+  line-height: 1;
+}
+
+.bfl-current-page {
+  font-size: 15px;
+  font-weight: 500;
+  color: #354339;
+  white-space: nowrap;
+}
+
+.bfl-content {
+  padding: 47px 52px 70px;
+  flex: 1 0 auto;
+}
+
+.bfl-eyebrow {
+  color: #849079;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.bfl-page-heading {
+  font: 800 clamp(40px, 3.5vw, 56px)/1.07 "Barlow Condensed", Impact, sans-serif;
+  letter-spacing: -.2px;
+  margin: 16px 0 10px;
+}
+
+.bfl-welcome {
+  font-size: 16px;
+  color: #7d8477;
+  margin: 0;
+}
+
+.bfl-date {
+  font-size: 14px;
+  color: #899381;
+  white-space: nowrap;
+}
+
+.bfl-date i {
+  margin-right: 9px;
+}
+
+.bfl-hero {
+  background: var(--bfl-green);
+  border-radius: 22px;
+  margin-top: 37px;
+  padding: 38px 43px;
+  min-height: 380px;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+}
+
+.bfl-hero-copy {
+  position: relative;
+  z-index: 2;
+}
+
+.bfl-hero-overline {
+  color: #f4d565;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+}
+
+.bfl-hero h2 {
+  font: 800 clamp(40px, 4vw, 57px)/1.07 "Barlow Condensed", Impact, sans-serif;
+  color: white;
+  margin: 22px 0 20px;
+  max-width: 750px;
+}
+
+.bfl-hero h2 span {
+  color: var(--bfl-yellow);
+  display: block;
+}
+
+.bfl-hero p {
+  color: #aeb8a9;
+  line-height: 1.75;
+  font-size: 14px;
+  margin-bottom: 26px;
+}
+
+.bfl-hero-cta {
+  background: var(--bfl-yellow);
+  color: #1d241b;
+  padding: 16px 23px;
+  border: 0;
+  border-radius: 9px;
+  font-weight: 700;
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.bfl-hero-cta:hover {
+  background: var(--bfl-yellow-hover);
+  color: #1d241b;
+}
+
+.bfl-hero-graphic {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 47%;
+  z-index: 1;
+  opacity: .8;
+}
+
+.bfl-stat-card {
+  background: white;
+  border: 1px solid #e4e7dd;
+  border-radius: 16px;
+  min-height: 133px;
+  padding: 24px;
+  display: flex;
+  gap: 16px;
+}
+
+.bfl-stat-icon {
+  width: 47px;
+  height: 47px;
+  border-radius: 12px;
+  background: #f4f5ed;
+  color: #7a876d;
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+  flex: 0 0 auto;
+}
+
+.bfl-stat-icon.highlight {
+  background: #fff3cf;
+  color: #9a791a;
+}
+
+.bfl-stat-label {
+  color: #879080;
+  font-size: 12px;
+}
+
+.bfl-stat-value {
+  font-size: 29px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 6px;
+}
+
+.bfl-stat-value small {
+  color: #939b87;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.bfl-stat-note {
+  color: #a4ad9c;
+  font-size: 11px;
+  margin-top: 6px;
+}
+
+.bfl-dashboard-detail {
+  margin-top: 31px;
+}
+
+.bfl-section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.bfl-section-head h2 {
+  margin: 0;
+  font-size: 23px;
+  font-weight: 700;
+  letter-spacing: -.7px;
+  line-height: 1.25;
+}
+
+.bfl-section-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  color: #7a856e;
+  font-size: 15px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.bfl-section-link:hover, .bfl-section-link:focus-visible {
+  color: #45543d;
+}
+
+.bfl-section-link i {
+  font-size: 19px;
+}
+
+.bfl-panel {
+  background: #fff;
+  border: 1px solid #e1e6d9;
+  border-radius: 20px;
+}
+
+.bfl-lesson-card {
+  display: flex;
+  min-height: 307px;
+  overflow: hidden;
+}
+
+.bfl-lesson-art {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 305px;
+  flex: 0 0 35%;
+  background: #e4e9dd;
+  display: grid;
+  place-items: center;
+  container-type: inline-size;
+}
+
+.bfl-lesson-art::before, .bfl-lesson-art::after {
+  content: "";
+  position: absolute;
+  border: 1px solid #c1cdaF;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.bfl-lesson-art::before {
+  width: 113%;
+  aspect-ratio: 1;
+  left: -20%;
+  top: 27%;
+}
+
+.bfl-lesson-art::after {
+  width: 94%;
+  aspect-ratio: 1;
+  left: -4%;
+  top: 42%;
+}
+
+.bfl-art-words {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: rotate(-5deg);
+  color: #435739;
+  font-family: "Barlow Condensed", Impact, sans-serif;
+  font-weight: 800;
+  line-height: .89;
+  text-align: center;
+  width: 100%;
+}
+
+.bfl-art-words .word-large {
+  font-size: clamp(30px, 17.4cqw, 66px);
+  letter-spacing: -.025em;
+  white-space: nowrap;
+}
+
+.bfl-art-words .word-small {
+  font-size: clamp(23px, 10cqw, 38px);
+  margin: 13px 0 3px;
+}
+
+.bfl-lesson-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 28px 33px;
+  min-width: 0;
+  flex: 1;
+}
+
+.bfl-week-label {
+  background: #fff2cc;
+  color: #9e7c21;
+  border-radius: 7px;
+  padding: 8px 11px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .45px;
+}
+
+.bfl-lesson-title {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -.6px;
+  margin: 16px 0 12px;
+  line-height: 1.23;
+}
+
+.bfl-lesson-description {
+  color: #80897b;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.bfl-lesson-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 21px;
+  color: #919c86;
+  font-size: 14px;
+  margin: 20px 0 22px;
+}
+
+.bfl-lesson-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.bfl-lesson-meta i {
+  font-size: 15px;
+}
+
+.bfl-dark-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 17px;
+  color: white;
+  background: #202420;
+  border: 0;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 14px 18px;
+}
+
+.bfl-dark-button:hover, .bfl-dark-button:focus-visible {
+  background: #3a4436;
+  color: white;
+}
+
+.bfl-dark-button i {
+  font-size: 21px;
+}
+
+.bfl-commitment-section {
+  margin-top: 38px;
+}
+
+.bfl-goals-card {
+  padding: 29px 33px 32px;
+}
+
+.bfl-goals-list {
+  display: grid;
+  gap: 25px;
+}
+
+.bfl-goal-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 17px;
+}
+
+.bfl-goal-check {
+  appearance: none;
+  -webkit-appearance: none;
+  flex: 0 0 auto;
+  width: 31px;
+  height: 31px;
+  border-radius: 8px;
+  background: white;
+  border: 1px solid #d4dcc8;
+  margin: 9px 0 0;
+  cursor: pointer;
+  position: relative;
+}
+
+.bfl-goal-check:focus-visible {
+  outline: 3px solid #d4b544;
+  outline-offset: 3px;
+}
+
+.bfl-goal-check:checked {
+  background: #e3ebd9;
+  border-color: #d2dfc4;
+}
+
+.bfl-goal-check:checked::after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 6px;
+  width: 7px;
+  height: 12px;
+  transform: rotate(45deg);
+  border: solid #668653;
+  border-width: 0 1.5px 1.5px 0;
+}
+
+.bfl-goal-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.bfl-goal-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: baseline;
+  margin: 3px 0 11px;
+}
+
+.bfl-goal-name {
+  color: #2b302c;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.bfl-goal-count {
+  color: #8e9a80;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.bfl-goal-track {
+  height: 8px;
+  background: #ebefe6;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.bfl-goal-fill {
+  height: 100%;
+  background: #98ae81;
+  border-radius: inherit;
+}
+
+.bfl-add-goal {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  font-size: 15px;
+  color: #7a866e;
+  background: transparent;
+  padding: 0;
+  margin: 28px 0 0;
+  border: 0;
+}
+
+.bfl-add-goal i {
+  font-size: 19px;
+}
+
+.bfl-add-goal:hover {
+  color: #41583b;
+}
+
+.bfl-pathway-card {
+  padding: 33px 33px 32px;
+}
+
+.bfl-card-eyebrow {
+  font-size: 13px;
+  font-weight: 700;
+  color: #909a87;
+  letter-spacing: 2.1px;
+  text-transform: uppercase;
+}
+
+.bfl-pathway-title {
+  font-size: 23px;
+  line-height: 1.3;
+  font-weight: 700;
+  margin: 14px 0 7px;
+  letter-spacing: -.45px;
+}
+
+.bfl-pathway-subtitle {
+  color: #8d9784;
+  font-size: 14px;
+}
+
+.bfl-pathway-progress {
+  display: flex;
+  align-items: center;
+  gap: 27px;
+  margin-top: 32px;
+}
+
+.bfl-progress-donut {
+  flex: 0 0 122px;
+  width: 122px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: conic-gradient(#c8ad3e 0 25%, #edf0e7 25% 100%);
+  display: grid;
+  place-items: center;
+  transform: rotate(-90deg);
+}
+
+.bfl-progress-donut-inner {
+  width: 102px;
+  aspect-ratio: 1;
+  background: white;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  transform: rotate(90deg);
+}
+
+.bfl-progress-donut-inner strong {
+  font-size: 30px;
+  letter-spacing: -.7px;
+}
+
+.bfl-progress-copy strong {
+  display: block;
+  color: #465540;
+  font-size: 17px;
+  line-height: 1.4;
+  margin-bottom: 9px;
+}
+
+.bfl-progress-copy p {
+  margin: 0;
+  color: #8b9586;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.bfl-week-timeline {
+  display: grid;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: 4px;
+  margin: 38px 0 30px;
+  position: relative;
+}
+
+.bfl-week-timeline::before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  background: #e2e8d8;
+  top: 18px;
+  left: 0;
+  right: 0;
+}
+
+.bfl-timeline-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+  min-width: 0;
+  position: relative;
+}
+
+.bfl-week-dot {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  box-sizing: content-box;
+  background: #edf0e7;
+  color: #8f9b84;
+  font-size: 13px;
+}
+
+.bfl-week-dot.done {
+  background: #e2ead7;
+  color: #6a8956;
+}
+
+.bfl-week-dot.current {
+  background: #f5d34f;
+  color: #4c491c;
+  font-weight: 700;
+}
+
+.bfl-timeline-label {
+  font-size: 12px;
+  color: #99a28f;
+  white-space: nowrap;
+}
+
+.bfl-timeline-step.current .bfl-timeline-label {
+  color: #7c7947;
+  font-weight: 700;
+}
+
+.bfl-pathway-areas {
+  border-top: 1px solid #e1e6d9;
+  padding-top: 27px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  column-gap: 12px;
+  row-gap: 18px;
+}
+
+.bfl-pathway-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #7f8d73;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.bfl-pathway-area i {
+  color: #a28b37;
+  font-size: 17px;
+}
+
+.bfl-horizon-card {
+  margin-top: 33px;
+  padding: 32px 33px 33px;
+}
+
+.bfl-horizon-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 27px;
+}
+
+.bfl-horizon-head h2 {
+  font-size: 23px;
+  letter-spacing: -.6px;
+  margin: 0;
+  font-weight: 700;
+}
+
+.bfl-horizon-head i {
+  font-size: 25px;
+}
+
+.bfl-event-list {
+  display: grid;
+  gap: 24px;
+}
+
+.bfl-event {
+  display: flex;
+  gap: 17px;
+  align-items: center;
+}
+
+.bfl-event-date {
+  background: #f0f2e9;
+  flex: 0 0 58px;
+  width: 58px;
+  height: 65px;
+  border-radius: 11px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #5f6c54;
+}
+
+.bfl-event-month {
+  font-size: 12px;
+  color: #9aa790;
+  text-transform: uppercase;
+}
+
+.bfl-event-day {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.bfl-event-name {
+  color: #282e29;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.bfl-event-note {
+  color: #8d9588;
+  font-size: 12px;
+  line-height: 1.5;
+  margin-top: 4px;
+}
+
+.bfl-coach-card {
+  margin-top: 33px;
+  padding: 33px 33px 32px;
+  background: #ecefdf;
+  border: 1px solid #dfe6ca;
+  border-radius: 20px;
+}
+
+.bfl-coach-eyebrow {
+  color: #899480;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2.1px;
+  margin: 0 0 23px;
+}
+
+.bfl-coach-quote {
+  color: #718065;
+  font-size: 16px;
+  line-height: 1.85;
+  margin: 0 0 24px;
+}
+
+.bfl-coach-byline {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.bfl-coach-mark {
+  display: grid;
+  place-items: center;
+  flex: 0 0 53px;
+  width: 53px;
+  height: 53px;
+  border-radius: 50%;
+  background: #20291e;
+  color: #d9c04d;
+  font: 800 23px/1 "Barlow Condensed", Impact, sans-serif;
+}
+
+.bfl-coach-name {
+  color: #282c27;
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0 0 3px;
+}
+
+.bfl-coach-role {
+  color: #8e9b7e;
+  font-size: 13px;
+  margin: 0;
+}
+
+@media (max-width: 1399.98px) and (min-width: 1200px) {
+  .bfl-lesson-art {
+    flex-basis: 33%;
+  }
+
+  .bfl-lesson-body {
+    padding: 24px 23px;
+  }
+
+  .bfl-lesson-title {
+    font-size: 23px;
+  }
+
+  .bfl-lesson-description {
+    font-size: 14px;
+  }
+
+  .bfl-lesson-meta {
+    gap: 10px;
+  }
+
+  .bfl-pathway-card, .bfl-horizon-card, .bfl-coach-card {
+    padding: 24px 18px;
+  }
+
+  .bfl-pathway-progress {
+    gap: 12px;
+  }
+
+  .bfl-progress-donut {
+    flex-basis: 88px;
+    width: 88px;
+  }
+
+  .bfl-progress-donut-inner {
+    width: 72px;
+  }
+
+  .bfl-progress-donut-inner strong {
+    font-size: 23px;
+  }
+
+  .bfl-progress-copy strong {
+    font-size: 14px;
+  }
+
+  .bfl-progress-copy p {
+    font-size: 12px;
+  }
+
+  .bfl-pathway-area {
+    font-size: 11px;
+    gap: 5px;
+  }
+
+  .bfl-timeline-label {
+    font-size: 10px;
+  }
+
+}
+@media (max-width: 767.98px) {
+  .bfl-dashboard-detail {
+    margin-top: 27px;
+  }
+
+  .bfl-section-head {
+    align-items: baseline;
+    margin-bottom: 17px;
+  }
+
+  .bfl-section-head h2, .bfl-horizon-head h2 {
+    font-size: 21px;
+  }
+
+  .bfl-section-link {
+    font-size: 12px;
+    gap: 6px;
+  }
+
+  .bfl-lesson-card {
+    flex-direction: column;
+  }
+
+  .bfl-lesson-art {
+    flex-basis: auto;
+    width: 100%;
+    min-height: 190px;
+    height: 190px;
+  }
+
+  .bfl-lesson-art::before {
+    width: 55%;
+    top: 10%;
+    left: 14%;
+  }
+
+  .bfl-lesson-art::after {
+    width: 40%;
+    top: 37%;
+    left: 23%;
+  }
+
+  .bfl-art-words .word-large {
+    font-size: min(17cqw, 62px);
+  }
+
+  .bfl-art-words .word-small {
+    font-size: min(10cqw, 36px);
+    margin: 6px 0 2px;
+  }
+
+  .bfl-lesson-body {
+    padding: 28px 24px;
+  }
+
+  .bfl-lesson-title {
+    font-size: 24px;
+  }
+
+  .bfl-lesson-description {
+    font-size: 14px;
+  }
+
+  .bfl-commitment-section {
+    margin-top: 31px;
+  }
+
+  .bfl-goals-card, .bfl-pathway-card, .bfl-horizon-card, .bfl-coach-card {
+    padding: 25px 23px;
+  }
+
+  .bfl-pathway-progress {
+    gap: 18px;
+  }
+
+}
+@media (max-width: 420px) {
+  .bfl-goal-heading {
+    flex-direction: column;
+    gap: 2px;
+    margin-bottom: 9px;
+  }
+
+  .bfl-goal-check {
+    margin-top: 5px;
+  }
+
+  .bfl-pathway-progress {
+    flex-wrap: wrap;
+  }
+
+  .bfl-timeline-label {
+    font-size: 10px;
+  }
+
+  .bfl-week-dot {
+    width: 30px;
+    height: 30px;
+  }
+
+  .bfl-week-timeline::before {
+    top: 15px;
+  }
+
+  .bfl-pathway-areas {
+    column-gap: 6px;
+  }
+
+  .bfl-pathway-area {
+    font-size: 11px;
+    gap: 6px;
+  }
+
+  .bfl-event {
+    gap: 12px;
+  }
+
+}
+@media (min-width: 992px) {
+  .bfl-sidebar {
+    position: fixed !important;
+    z-index: 1030;
+    width: var(--bfl-sidebar-width) !important;
+    height: 100vh !important;
+    top: 0;
+    left: 0;
+    display: block !important;
+  }
+
+  .bfl-sidebar .offcanvas-body {
+    height: 100%;
+  }
+
+  .bfl-brand {
+    margin: 46px 38px 0;
+  }
+
+  .bfl-sidebar-nav {
+    margin-top: 60px;
+  }
+
+  .bfl-main {
+    margin-left: var(--bfl-sidebar-width);
+  }
+
+}
+@media (max-width: 991.98px) {
+  .bfl-sidebar {
+    --bs-offcanvas-width: 260px;
+  }
+
+  .bfl-brand {
+    margin: 30px 20px 0;
+    gap: 9px;
+  }
+
+  .bfl-brand-mark {
+    width: 42px;
+    height: 50px;
+  }
+
+  .bfl-brand-name {
+    font-size: 22px;
+  }
+
+  .bfl-brand-caption {
+    font-size: 6px;
+    letter-spacing: 1.15px;
+    margin-top: 6px;
+  }
+
+  .bfl-sidebar-nav {
+    padding: 0 11px;
+    margin-top: 46px;
+  }
+
+  .bfl-sidebar-heading {
+    font-size: 9px;
+    margin: 0 14px 12px;
+    letter-spacing: 2px;
+  }
+
+  .bfl-nav-link {
+    min-height: 47px;
+    border-radius: 9px;
+    font-size: 13px;
+    gap: 12px;
+    padding: 0 14px;
+  }
+
+  .bfl-nav-link i {
+    width: 18px;
+    font-size: 17px;
+  }
+
+  .bfl-sidebar-group + .bfl-sidebar-group {
+    margin-top: 22px;
+  }
+
+  .bfl-sidebar-footer {
+    margin: 30px 20px 18px;
+    padding-top: 24px;
+  }
+
+  .bfl-sidebar-footer p {
+    font-size: 12px;
+  }
+
+  .bfl-topbar {
+    height: 97px;
+    padding: 0 31px 0 39px;
+  }
+
+  .bfl-top-actions {
+    gap: 27px;
+  }
+
+  .bfl-private {
+    padding: 9px 13px;
+  }
+
+  .bfl-content {
+    padding: 39px 30px 60px;
+  }
+
+  .bfl-page-heading {
+    font-size: 50px;
+    line-height: 1.06;
+    margin-top: 20px;
+    margin-bottom: 14px;
+  }
+
+  .bfl-welcome {
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .bfl-hero {
+    margin-top: 35px;
+    min-height: 540px;
+    padding: 39px 36px 34px;
+    align-items: flex-start;
+  }
+
+  .bfl-hero h2 {
+    font-size: 54px;
+    margin: 24px 0 20px;
+  }
+
+  .bfl-hero-graphic {
+    width: 65%;
+    right: -5%;
+  }
+
+  .bfl-hero p {
+    font-size: 14px;
+    margin-bottom: 28px;
+  }
+
+}
+@media (max-width: 420px) {
+  .bfl-topbar {
+    padding: 0 18px;
+  }
+
+  .bfl-top-actions {
+    gap: 12px;
+  }
+
+  .bfl-current-page {
+    font-size: 13px;
+  }
+
+  .bfl-private {
+    font-size: 11px;
+    gap: 6px;
+    padding: 9px 10px;
+  }
+
+  .bfl-content {
+    padding-left: 21px;
+    padding-right: 21px;
+  }
+
+  .bfl-page-heading {
+    font-size: 43px;
+  }
+
+  .bfl-hero {
+    padding: 33px 23px;
+  }
+
+  .bfl-hero h2 {
+    font-size: 46px;
+  }
+
+  .bfl-hero-cta {
+    font-size: 13px;
+    padding: 14px;
+    gap: 12px;
+  }
+
+}
+.bfl-page-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px 28px;
+  margin: 0 52px;
+  padding: 30px 0 34px;
+  border-top: 1px solid #e0e5d9;
+  color: #98a18f;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.bfl-page-footer p {
+  margin: 0;
+}
+
+.bfl-page-footer-tagline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.bfl-page-footer-tagline i {
+  font-size: 14px;
+  line-height: 1;
+}
+
+@media (max-width: 991.98px) {
+  .bfl-page-footer {
+    margin: 0 30px;
+  }
+
+}
+@media (max-width: 575.98px) {
+  .bfl-page-footer {
+    margin: 0 21px;
+    padding: 24px 0 28px;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 12px;
+  }
+
+  .bfl-page-footer-tagline {
+    white-space: normal;
+  }
+
+}
+
+/* 02 — Account page */
+
+.bfl-account-grid {
+  margin-top: 39px;
+}
+
+.bfl-account-card {
+  background: #fff;
+  border: 1px solid #e2e6da;
+  border-radius: 19px;
+  padding: 33px 32px;
+  height: 100%;
+}
+
+.bfl-account-identity {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 30px;
+}
+
+.bfl-account-identity-badge {
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 50px;
+  border-radius: 50%;
+  background: var(--bfl-yellow);
+  color: #30372a;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.bfl-account-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #272c27;
+  line-height: 1.5;
+  margin: 0 0 8px;
+}
+
+.bfl-account-identity-note {
+  font-size: 12px;
+  color: #9aa58b;
+  margin: 0;
+}
+
+.bfl-account-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 23px 0;
+  min-height: 74px;
+  border-bottom: 1px solid #e3e6dc;
+}
+
+.bfl-account-label {
+  font-size: 15px;
+  color: #939f87;
+}
+
+.bfl-account-value {
+  color: #252b26;
+  font-weight: 700;
+  font-size: 16px;
+  text-align: right;
+}
+
+.bfl-account-value.gold {
+  color: #b18c11;
+}
+
+.bfl-account-select {
+  width: 109px;
+  min-height: 59px;
+  border: 1px solid #d9dfd0;
+  border-radius: 11px;
+  background-color: #fff;
+  color: #485344;
+  padding-left: 20px;
+  font-size: 17px;
+}
+
+.bfl-account-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+  margin-top: 34px;
+}
+
+.bfl-account-switch, .bfl-account-outline {
+  min-height: 57px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 13px 23px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.bfl-account-switch {
+  border: 1px solid var(--bfl-yellow);
+  background: var(--bfl-yellow);
+  color: #242a20;
+}
+
+.bfl-account-switch:hover {
+  background: var(--bfl-yellow-hover);
+}
+
+.bfl-account-outline {
+  border: 1px solid #dce2d3;
+  background: #fff;
+  color: #525e4d;
+}
+
+.bfl-account-outline:hover {
+  background: #f6f7f2;
+}
+
+.bfl-account-actions i {
+  font-size: 19px;
+}
+
+.bfl-account-eyebrow {
+  margin: 0 0 13px;
+  color: #899583;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2.1px;
+  text-transform: uppercase;
+}
+
+.bfl-account-side-title {
+  color: #252b25;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -.4px;
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+
+.bfl-account-side-copy {
+  font-size: 14px;
+  line-height: 2;
+  color: #7f887a;
+  margin: 0 0 24px;
+}
+
+.bfl-account-reset {
+  margin-top: 10px;
+  min-height: 60px;
+}
+
+.bfl-demo-status {
+  font-size: 12px;
+  color: #6a755f;
+  min-height: 18px;
+  margin: 15px 0 0;
+}
+
+@media (max-width: 767.98px) {
+  .bfl-account-grid {
+    margin-top: 28px;
+  }
+
+  .bfl-account-card {
+    padding: 26px 23px;
+  }
+
+  .bfl-account-identity {
+    margin-bottom: 18px;
+  }
+
+  .bfl-account-row {
+    min-height: 68px;
+    padding: 19px 0;
+  }
+
+  .bfl-account-label {
+    font-size: 14px;
+  }
+
+  .bfl-account-value {
+    font-size: 14px;
+  }
+
+  .bfl-account-actions {
+    margin-top: 27px;
+    gap: 11px;
+  }
+
+  .bfl-account-switch, .bfl-account-outline {
+    min-height: 51px;
+    padding: 12px 16px;
+    font-size: 13px;
+  }
+
+}
+@media (max-width: 420px) {
+  .bfl-account-name {
+    font-size: 12px;
+  }
+
+  .bfl-account-identity-note {
+    font-size: 11px;
+  }
+
+  .bfl-account-select {
+    width: 96px;
+    min-height: 50px;
+    padding-left: 11px;
+  }
+
+}
+
+/* 03 — Curriculum page */
+
+.bfl-curriculum-filters {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.bfl-curriculum-tabs {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 5px;
+  padding: 6px;
+  border-radius: 14px;
+  background: #e9ede1;
+  border: 1px solid #e0e6d6;
+}
+
+.bfl-curriculum-tab {
+  background: transparent;
+  border: 0;
+  border-radius: 9px;
+  padding: 15px 21px;
+  min-height: 51px;
+  color: #7b8973;
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: background-color .15s, color .15s, box-shadow .15s;
+}
+
+.bfl-curriculum-tab:hover {
+  color: #323b2e;
+}
+
+.bfl-curriculum-tab:focus-visible {
+  outline: 2px solid #9cae82;
+  outline-offset: 2px;
+}
+
+.bfl-curriculum-tab[aria-pressed="true"] {
+  background: #fff;
+  color: #30392c;
+  box-shadow: 0 1px 6px rgba(33,44,24,.06);
+}
+
+.bfl-curriculum-banner {
+  margin-top: 33px;
+  background: #e7eddf;
+  min-height: 202px;
+  padding: 38px 40px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.bfl-curriculum-banner-overline {
+  font-size: 13px;
+  font-weight: 700;
+  color: #87947b;
+  text-transform: uppercase;
+  letter-spacing: 2.1px;
+  margin: 0 0 15px;
+}
+
+.bfl-curriculum-banner h2 {
+  font: 800 clamp(31px, 2.8vw, 43px)/1 "Barlow Condensed", Impact, sans-serif;
+  color: #242923;
+  margin: 0 0 14px;
+}
+
+.bfl-curriculum-banner p:last-child {
+  color: #7e8f72;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.bfl-curriculum-banner-age {
+  color: #a5b594;
+  font: 700 72px/.9 "Barlow Condensed", Impact, sans-serif;
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+.bfl-curriculum-notice {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  background: #f0f2e9;
+  border: 1px solid #dfe6d4;
+  border-radius: 13px;
+  padding: 19px 23px;
+  color: #78896e;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-top: 35px;
+}
+
+.bfl-curriculum-notice i {
+  font-size: 19px;
+  line-height: 1;
+  flex: 0 0 auto;
+}
+
+.bfl-curriculum-preview {
+  margin-top: 35px;
+}
+
+.bfl-curriculum-preview-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 22px;
+}
+
+.bfl-curriculum-section-title {
+  font-size: 22px;
+  color: #262b25;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 13px 0 0;
+}
+
+.bfl-curriculum-month-select {
+  width: min(100%, 350px);
+  min-height: 60px;
+  border: 1px solid #dbe2d3;
+  border-radius: 11px;
+  background-color: white;
+  color: #3b4934;
+  font-size: 15px;
+  padding: 14px 48px 14px 22px;
+  flex: 0 1 350px;
+  box-shadow: none !important;
+}
+
+.bfl-curriculum-month-select:focus {
+  border-color: #99ac86;
+}
+
+.bfl-curriculum-body {
+  margin-top: 26px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px;
+  align-items: stretch;
+}
+
+.bfl-curriculum-card {
+  background: #fff;
+  border: 1px solid #e0e5d9;
+  border-radius: 20px;
+  padding: 33px;
+  min-height: 300px;
+  min-width: 0;
+}
+
+.bfl-curriculum-week-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.bfl-curriculum-week-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 54px;
+  gap: 16px;
+}
+
+.bfl-curriculum-week-label {
+  color: #99a68e;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  padding-top: 9px;
+}
+
+.bfl-curriculum-week-icon {
+  flex: 0 0 53px;
+  width: 53px;
+  height: 53px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 14px;
+  background: #f4f5ed;
+  color: #70815b;
+  font-size: 24px;
+}
+
+.bfl-curriculum-week-icon.is-highlight {
+  background: #fff2cb;
+  color: #a88620;
+}
+
+.bfl-curriculum-week-title {
+  font-size: 25px;
+  letter-spacing: -.45px;
+  line-height: 1.25;
+  font-weight: 700;
+  margin: 0 0 10px;
+  color: #242a23;
+}
+
+.bfl-curriculum-week-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #808a7d;
+  margin: 0 0 25px;
+}
+
+.bfl-curriculum-week-link {
+  margin-top: auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
+  color: #75836b;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.bfl-curriculum-week-link i {
+  font-size: 19px;
+  transition: transform .16s ease;
+}
+
+.bfl-curriculum-week-link:hover, .bfl-curriculum-week-link:focus-visible {
+  color: #3c5331;
+}
+
+.bfl-curriculum-week-link:hover i {
+  transform: translateX(4px);
+}
+
+.bfl-curriculum-week-link:focus-visible {
+  outline: 2px solid #90a97a;
+  outline-offset: 5px;
+  border-radius: 2px;
+}
+
+.bfl-curriculum-rhythm {
+  margin-top: 36px;
+  min-height: 174px;
+  padding: 34px 34px 30px;
+}
+
+.bfl-curriculum-rhythm-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 22px;
+  margin-bottom: 25px;
+}
+
+.bfl-curriculum-rhythm h2 {
+  margin: 0;
+  color: #252b24;
+  font-size: 23px;
+  font-weight: 700;
+  letter-spacing: -.5px;
+  line-height: 1.35;
+}
+
+.bfl-curriculum-rhythm-badge {
+  background: #f0f3ea;
+  color: #718165;
+  padding: 8px 11px;
+  border-radius: 6px;
+  font-size: 12px;
+  line-height: 1.3;
+  font-weight: 700;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.bfl-curriculum-rhythm p {
+  margin: 0;
+  color: #818a7e;
+  font-size: 15px;
+  line-height: 1.95;
+}
+
+@media (max-width: 575.98px) {
+  .bfl-curriculum-rhythm {
+    padding: 26px 23px;
+    min-height: unset;
+  }
+
+  .bfl-curriculum-rhythm-top {
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+
+  .bfl-curriculum-rhythm h2 {
+    font-size: 21px;
+  }
+
+  .bfl-curriculum-rhythm p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .bfl-curriculum-rhythm-badge {
+    font-size: 10px;
+    white-space: normal;
+  }
+
+}
+@media (max-width: 1199.98px) {
+  .bfl-curriculum-filters {
+    align-items: flex-start;
+  }
+
+  .bfl-curriculum-body {
+    grid-template-columns: 1fr;
+  }
+
+}
+@media (max-width: 767.98px) {
+  .bfl-curriculum-filters {
+    gap: 14px;
+    margin-top: 28px;
+  }
+
+  .bfl-curriculum-age-scroll {
+    max-width: 100%;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    padding-bottom: 4px;
+  }
+
+  .bfl-curriculum-tabs {
+    gap: 2px;
+    padding: 4px;
+  }
+
+  .bfl-curriculum-tab {
+    padding: 12px 14px;
+    font-size: 12px;
+    min-height: 45px;
+  }
+
+  .bfl-curriculum-banner {
+    margin-top: 25px;
+    padding: 27px 24px;
+    min-height: 180px;
+  }
+
+  .bfl-curriculum-banner-age {
+    font-size: 46px;
+  }
+
+  .bfl-curriculum-banner-overline {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+  }
+
+  .bfl-curriculum-banner h2 {
+    font-size: 34px;
+  }
+
+  .bfl-curriculum-banner p:last-child {
+    font-size: 14px;
+  }
+
+  .bfl-curriculum-notice {
+    margin-top: 25px;
+    padding: 17px;
+    font-size: 13px;
+  }
+
+  .bfl-curriculum-preview-head {
+    flex-direction: column;
+  }
+
+  .bfl-curriculum-month-select {
+    width: 100%;
+    flex: 0 0 auto;
+  }
+
+  .bfl-curriculum-card {
+    padding: 26px;
+    min-height: 270px;
+  }
+
+  .bfl-curriculum-week-title {
+    font-size: 23px;
+  }
+
+  .bfl-curriculum-week-description {
+    font-size: 14px;
+  }
+
+}
+@media (max-width: 420px) {
+  .bfl-curriculum-banner-age {
+    font-size: 36px;
+    align-self: flex-start;
+    padding-top: 12px;
+  }
+
+  .bfl-curriculum-banner {
+    gap: 10px;
+  }
+
+  .bfl-curriculum-banner h2 {
+    font-size: 30px;
+  }
+
+  .bfl-curriculum-card {
+    padding: 23px;
+  }
+
+  .bfl-curriculum-week-label {
+    font-size: 12px;
+  }
+
+}
+
+/* 04 — Weekly Playbook page */
+
+.bfl-playbook-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+  margin-top: 43px;
+}
+
+.bfl-playbook-meta {
+  min-width: 0;
+}
+
+.bfl-playbook-month {
+  display: inline-block;
+  background: #fff2c9;
+  color: #9a7820;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .6px;
+  text-transform: uppercase;
+  padding: 8px 11px;
+  border-radius: 6px;
+}
+
+.bfl-playbook-pathway {
+  color: #9aa88d;
+  font-size: 14px;
+  margin: 12px 0 0;
+}
+
+.bfl-playbook-outline-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  background: transparent;
+  border: 1px solid #d7dfce;
+  color: #4e5b47;
+  border-radius: 10px;
+  padding: 14px 19px;
+  min-height: 51px;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color .15s, border-color .15s;
+}
+
+.bfl-playbook-outline-button:hover, .bfl-playbook-outline-button:focus-visible {
+  background: #e9ede2;
+  color: #334331;
+  border-color: #b8c7aa;
+}
+
+.bfl-playbook-outline-button i {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.bfl-playbook-notice {
+  border: 1px solid #dde5cd;
+  background: #eff2e8;
+  color: #7c8b70;
+  border-radius: 13px;
+  padding: 18px 23px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 15px;
+  margin: 37px 0 42px;
+  line-height: 1.5;
+}
+
+.bfl-playbook-notice i {
+  font-size: 20px;
+  flex: 0 0 auto;
+}
+
+.bfl-playbook-timeline {
+  display: grid;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: 8px;
+  padding: 0 0 30px;
+  position: relative;
+  margin: 0 0 3px;
+}
+
+.bfl-playbook-timeline::before {
+  content: "";
+  position: absolute;
+  top: 21px;
+  height: 2px;
+  background: #dfe6d8;
+  left: 0;
+  right: 0;
+}
+
+.bfl-playbook-timeline-step {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 9px;
+  text-align: center;
+}
+
+.bfl-playbook-timeline-dot {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #f0f2e9;
+  border: 6px solid #fff;
+  color: #9baa8e;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.bfl-playbook-timeline-step[data-state="done"] .bfl-playbook-timeline-dot {
+  background: #e2ead7;
+  color: #668652;
+}
+
+.bfl-playbook-timeline-step[data-state="ready"] .bfl-playbook-timeline-dot {
+  background: var(--bfl-yellow);
+  color: #705a10;
+}
+
+.bfl-playbook-timeline-label {
+  color: #95a18c;
+  font-size: 12px;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+.bfl-playbook-timeline-step[data-state="ready"] .bfl-playbook-timeline-label {
+  color: #82783d;
+  font-weight: 700;
+}
+
+.bfl-playbook-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 28px;
+}
+
+.bfl-playbook-card {
+  min-width: 0;
+  min-height: 446px;
+  padding: 36px 32px 31px;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #e3e8dd;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.bfl-playbook-card[data-state="ready"] {
+  border: 2px solid #d4b02f;
+  padding: 35px 31px 30px;
+}
+
+.bfl-playbook-card[data-state="locked"] {
+  background: #f0f2e9;
+  border: 1px dashed #e1e7d9;
+}
+
+.bfl-playbook-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 48px;
+}
+
+.bfl-playbook-number {
+  font: 700 54px/.95 "Barlow Condensed",Impact,"Arial Narrow",sans-serif;
+  color: #adbb9e;
+  letter-spacing: -.7px;
+}
+
+.bfl-playbook-card[data-state="locked"] .bfl-playbook-number {
+  color: #c3ccbb;
+}
+
+.bfl-playbook-state {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  background: #f0f3e9;
+  color: #6f815f;
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .45px;
+  white-space: nowrap;
+}
+
+.bfl-playbook-state i {
+  font-size: 19px;
+  line-height: 1;
+}
+
+.bfl-playbook-card[data-state="ready"] .bfl-playbook-state {
+  background: #fff2cc;
+  color: #987523;
+}
+
+.bfl-playbook-card[data-state="locked"] .bfl-playbook-state {
+  background: transparent;
+  color: #708263;
+}
+
+.bfl-playbook-overline {
+  color: #8c9980;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.85px;
+  text-transform: uppercase;
+  margin: 0 0 24px;
+}
+
+.bfl-playbook-title {
+  color: #252a24;
+  font-size: clamp(24px,1.7vw,29px);
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -.55px;
+  margin: 0 0 17px;
+}
+
+.bfl-playbook-description {
+  color: #7c8679;
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0 0 17px;
+}
+
+.bfl-playbook-details {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #95a389;
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 0 0 25px;
+}
+
+.bfl-playbook-details i {
+  font-size: 14px;
+}
+
+.bfl-playbook-actions {
+  margin-top: auto;
+  display: flex;
+  align-items: flex-start;
+}
+
+.bfl-playbook-primary {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  background: #202420;
+  color: #fff;
+  border: 1px solid #202420;
+  border-radius: 9px;
+  padding: 15px 20px;
+  font-weight: 700;
+  font-size: 15px;
+  min-height: 59px;
+  transition: background-color .15s;
+}
+
+.bfl-playbook-primary i {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.bfl-playbook-primary:hover, .bfl-playbook-primary:focus-visible {
+  background: #404c3c;
+  color: white;
+}
+
+.bfl-playbook-card[data-state="locked"] .bfl-playbook-outline-button {
+  background: transparent;
+}
+
+.bfl-playbook-card[data-state="locked"] .bfl-playbook-outline-button:hover {
+  background: #e5ebdf;
+}
+
+.bfl-playbook-modal-eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  color: #899783;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+}
+
+.bfl-playbook-modal-quote {
+  padding: 17px;
+  background: #f3f5ee;
+  border-radius: 10px;
+  color: #697d60;
+}
+
+.bfl-playbook-modal .modal-content {
+  border: 1px solid #e0e6d8;
+  border-radius: 18px;
+}
+
+.bfl-playbook-modal .modal-title {
+  font-weight: 700;
+}
+
+.bfl-playbook-date-list {
+  display: grid;
+  gap: 10px;
+  padding: 0;
+  margin: 18px 0 0;
+  list-style: none;
+}
+
+.bfl-playbook-date-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  background: #f5f6f0;
+  border-radius: 9px;
+  padding: 12px 14px;
+  color: #596750;
+}
+
+.bfl-playbook-toast {
+  background: #20291e;
+  color: white;
+}
+
+@media (max-width: 1199.98px) {
+  .bfl-playbook-grid {
+    gap: 20px;
+  }
+
+  .bfl-playbook-card {
+    padding: 29px 24px;
+    min-height: 410px;
+  }
+
+  .bfl-playbook-card[data-state="ready"] {
+    padding: 28px 23px;
+  }
+
+  .bfl-playbook-card-head {
+    margin-bottom: 37px;
+  }
+
+  .bfl-playbook-title {
+    font-size: 24px;
+  }
+
+}
+@media (max-width: 767.98px) {
+  .bfl-playbook-header {
+    margin-top: 30px;
+    align-items: flex-start;
+  }
+
+  .bfl-playbook-notice {
+    margin: 26px 0 32px;
+    padding: 15px 17px;
+    font-size: 13px;
+    align-items: flex-start;
+  }
+
+  .bfl-playbook-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .bfl-playbook-card {
+    min-height: 354px;
+  }
+
+  .bfl-playbook-card-head {
+    margin-bottom: 32px;
+  }
+
+  .bfl-playbook-overline {
+    margin-bottom: 16px;
+  }
+
+  .bfl-playbook-title {
+    font-size: 24px;
+  }
+
+  .bfl-playbook-number {
+    font-size: 48px;
+  }
+
+  .bfl-playbook-timeline {
+    padding-bottom: 20px;
+  }
+
+}
+@media (max-width: 420px) {
+  .bfl-playbook-header {
+    margin-top: 26px;
+  }
+
+  .bfl-playbook-outline-button {
+    min-height: 45px;
+    padding: 11px 14px;
+    font-size: 13px;
+  }
+
+  .bfl-playbook-timeline-step {
+    gap: 6px;
+  }
+
+  .bfl-playbook-timeline-label {
+    font-size: 10px;
+  }
+
+  .bfl-playbook-timeline-dot {
+    width: 38px;
+    height: 38px;
+    border-width: 5px;
+  }
+
+  .bfl-playbook-timeline::before {
+    top: 18px;
+  }
+
+  .bfl-playbook-card {
+    padding: 26px 22px;
+  }
+
+  .bfl-playbook-card[data-state="ready"] {
+    padding: 25px 21px;
+  }
+
+  .bfl-playbook-state {
+    font-size: 10px;
+    gap: 6px;
+    padding: 8px;
+  }
+
+  .bfl-playbook-number {
+    font-size: 46px;
+  }
+
+  .bfl-playbook-title {
+    font-size: 23px;
+  }
+
+}
+
+/* 05 — Progress & Goals page */
+
+.bfl-progress-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+.bfl-progress-intro .bfl-page-heading {
+  margin-bottom: 12px;
+}
+
+.bfl-outline-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  border: 1px solid #d8dfce;
+  border-radius: 10px;
+  background: transparent;
+  color: #4d5947;
+  padding: 16px 23px;
+  min-height: 59px;
+  font-weight: 700;
+  white-space: nowrap;
+  font-size: 15px;
+}
+
+.bfl-outline-action:hover,.bfl-outline-action:focus-visible {
+  background: #edf1e7;
+  border-color: #abbc9b;
+  color: #384731;
+}
+
+.bfl-outline-action i {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.bfl-progress-intro .bfl-outline-action {
+  margin-top: 31px;
+}
+
+.bfl-notice-panel {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 17px 24px;
+  margin: 40px 0 32px;
+  background: #f0f3e8;
+  border: 1px solid #dbe5d0;
+  border-radius: 13px;
+  color: #778768;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.bfl-notice-panel i {
+  flex: 0 0 auto;
+  font-size: 19px;
+}
+
+.bfl-progress-section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.bfl-progress-section-head h2 {
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -.6px;
+  margin: 0;
+}
+
+.bfl-progress-hint {
+  color: #98a68c;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .7px;
+  text-transform: uppercase;
+}
+
+.bfl-goal-cards {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 27px;
+}
+
+.bfl-goal-card {
+  min-width: 0;
+  min-height: 350px;
+  border: 1px solid #e2e6dc;
+  background: #fff;
+  border-radius: 21px;
+  padding: 33px 31px 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.bfl-goal-category {
+  display: table;
+  background: #f0f3e9;
+  color: #70805e;
+  padding: 9px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .5px;
+  line-height: 1;
+  text-transform: uppercase;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.bfl-goal-title {
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -.4px;
+  line-height: 1.17;
+  margin: 0 0 12px;
+}
+
+.bfl-goal-description {
+  font-size: 14px;
+  color: #808a7c;
+  margin: 0 0 28px;
+  line-height: 1.45;
+}
+
+.bfl-goal-tracking {
+  margin-top: auto;
+}
+
+body.bfl-page--progress .bfl-goal-track {
+  background: #ecf0e7;
+  height: 10px;
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+body.bfl-page--progress .bfl-goal-fill {
+  height: 100%;
+  border-radius: 99px;
+  background: #dabb43;
+  transition: width .2s ease;
+}
+
+.bfl-goal-stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-top: 13px;
+  font-size: 14px;
+}
+
+.bfl-goal-stat strong {
+  font-weight: 500;
+  color: #242c23;
+}
+
+.bfl-goal-stat span {
+  color: #94a18a;
+  font-size: 12px;
+}
+
+.bfl-goal-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.bfl-solid-button {
+  border: 0;
+  background: #202420;
+  color: #fff;
+  padding: 13px 18px;
+  min-height: 47px;
+  border-radius: 9px;
+  display: inline-flex;
+  align-items: center;
+  gap: 19px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.bfl-solid-button:hover,.bfl-solid-button:focus-visible {
+  background: #3e4838;
+  color: #fff;
+}
+
+.bfl-solid-button:disabled {
+  opacity: .45;
+  cursor: not-allowed;
+}
+
+.bfl-solid-button i {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.bfl-goal-complete {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 46px;
+  padding: 12px 16px;
+  border: 1px solid #e5e9df;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #a0a99a;
+  white-space: nowrap;
+}
+
+.bfl-goal-edit {
+  background: none;
+  border: 0;
+  padding: 6px 0;
+  color: #6f7e66;
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.bfl-goal-edit:hover {
+  color: #202420;
+  text-decoration: underline;
+}
+
+.bfl-progress-lower {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 28px;
+  margin-top: 40px;
+}
+
+.bfl-progress-panel {
+  background: #fff;
+  border: 1px solid #e2e6dc;
+  border-radius: 21px;
+  min-width: 0;
+  padding: 32px 32px 34px;
+  min-height: 640px;
+}
+
+.bfl-progress-panel-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+}
+
+.bfl-progress-panel h2 {
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -.5px;
+  margin: 0;
+}
+
+.bfl-accountability-pill {
+  background: #fff2ce;
+  color: #987720;
+  border-radius: 5px;
+  padding: 8px 11px;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: .4px;
+  font-weight: 700;
+}
+
+.bfl-progress-muted {
+  color: #858f81;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.bfl-checkin-question {
+  margin: 30px 0 27px;
+}
+
+.bfl-checkin-choice-row {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 14px;
+  margin: 0 0 25px;
+}
+
+.bfl-checkin-choice {
+  border: 1px solid #dfe5d6;
+  background: #f7f8f4;
+  border-radius: 10px;
+  height: 108px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  font-size: 13px;
+  color: #91a085;
+}
+
+.bfl-checkin-choice i {
+  font-size: 23px;
+  line-height: 1;
+}
+
+.bfl-checkin-choice:hover,.bfl-checkin-choice:focus-visible {
+  background: #f3f3e5;
+  border-color: #bfb46f;
+}
+
+.bfl-checkin-choice[aria-pressed="true"] {
+  border-color: #dfbc4c;
+  background: #fbf3d6;
+  color: #987c2e;
+}
+
+.bfl-checkin-label {
+  display: block;
+  color: #728366;
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+
+.bfl-checkin-textarea {
+  width: 100%;
+  background: #fff;
+  border: 1px solid #d6ddcb;
+  border-radius: 10px;
+  padding: 16px 17px;
+  min-height: 126px;
+  resize: vertical;
+  font-size: 15px;
+  color: #2c3228;
+}
+
+.bfl-checkin-textarea:focus {
+  border-color: #a9bc98;
+  outline: 3px solid #e8f0de;
+}
+
+.bfl-checkin-submit {
+  margin-top: 25px;
+  padding-left: 23px;
+  padding-right: 22px;
+  min-height: 58px;
+}
+
+.bfl-checkin-status {
+  font-size: 12px;
+  color: #778b68;
+  margin-top: 13px;
+  min-height: 18px;
+}
+
+.bfl-grades-link {
+  border: 0;
+  background: transparent;
+  color: #718368;
+  font-size: 14px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 0;
+  white-space: nowrap;
+}
+
+.bfl-grades-link:hover {
+  color: #2b3329;
+}
+
+.bfl-grades-subhead {
+  margin: 29px 0 10px;
+}
+
+.bfl-grade-row {
+  display: grid;
+  grid-template-columns: minmax(115px,1fr) 82px minmax(100px,1.15fr);
+  align-items: center;
+  gap: 18px;
+  padding: 21px 0;
+  border-bottom: 1px solid #e5e9df;
+}
+
+.bfl-grade-name {
+  font-size: 15px;
+  color: #303630;
+}
+
+.bfl-grade-value {
+  font-weight: 700;
+  font-size: 23px;
+  color: #202520;
+}
+
+.bfl-grade-track {
+  height: 8px;
+  border-radius: 99px;
+  overflow: hidden;
+  background: #e9eee4;
+}
+
+.bfl-grade-fill {
+  height: 100%;
+  border-radius: 99px;
+  background: #9faf8c;
+  transition: width .2s;
+}
+
+.bfl-effort-title {
+  font-weight: 700;
+  font-size: 15px;
+  margin: 32px 0 0;
+}
+
+.bfl-chart {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-end;
+  height: 139px;
+  margin: 13px 12px 0;
+  padding-bottom: 0;
+}
+
+.bfl-chart-item {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 13px;
+  min-width: 0;
+  height: 100%;
+}
+
+.bfl-chart-bar {
+  width: min(52px,70%);
+  min-height: 8px;
+  border-radius: 5px 5px 0 0;
+  background: #dce6ce;
+}
+
+.bfl-chart-item:last-child .bfl-chart-bar {
+  background: #d5b542;
+}
+
+.bfl-chart-item span {
+  font-size: 12px;
+  color: #9aab8c;
+}
+
+.bfl-chart-disclaimer {
+  font-size: 13px;
+  color: #9aa98e;
+  margin: 15px 0 0;
+}
+
+.bfl-progress-modal .modal-content {
+  border: 1px solid #dbe2d3;
+  border-radius: 19px;
+}
+
+.bfl-progress-modal .modal-title {
+  font-weight: 700;
+}
+
+.bfl-modal-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #667761;
+}
+
+.bfl-progress-modal .form-control,.bfl-progress-modal .form-select {
+  border: 1px solid #d7dfd0;
+  padding: 11px 13px;
+}
+
+.bfl-progress-modal .form-control:focus,.bfl-progress-modal .form-select:focus {
+  border-color: #9bab8e;
+  box-shadow: 0 0 0 .2rem #a9bf983d;
+}
+
+.bfl-progress-modal .btn-primary {
+  background: #202420;
+  border-color: #202420;
+}
+
+.bfl-progress-modal .btn-primary:hover {
+  background: #3f4b3e;
+}
+
+.bfl-progress-toast {
+  background: #20291e;
+  color: #fff;
+}
+
+@media (max-width:1300px) {
+  .bfl-goal-cards {
+    gap: 16px;
+  }
+
+  .bfl-goal-card {
+    padding: 26px 22px 24px;
+  }
+
+  .bfl-goal-actions {
+    gap: 8px;
+  }
+
+  .bfl-solid-button {
+    gap: 10px;
+  }
+
+  .bfl-progress-lower {
+    gap: 18px;
+  }
+
+  .bfl-progress-panel {
+    padding: 27px 24px;
+  }
+
+  .bfl-grade-row {
+    gap: 10px;
+    grid-template-columns: minmax(90px,1fr) 65px minmax(80px,1fr);
+  }
+
+}
+@media (max-width:1199.98px) {
+  .bfl-goal-cards {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+
+  .bfl-progress-lower {
+    grid-template-columns: 1fr;
+  }
+
+  .bfl-progress-panel {
+    min-height: unset;
+  }
+
+}
+@media (max-width:767.98px) {
+  .bfl-progress-intro {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .bfl-progress-intro .bfl-outline-action {
+    margin-top: 3px;
+  }
+
+  .bfl-notice-panel {
+    margin: 27px 0 27px;
+    padding: 15px 16px;
+    align-items: flex-start;
+    font-size: 13px;
+  }
+
+  .bfl-goal-cards {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .bfl-goal-card {
+    min-height: 305px;
+    padding: 27px 23px;
+  }
+
+  .bfl-progress-hint {
+    font-size: 10px;
+    text-align: right;
+  }
+
+  .bfl-progress-lower {
+    margin-top: 27px;
+    gap: 17px;
+  }
+
+  .bfl-progress-panel {
+    padding: 25px 22px;
+  }
+
+  .bfl-checkin-choice-row {
+    gap: 8px;
+  }
+
+  .bfl-checkin-choice {
+    height: 98px;
+    font-size: 11px;
+  }
+
+}
+@media (max-width:420px) {
+  .bfl-checkin-choice i {
+    font-size: 20px;
+  }
+
+  .bfl-progress-panel-heading {
+    align-items: flex-start;
+  }
+
+  .bfl-accountability-pill {
+    font-size: 9px;
+  }
+
+  .bfl-grade-row {
+    grid-template-columns: minmax(92px,1fr) 58px minmax(72px,1fr);
+  }
+
+  .bfl-grade-value {
+    font-size: 19px;
+  }
+
+  .bfl-progress-section-head h2 {
+    font-size: 19px;
+  }
+
+}
+
+/* 06 — The Huddle page */
+
+.bfl-huddle-intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+}
+
+.bfl-huddle-intro .bfl-page-heading {
+  margin: 19px 0 11px;
+}
+
+.bfl-huddle-subtitle {
+  margin: 0;
+  font-size: 17px;
+  color: #7d8578;
+  line-height: 1.6;
+}
+
+.bfl-huddle-start {
+  border: 0;
+  border-radius: 11px;
+  background: var(--bfl-yellow);
+  color: #20271d;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  min-width: 260px;
+  padding: 17px 23px;
+  min-height: 61px;
+  white-space: nowrap;
+}
+
+.bfl-huddle-start:hover,.bfl-huddle-start:focus-visible {
+  background: var(--bfl-yellow-hover);
+}
+
+.bfl-huddle-start i {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.bfl-huddle-alert {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 40px 0 34px;
+  padding: 19px 24px;
+  color: #78896b;
+  background: #f0f3e8;
+  border: 1px solid #dce5d0;
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.bfl-huddle-alert i {
+  font-size: 21px;
+  flex: 0 0 auto;
+}
+
+.bfl-huddle-layout {
+  display: grid;
+  grid-template-columns: minmax(0,1.8fr) minmax(300px,1fr);
+  align-items: start;
+  gap: 34px;
+}
+
+.bfl-huddle-feed,.bfl-huddle-aside {
+  min-width: 0;
+}
+
+.bfl-huddle-tabs {
+  display: inline-flex;
+  max-width: 100%;
+  padding: 6px;
+  gap: 5px;
+  flex-wrap: wrap;
+  align-items: center;
+  background: #e9eee2;
+  border: 1px solid #dfe6d6;
+  border-radius: 12px;
+  margin-bottom: 35px;
+}
+
+.bfl-huddle-tab {
+  border: 0;
+  background: transparent;
+  color: #7c8972;
+  border-radius: 9px;
+  min-height: 52px;
+  padding: 0 22px;
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.bfl-huddle-tab[aria-selected="true"] {
+  background: #fff;
+  color: #31392e;
+  box-shadow: 0 1px 3px #25301810;
+}
+
+.bfl-huddle-tab:hover:not([aria-selected="true"]) {
+  background: #f4f6ef;
+  color: #42513c;
+}
+
+.bfl-huddle-post {
+  background: #fff;
+  border: 1px solid #e2e7db;
+  border-radius: 20px;
+  padding: 32px 32px 27px;
+  margin-bottom: 22px;
+}
+
+.bfl-huddle-post-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.bfl-huddle-author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.bfl-huddle-author-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  background: #20291e;
+  color: var(--bfl-yellow);
+  font: 800 24px/1 "Barlow Condensed", Impact, sans-serif;
+}
+
+.bfl-huddle-author-avatar.member {
+  background: #e9edcc;
+  color: #3c4830;
+  font: 700 15px/1 "DM Sans",Arial,sans-serif;
+}
+
+.bfl-huddle-author-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #2b302a;
+  margin: 0 0 5px;
+}
+
+.bfl-huddle-author-meta {
+  font-size: 12px;
+  color: #94a186;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.bfl-huddle-tag {
+  padding: 8px 10px;
+  border-radius: 5px;
+  background: #f1f4e9;
+  color: #71805f;
+  letter-spacing: .45px;
+  text-transform: uppercase;
+  font-size: 11px;
+  line-height: 1.2;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.bfl-huddle-tag.challenge {
+  background: #fff2cf;
+  color: #95761f;
+}
+
+.bfl-huddle-tag.general {
+  background: #e8eddf;
+  color: #768365;
+}
+
+.bfl-huddle-post h2 {
+  font-size: 22px;
+  letter-spacing: -.45px;
+  line-height: 1.35;
+  font-weight: 700;
+  margin: 22px 0 13px;
+  color: #262b25;
+}
+
+.bfl-huddle-body {
+  color: #7a8a70;
+  font-size: 15.5px;
+  line-height: 1.95;
+  white-space: pre-line;
+  margin: 0;
+}
+
+.bfl-huddle-reply-preview {
+  background: #f5f7f0;
+  border-radius: 11px;
+  margin-top: 19px;
+  padding: 18px 18px 16px;
+}
+
+.bfl-huddle-reply-preview strong {
+  color: #303630;
+  font-size: 13px;
+  display: block;
+  margin-bottom: 7px;
+}
+
+.bfl-huddle-reply-preview p {
+  margin: 0;
+  color: #313a2f;
+  font-size: 14px;
+  line-height: 1.55;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.bfl-huddle-post-actions {
+  border-top: 1px solid #e8ece2;
+  padding-top: 18px;
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  gap: 29px;
+  flex-wrap: wrap;
+}
+
+.bfl-huddle-reaction,.bfl-huddle-reply-link {
+  border: 0;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  color: #829571;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.bfl-huddle-reaction i,.bfl-huddle-reply-link i {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.bfl-huddle-reaction[aria-pressed="true"] {
+  color: #ae8b21;
+  font-weight: 700;
+}
+
+.bfl-huddle-reaction:hover,.bfl-huddle-reply-link:hover {
+  color: #43543b;
+}
+
+.bfl-huddle-replies {
+  border-top: 1px solid #edf0e8;
+  margin-top: 19px;
+  padding-top: 16px;
+}
+
+.bfl-huddle-replies-list {
+  display: grid;
+  gap: 10px;
+}
+
+.bfl-huddle-replies-list .bfl-huddle-reply-preview {
+  margin-top: 0;
+}
+
+.bfl-huddle-reply-form {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.bfl-huddle-reply-form label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #77876d;
+}
+
+.bfl-huddle-reply-form textarea {
+  width: 100%;
+  min-height: 90px;
+  padding: 14px 15px;
+  border: 1px solid #dce4d3;
+  border-radius: 10px;
+  resize: vertical;
+  background: #fff;
+  font-size: 14px;
+  color: #242b24;
+}
+
+.bfl-huddle-reply-form .bfl-huddle-dark-button {
+  justify-self: start;
+}
+
+.bfl-huddle-dark-button {
+  background: #202420;
+  border: 0;
+  border-radius: 8px;
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 11px 19px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bfl-huddle-dark-button:hover {
+  background: #374133;
+}
+
+.bfl-huddle-empty {
+  border: 1px dashed #d5dfcb;
+  border-radius: 16px;
+  padding: 45px 24px;
+  background: #fff;
+  color: #77856e;
+  text-align: center;
+}
+
+.bfl-huddle-standards {
+  background: #fff;
+  border: 1px solid #e3e7dd;
+  border-radius: 20px;
+  padding: 32px 33px 34px;
+}
+
+.bfl-huddle-overline {
+  color: #87927d;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0 0 13px;
+}
+
+.bfl-huddle-standards h2,.bfl-huddle-prompt h2 {
+  margin: 0;
+  color: #292e27;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.bfl-huddle-standards ul {
+  list-style: none;
+  padding: 0;
+  margin: 28px 0 0;
+  display: grid;
+  gap: 23px;
+}
+
+.bfl-huddle-standards li {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #82936f;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.bfl-huddle-standards li i {
+  font-size: 21px;
+  color: #a1b18b;
+  flex: 0 0 21px;
+  line-height: 1;
+}
+
+.bfl-huddle-prompt {
+  margin-top: 34px;
+  padding: 32px 33px 34px;
+  border-radius: 20px;
+  border: 1px solid #dfe7d1;
+  background: #edf1e2;
+}
+
+.bfl-huddle-prompt p:not(.bfl-huddle-overline) {
+  margin: 19px 0 25px;
+  color: #748568;
+  line-height: 1.9;
+  font-size: 14px;
+}
+
+.bfl-huddle-join {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  color: #758365;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.bfl-huddle-join:hover {
+  color: #2f412d;
+}
+
+.bfl-huddle-join i {
+  font-size: 19px;
+}
+
+.bfl-huddle-modal .modal-content {
+  border: 1px solid #dce5d2;
+  border-radius: 19px;
+}
+
+.bfl-huddle-modal .modal-title {
+  font-weight: 700;
+  color: #232823;
+}
+
+.bfl-huddle-modal .form-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #64765c;
+}
+
+.bfl-huddle-modal .form-control,.bfl-huddle-modal .form-select {
+  border-color: #d9e1d2;
+  padding: 12px 14px;
+}
+
+.bfl-huddle-modal .form-control:focus,.bfl-huddle-modal .form-select:focus {
+  border-color: #a3b58c;
+  box-shadow: 0 0 0 .2rem #a3b58c38;
+}
+
+.bfl-huddle-modal .btn-primary {
+  background: #202420;
+  border-color: #202420;
+}
+
+.bfl-huddle-modal .btn-primary:hover {
+  background: #3b4938;
+  border-color: #3b4938;
+}
+
+.bfl-huddle-toast {
+  background: #20291e;
+  color: #fff;
+}
+
+@media (max-width:1399.98px) {
+  .bfl-huddle-layout {
+    gap: 24px;
+    grid-template-columns: minmax(0,1.65fr) minmax(290px,1fr);
+  }
+
+  .bfl-huddle-post {
+    padding: 27px 26px 24px;
+  }
+
+  .bfl-huddle-standards,.bfl-huddle-prompt {
+    padding: 28px 25px;
+  }
+
+}
+@media (max-width:1199.98px) {
+  .bfl-huddle-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .bfl-huddle-aside {
+    display: grid;
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 20px;
+  }
+
+  .bfl-huddle-prompt {
+    margin-top: 0;
+  }
+
+}
+@media (max-width:767.98px) {
+  .bfl-huddle-intro {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .bfl-huddle-start {
+    min-width: 0;
+  }
+
+  .bfl-huddle-alert {
+    padding: 15px 16px;
+    margin: 28px 0;
+    align-items: flex-start;
+    font-size: 13px;
+  }
+
+  .bfl-huddle-tabs {
+    margin-bottom: 22px;
+  }
+
+  .bfl-huddle-tab {
+    padding: 0 16px;
+    min-height: 45px;
+    font-size: 13px;
+  }
+
+  .bfl-huddle-post {
+    padding: 23px 20px;
+  }
+
+  .bfl-huddle-aside {
+    grid-template-columns: 1fr;
+  }
+
+  .bfl-huddle-standards,.bfl-huddle-prompt {
+    padding: 25px 22px;
+  }
+
+}
+@media (max-width:480px) {
+  .bfl-huddle-tabs {
+    display: flex;
+    width: 100%;
+    gap: 3px;
+    padding: 4px;
+  }
+
+  .bfl-huddle-tab {
+    padding: 10px 8px;
+    flex: 1 1 auto;
+    font-size: 11px;
+    white-space: normal;
+    min-height: 44px;
+  }
+
+  .bfl-huddle-post-header {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .bfl-huddle-post h2 {
+    font-size: 20px;
+  }
+
+  .bfl-huddle-body {
+    font-size: 14px;
+  }
+
+  .bfl-huddle-reaction,.bfl-huddle-reply-link {
+    font-size: 12px;
+  }
+
+}
+
+/* 07 — Plans & Membership page */
+
+.bfl-plans-intro {
+  margin-bottom: 42px;
+}
+
+.bfl-plans-intro .bfl-page-heading {
+  margin: 18px 0 11px;
+}
+
+.bfl-plans-subheading {
+  color: #7b8577;
+  font-size: 17px;
+  margin: 0;
+}
+
+.bfl-plans-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin: 0 0 34px;
+}
+
+.bfl-plans-notice-title {
+  text-transform: uppercase;
+  color: #93a187;
+  font-size: 12px;
+  letter-spacing: .75px;
+  font-weight: 500;
+}
+
+.bfl-billing-toggle {
+  display: inline-flex;
+  border: 1px solid #dfe4d6;
+  padding: 6px;
+  background: #e9ede2;
+  border-radius: 13px;
+  flex-shrink: 0;
+}
+
+.bfl-billing-button {
+  border: 0;
+  border-radius: 9px;
+  padding: 16px 22px;
+  background: transparent;
+  color: #829077;
+  font-size: 14px;
+  font-weight: 700;
+  min-height: 52px;
+  transition: background-color .15s,color .15s;
+}
+
+.bfl-billing-button:hover {
+  color: #303b2d;
+}
+
+.bfl-billing-button.active {
+  background: #fff;
+  color: #263023;
+  box-shadow: 0 2px 5px rgba(22,30,18,.03);
+}
+
+.bfl-plans-grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 27px;
+  align-items: stretch;
+}
+
+.bfl-plan-card {
+  border: 1px solid #e1e6dc;
+  border-radius: 19px;
+  background: #fff;
+  padding: 36px 35px 33px;
+  min-height: 678px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.bfl-plan-card.bfl-plan-current {
+  border: 2px solid #cfb03a;
+  background: #fffef9;
+  padding: 35px 34px 32px;
+}
+
+.bfl-plan-ribbon {
+  position: absolute;
+  top: -15px;
+  right: 29px;
+  padding: 8px 14px;
+  border-radius: 5px;
+  background: #d7b941;
+  color: #463a13;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.bfl-plan-icon {
+  width: 51px;
+  height: 51px;
+  border-radius: 13px;
+  display: grid;
+  place-items: center;
+  background: #f4f5eb;
+  color: #73835f;
+  font-size: 23px;
+  margin-bottom: 25px;
+}
+
+.bfl-plan-current .bfl-plan-icon {
+  background: #fbf0cb;
+  color: #ac8c25;
+}
+
+.bfl-plan-card h2 {
+  color: #202521;
+  font: 800 35px/1.06 "Barlow Condensed",Impact,sans-serif;
+  margin: 0 0 12px;
+}
+
+.bfl-plan-description {
+  color: #7f887b;
+  font-size: 14px;
+  min-height: 24px;
+  line-height: 1.55;
+  margin: 0 0 30px;
+}
+
+.bfl-plan-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  white-space: nowrap;
+  margin-bottom: 13px;
+}
+
+.bfl-plan-price {
+  font-size: 52px;
+  font-weight: 700;
+  letter-spacing: -3.1px;
+  line-height: 1.15;
+  color: #202521;
+}
+
+.bfl-plan-unit {
+  color: #929d89;
+  font-size: 15px;
+}
+
+.bfl-plan-description-price {
+  min-height: 24px;
+  color: #838d7e;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0 0 35px;
+}
+
+.bfl-plan-benefits {
+  padding: 0;
+  margin: 0 0 26px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+  color: #718067;
+  font-size: 14px;
+}
+
+.bfl-plan-benefits li {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  line-height: 1.6;
+}
+
+.bfl-plan-benefits i {
+  color: #718f57;
+  font-size: 16px;
+  line-height: 1.4;
+  flex: 0 0 auto;
+}
+
+.bfl-plan-bottom {
+  margin-top: auto;
+}
+
+.bfl-plan-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+  min-height: 59px;
+  border: 1px solid #d8decf;
+  border-radius: 10px;
+  background: white;
+  font-weight: 700;
+  color: #4f5d49;
+  font-size: 15px;
+  transition: background .15s,transform .15s;
+}
+
+.bfl-plan-action:hover {
+  background: #f6f7ef;
+  transform: translateY(-1px);
+}
+
+.bfl-plan-current .bfl-plan-action {
+  background: var(--bfl-yellow);
+  border-color: var(--bfl-yellow);
+  color: #1e241d;
+}
+
+.bfl-plan-current .bfl-plan-action:hover {
+  background: var(--bfl-yellow-hover);
+}
+
+.bfl-plan-action i {
+  font-size: 18px;
+}
+
+.bfl-plan-footnote {
+  color: #9ca990;
+  font-size: 13px;
+  margin: 10px 0 0;
+}
+
+.bfl-compare-card {
+  background: white;
+  border: 1px solid #e1e6dc;
+  border-radius: 19px;
+  padding: 31px 32px 32px;
+  margin-top: 42px;
+}
+
+.bfl-compare-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.bfl-compare-title-row h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -.6px;
+}
+
+.bfl-compare-badge {
+  background: #f0f3e8;
+  color: #7a886e;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: .4px;
+  padding: 8px 10px;
+  border-radius: 5px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.bfl-compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 640px;
+  font-size: 14px;
+  color: #526247;
+}
+
+.bfl-compare-table th, .bfl-compare-table td {
+  padding: 23px 18px;
+  border-bottom: 1px solid #e3e8dc;
+}
+
+.bfl-compare-table th {
+  color: #536348;
+  font-weight: 700;
+}
+
+.bfl-compare-table thead th {
+  padding-top: 14px;
+  padding-bottom: 18px;
+}
+
+.bfl-compare-table th:first-child {
+  width: 40%;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.bfl-compare-table th:not(:first-child), .bfl-compare-table td {
+  text-align: center;
+  width: 20%;
+}
+
+.bfl-compare-table td {
+  color: #728d5d;
+  font-weight: 600;
+  font-size: 19px;
+}
+
+.bfl-compare-table td span {
+  display: inline-block;
+  width: 20px;
+}
+
+.bfl-plans-disclaimer {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  margin-top: 34px;
+  padding: 19px 24px;
+  background: #fff7dc;
+  border: 1px solid #f4df91;
+  border-radius: 14px;
+  color: #98813b;
+  line-height: 1.65;
+  font-size: 14px;
+}
+
+.bfl-plans-disclaimer i {
+  font-size: 19px;
+  padding-top: 1px;
+  flex: 0 0 auto;
+}
+
+.bfl-plans-disclaimer p {
+  margin: 0;
+}
+
+.bfl-plans-toast {
+  background: var(--bfl-dark);
+  color: #fff;
+}
+
+.bfl-plans-modal .modal-content {
+  border: 1px solid #e1e6dc;
+  border-radius: 17px;
+  overflow: hidden;
+}
+
+.bfl-plans-modal .modal-title {
+  font-weight: 700;
+}
+
+.bfl-plans-modal .btn-primary {
+  background: var(--bfl-yellow);
+  border-color: var(--bfl-yellow);
+  color: #202420;
+  font-weight: 700;
+}
+
+.bfl-plans-modal .btn-primary:hover {
+  background: var(--bfl-yellow-hover);
+}
+
+.bfl-plans-modal .modal-body {
+  color: #788373;
+}
+
+.bfl-plans-modal .bfl-confirm-price {
+  color: #202420;
+  font-weight: 700;
+  font-size: 26px;
+}
+
+@media (max-width:1399.98px) {
+  .bfl-plans-grid {
+    gap: 18px;
+  }
+
+  .bfl-plan-card {
+    padding: 27px 23px;
+    min-height: 676px;
+  }
+
+  .bfl-plan-card.bfl-plan-current {
+    padding: 26px 22px;
+  }
+
+  .bfl-plan-price {
+    font-size: 46px;
+  }
+
+  .bfl-plan-benefits {
+    gap: 19px;
+  }
+
+  .bfl-plan-ribbon {
+    right: 14px;
+    font-size: 9px;
+  }
+
+}
+@media (max-width:1199.98px) {
+  .bfl-plans-grid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+
+  .bfl-plan-card {
+    min-height: 620px;
+  }
+
+  .bfl-plan-card:last-child {
+    grid-column: 1/-1;
+    min-height: 580px;
+  }
+
+  .bfl-plan-card:last-child .bfl-plan-benefits {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 16px;
+  }
+
+}
+@media (max-width:767.98px) {
+  .bfl-plans-intro {
+    margin-bottom: 28px;
+  }
+
+  .bfl-plans-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: 26px;
+  }
+
+  .bfl-billing-toggle {
+    width: 100%;
+  }
+
+  .bfl-billing-button {
+    flex: 1;
+    padding: 13px 6px;
+    font-size: 12px;
+  }
+
+  .bfl-plans-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .bfl-plan-card,.bfl-plan-card:last-child {
+    grid-column: auto;
+    min-height: 0;
+    padding: 27px 25px 26px;
+  }
+
+  .bfl-plan-card.bfl-plan-current {
+    padding: 26px 24px 25px;
+  }
+
+  .bfl-plan-card:last-child .bfl-plan-benefits {
+    display: flex;
+  }
+
+  .bfl-plan-description {
+    margin-bottom: 18px;
+  }
+
+  .bfl-plan-description-price {
+    margin-bottom: 25px;
+  }
+
+  .bfl-plan-benefits {
+    gap: 15px;
+  }
+
+  .bfl-compare-card {
+    margin-top: 28px;
+    padding: 24px 20px;
+  }
+
+  .bfl-compare-title-row {
+    align-items: start;
+  }
+
+  .bfl-compare-title-row h2 {
+    font-size: 19px;
+  }
+
+  .bfl-plans-disclaimer {
+    gap: 12px;
+    margin-top: 24px;
+    padding: 17px 16px;
+    font-size: 13px;
+  }
+
+}
+@media (max-width:420px) {
+  .bfl-plan-price {
+    font-size: 45px;
+  }
+
+  .bfl-plan-unit {
+    font-size: 13px;
+  }
+
+  .bfl-compare-badge {
+    font-size: 9px;
+  }
+
+}
+
+/* 08 — Consolidated static HTML styles (formerly inline style attributes) */
+.bfl-toast-container {
+  z-index: 1100;
+}
+
+.bfl-goal-fill--60 { width: 60%; }
+.bfl-goal-fill--two-thirds { width: 66.67%; }
+.bfl-goal-fill--full { width: 100%; }
+
+.bfl-curriculum-sample-note {
+  background: #f1f4eb;
+  color: #63735a;
+  font-size: 14px;
+}
+
+.bfl-chart-bar--w1 { height: 76px; }
+.bfl-chart-bar--w2 { height: 85px; }
+.bfl-chart-bar--w3 { height: 82px; }
+.bfl-chart-bar--w4 { height: 99px; }
+.bfl-chart-bar--w5 { height: 105px; }
+
+/* 09 — Help & FAQs component styles (nonduplicated from original FAQ page) */
+.bfl-faq-intro .bfl-page-heading { margin: 21px 0 11px; }
+.bfl-faq-subheading { color:#7d8578; font-size:17px; line-height:1.65; margin:0; }
+.bfl-faq-search-wrap { max-width:734px; margin-top:41px; }
+.bfl-faq-search-wrap label { display:block; margin-bottom:10px; font-weight:700; font-size:14px; color:#647359; }
+.bfl-faq-search { display:block; width:100%; height:62px; padding:14px 18px; background:#fff; color:#303730; border:1px solid #d9e0d1; border-radius:10px; font:400 15px "DM Sans",Arial,sans-serif; outline:none; }
+.bfl-faq-search::placeholder { color:#858885; opacity:1; }
+.bfl-faq-search:focus { border-color:#a1ae8d; box-shadow:0 0 0 3px rgba(157,172,136,.16); }
+.bfl-faq-panel { background:#fff; border:1px solid #e0e5d9; border-radius:19px; margin-top:32px; padding:29px 32px 31px; }
+.bfl-faq-item { border-bottom:1px solid #e5e8dd; }
+.bfl-faq-item:last-child { border-bottom:none; }
+.bfl-faq-item[hidden] { display:none!important; }
+.bfl-faq-question { display:flex; justify-content:space-between; align-items:center; width:100%; min-height:107px; padding:16px 0; gap:25px; border:0; border-radius:0; background:transparent; color:#202521; text-align:left; font-size:17px; font-weight:700; line-height:1.45; }
+.bfl-faq-question:hover, .bfl-faq-question:focus-visible { color:#627452; }
+.bfl-faq-question:focus-visible { outline:2px solid #8ba47b; outline-offset:-3px; }
+.bfl-faq-symbol { color:#a6b391; font-size:29px; line-height:1; font-weight:400; width:22px; flex:0 0 22px; text-align:center; }
+.bfl-faq-symbol::before { content:"+"; }
+.bfl-faq-question[aria-expanded="true"] .bfl-faq-symbol::before { content:"−"; }
+.bfl-faq-answer { padding:0 46px 28px 0; color:#7d8778; font-size:15px; line-height:1.8; }
+.bfl-faq-answer p { margin:0; }
+.bfl-faq-answer a { color:#5c704e; text-decoration:underline; text-underline-offset:2px; }
+.bfl-faq-empty { padding:52px 14px; color:#7b8774; text-align:center; }
+.bfl-faq-empty h2 { font-size:20px; color:#273027; font-weight:700; }
+.bfl-faq-empty p { margin-bottom:18px; }
+.bfl-faq-clear { border:1px solid #d5ddcb; background:white; color:#53644b; border-radius:9px; font-weight:700; padding:10px 16px; }
+.bfl-faq-support { margin-top:35px; background:#eff1df; border:1px solid #e1e6d3; border-radius:19px; padding:33px 32px 31px; }
+.bfl-faq-support h2 { margin:0 0 17px; font-weight:700; font-size:22px; line-height:1.3; }
+.bfl-faq-support p { color:#77856c; font-size:14px; line-height:1.8; margin:0 0 24px; }
+.bfl-faq-feedback-btn { display:inline-flex; align-items:center; justify-content:center; gap:15px; min-height:61px; border:1px solid #d6ddca; background:transparent; border-radius:10px; color:#526249; padding:12px 23px; font-size:15px; font-weight:700; }
+.bfl-faq-feedback-btn:hover { background:#e6ecd8; }
+.bfl-faq-feedback-btn i { font-size:20px; }
+.bfl-faq-modal .modal-content { border-radius:18px; border:1px solid #dfe4d8; }
+.bfl-faq-modal .modal-title { font-weight:700; }
+.bfl-faq-modal .form-label { font-weight:700; color:#586a4d; }
+.bfl-faq-modal .form-control, .bfl-faq-modal .form-select { border-color:#d6ddcc; padding:12px; }
+.bfl-faq-modal .form-control:focus, .bfl-faq-modal .form-select:focus { box-shadow:0 0 0 .2rem rgba(143,164,123,.17); border-color:#94a785; }
+.bfl-faq-submit { background:var(--bfl-yellow); border:1px solid var(--bfl-yellow); border-radius:8px; font-weight:700; color:#263021; padding:11px 18px; }
+.bfl-faq-submit:hover { background:var(--bfl-yellow-hover); }
+.bfl-faq-toast { background:var(--bfl-dark); color:#fff; }
+@media (max-width:767.98px) {
+.bfl-faq-intro .bfl-page-heading { margin-top:18px; }
+.bfl-faq-subheading { font-size:15px; }
+.bfl-faq-search-wrap { margin-top:29px; }
+.bfl-faq-panel { margin-top:24px; padding:9px 22px 14px; border-radius:17px; }
+.bfl-faq-question { min-height:83px; font-size:15px; gap:13px; }
+.bfl-faq-answer { padding:0 8px 23px 0; font-size:14px; }
+.bfl-faq-support { margin-top:25px; padding:27px 23px; }
+}
+@media (max-width:420px) {
+.bfl-faq-search { font-size:14px; height:58px; }
+.bfl-faq-panel { padding-left:18px; padding-right:18px; }
+.bfl-faq-question { font-size:14px; }
+}
+
+/* Dashboard lesson dialog — shared by both lesson entry points. */
+.bfl-dashboard-lesson .modal-dialog { max-width: 860px; }
+.bfl-dashboard-lesson .modal-content { border: 0; border-radius: 22px; max-height: calc(100dvh - 3.5rem); overflow-y: auto; color: #808778; font-family: "DM Sans", sans-serif; font-size: 18px; line-height: 1.9; }
+.bfl-dashboard-lesson-header { position: relative; padding: 34px 80px 28px 36px; border-bottom: 1px solid #e0e3d8; }
+.bfl-dashboard-lesson-eyebrow { margin: 0 0 12px; font-size: 14px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
+.bfl-dashboard-lesson-header h2 { margin: 0; color: #1e241f; font-family: "Barlow Condensed", sans-serif; font-size: 40px; font-weight: 700; line-height: 1.2; }
+.bfl-dashboard-lesson-close { position: absolute; top: 36px; right: 40px; display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 50%; background: #f0f3e8; color: #859374; font-size: 18px; }
+.bfl-dashboard-lesson-body { padding: 38px 36px 36px; }
+.bfl-dashboard-lesson-pathway { display: inline-block; margin-bottom: 24px; padding: 4px 10px; border-radius: 5px; background: #fff2cf; color: #997313; font-size: 13px; line-height: 1.8; font-weight: 700; letter-spacing: .6px; text-transform: uppercase; }
+.bfl-dashboard-lesson-body > p { margin: 0 0 28px; }
+.bfl-dashboard-lesson-body h3 { margin: 26px 0 14px; color: #171e18; font-size: 21px; font-weight: 700; }
+.bfl-dashboard-lesson-next { margin: 30px 0 26px; padding: 26px 25px; background: #f0f3e8; border-radius: 15px; }
+.bfl-dashboard-lesson-next h4 { margin: 0 0 10px; color: #4a5940; font-size: 18px; font-weight: 700; }
+.bfl-dashboard-lesson-next p { margin: 0; }
+.bfl-dashboard-lesson-body ol { margin: 0 0 24px; padding-left: 30px; }
+.bfl-dashboard-lesson-body label { display: block; margin-bottom: 8px; color: #65705b; font-size: 16px; font-weight: 500; }
+.bfl-dashboard-lesson-body textarea { display: block; width: 100%; min-height: 128px; padding: 14px 18px; border: 1px solid #d8ddca; border-radius: 11px; background: #fff; color: #4a5940; font: inherit; resize: vertical; }
+.bfl-dashboard-lesson-body textarea::placeholder { color: #808778; opacity: 1; }
+.bfl-dashboard-lesson-body .bfl-dashboard-lesson-note { margin: 26px 0 36px; color: #9ba28d; }
+.bfl-dashboard-lesson-actions { display: flex; flex-wrap: wrap; gap: 15px; }
+.bfl-dashboard-lesson-actions button, .bfl-dashboard-lesson-actions a { display: inline-flex; align-items: center; justify-content: center; gap: 16px; padding: 15px 25px; border: 1px solid #d6dcc7; border-radius: 11px; background: #fff; color: #4c5945; font: inherit; font-weight: 700; text-decoration: none; }
+.bfl-dashboard-lesson-actions button { border-color: #f3cf4c; background: #f3cf4c; color: #19261b; }
+.bfl-dashboard-lesson-actions button:disabled { opacity: .75; }
+.bfl-dashboard-lesson :focus-visible { outline: 3px solid #9e7a17; outline-offset: 3px; }
+@media (max-width: 575.98px) {
+  .bfl-dashboard-lesson .modal-content { max-height: calc(100dvh - 1rem); font-size: 16px; }
+  .bfl-dashboard-lesson-header { padding: 26px 66px 24px 22px; }
+  .bfl-dashboard-lesson-header h2 { font-size: 32px; }
+  .bfl-dashboard-lesson-close { top: 24px; right: 18px; width: 36px; height: 36px; }
+  .bfl-dashboard-lesson-body { padding: 26px 22px; }
+  .bfl-dashboard-lesson-next { padding: 22px; }
+}
+
+/* Shared navbar notification modal. */
+.bfl-notifications-modal .modal-dialog { max-width: 580px; }
+.bfl-notifications-modal .modal-content { border: 1px solid #e1e4dc; border-radius: 18px; overflow: hidden; background: #fff; color: #30362e; font-family: "DM Sans", sans-serif; }
+.bfl-notifications-header { position: relative; padding: 24px 66px 19px 27px; border-bottom: 1px solid #f1f2ed; }
+.bfl-notifications-eyebrow { margin: 0 0 10px; color: #8a947d; font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
+.bfl-notifications-header h2 { margin: 0; color: #22291f; font-family: "Barlow Condensed", sans-serif; font-size: 28px; font-weight: 700; line-height: 1.25; }
+.bfl-notifications-close { position: absolute; top: 23px; right: 27px; display: grid; place-items: center; width: 30px; height: 30px; padding: 0; border: 0; border-radius: 50%; background: #f0f3e8; color: #8b9879; font-size: 12px; }
+.bfl-notifications-body { padding: 38px 27px 27px; max-height: calc(100dvh - 180px); overflow-y: auto; }
+.bfl-notifications-list { display: grid; gap: 14px; margin: 0 0 22px; padding: 0; list-style: none; }
+.bfl-notifications-list li { padding: 13px 12px; border-radius: 9px; background: #f6f8ef; }
+.bfl-notifications-list h3 { margin: 0 0 6px; font-size: 11px; font-weight: 700; line-height: 1.4; }
+.bfl-notifications-list p { margin: 0; font-size: 12px; line-height: 1.5; }
+.bfl-notifications-playbook { display: inline-flex; align-items: center; gap: 14px; padding: 11px 17px; border-radius: 8px; background: #f3cf4c; color: #282e20; font-size: 13px; font-weight: 700; text-decoration: none; }
+.bfl-notifications-playbook:hover { background: #eac23c; color: #282e20; }
+.bfl-notifications-modal :focus-visible { outline: 3px solid #9e7a17; outline-offset: 3px; }
+@media (max-width: 575.98px) {
+  .bfl-notifications-header { padding-left: 22px; }
+  .bfl-notifications-body { padding: 28px 22px 24px; }
+}
+
+.bfl-dashboard-lesson-actions .bfl-lesson-back { background: #fff; border-color: #d6dcc7; color: #4c5945; }
+
+/* Goal creation dialog shared across dashboard and progress pages. */
+.bfl-goal-dialog .modal-dialog { max-width: 870px; }
+.bfl-goal-dialog .modal-content { border: 0; border-radius: 24px; max-height: calc(100dvh - 3.5rem); overflow-y: auto; font-family: "DM Sans", sans-serif; }
+.bfl-goal-dialog-header { position: relative; padding: 38px 80px 30px 40px; border-bottom: 1px solid #e1e4d9; }
+.bfl-goal-dialog-header p { margin: 0 0 16px; color: #88927d; font-size: 14px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
+.bfl-goal-dialog-header h2 { margin: 0; color: #22281f; font: 700 40px/1.2 "Barlow Condensed", sans-serif; }
+.bfl-goal-dialog-close { position: absolute; right: 40px; top: 38px; display: grid; place-items: center; width: 44px; height: 44px; border: 0; border-radius: 50%; color: #899776; background: #f0f3e8; }
+.bfl-goal-dialog-body { padding: 36px 40px 40px; }
+.bfl-goal-dialog-body label { display: block; margin: 0 0 10px; color: #717c62; font-size: 16px; font-weight: 700; }
+.bfl-goal-dialog-body .form-control, .bfl-goal-dialog-body .form-select { min-height: 62px; margin-bottom: 26px; padding: 16px 18px; border: 1px solid #d8ddcb; border-radius: 11px; color: #48523e; font-size: 18px; }
+.bfl-goal-dialog-body .form-select { padding-right: 42px; }
+.bfl-goal-dialog-save { display: inline-flex; align-items: center; gap: 18px; margin-top: 34px; padding: 16px 25px; border: 0; border-radius: 11px; background: #f3cf4c; color: #29321e; font-size: 18px; font-weight: 700; }
+.bfl-goal-dialog :focus-visible { outline: 3px solid #9e7a17; outline-offset: 3px; }
+@media (max-width: 575.98px) {
+ .bfl-goal-dialog .modal-content { max-height: calc(100dvh - 1rem); }
+ .bfl-goal-dialog-header { padding: 28px 65px 24px 22px; }
+ .bfl-goal-dialog-header h2 { font-size: 32px; }
+ .bfl-goal-dialog-close { right: 18px; top: 26px; width: 36px; height: 36px; }
+ .bfl-goal-dialog-body { padding: 28px 22px; }
+ .bfl-goal-dialog-save { margin-top: 12px; }
+}
+
+/* Academic snapshot uses the shared form-dialog layout. */
+.bfl-grade-dialog-intro { margin: 0 0 40px; color: #808778; font-size: 18px; line-height: 1.7; }
+.bfl-grade-dialog .bfl-goal-dialog-save { margin-top: 0; }
+
+/* Featured Huddle conversation reply. */
+.bfl-reply-modal .modal-content { max-height: calc(100dvh - 3.5rem); overflow-y: auto; }
+.bfl-reply-body { padding: 26px 27px; font-size: 12px; }
+.bfl-reply-context { margin: 0 0 27px; color: #83897c; line-height: 1.6; }
+.bfl-reply-body label { display: block; margin-bottom: 6px; color: #79866b; font-size: 11px; font-weight: 700; }
+.bfl-reply-body textarea { display: block; width: 100%; min-height: 86px; padding: 11px 12px; border: 1px solid #dfe3d5; border-radius: 7px; color: #48523e; font: inherit; resize: vertical; }
+.bfl-reply-body .bfl-notifications-playbook { margin-top: 16px; border: 0; }
+@media (max-width: 575.98px) {
+ .bfl-reply-modal .modal-content { max-height: calc(100dvh - 1rem); }
+ .bfl-reply-body { padding: 24px 22px; }
+}
+
+/* Simulated membership checkout, shared by all plans and billing periods. */
+.bfl-checkout-summary { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 26px; margin: 0 0 30px; border-radius: 17px; background: #f3f5eb; }
+.bfl-checkout-summary h3 { margin: 0 0 6px; font-size: 20px; }
+.bfl-checkout-summary p { margin: 0; font-size: 15px; color: #929d83; }
+.bfl-checkout-summary > strong { color: #20271e; font-size: 36px; line-height: 1.2; }
+.bfl-checkout-pathway { min-height: 62px; border: 1px solid #d8ddca; border-radius: 11px; padding-left: 24px; font-size: 18px; color: #424d38; }
+.bfl-checkout-payment { display: flex; align-items: center; gap: 20px; margin: 26px 0; padding: 26px 28px; border: 1px dashed #e4c44b; border-radius: 13px; background: #fcf8e7; color: #917b2d; line-height: 1.6; }
+.bfl-checkout-payment > i { font-size: 34px; }
+.bfl-checkout-payment small { font-size: 15px; }
+.bfl-checkout-modal .bfl-checkout-ack { display: flex; align-items: flex-start; gap: 18px; margin: 24px 6px 38px; color: #818b76; font-size: 16px; font-weight: 400; line-height: 1.6; }
+.bfl-checkout-ack input { flex: 0 0 24px; width: 24px; height: 24px; margin-top: 3px; accent-color: #f3cf4c; }
+.bfl-checkout-modal .bfl-checkout-charge { margin: 24px 0 0; color: #9ba48f; line-height: 1.6; }
+@media (max-width: 575.98px) {
+ .bfl-checkout-summary { padding: 20px; }
+ .bfl-checkout-summary > strong { font-size: 30px; }
+ .bfl-checkout-payment { padding: 20px; gap: 14px; }
+ .bfl-checkout-modal .bfl-dashboard-lesson-actions > button { width: 100%; }
+}
+
+/* Timed lesson preview, shared by weeks three and four. */
+.bfl-locked-lesson .modal-dialog { max-width: 870px; }
+.bfl-locked-lesson .bfl-dashboard-lesson-header { padding-left: 40px; }
+.bfl-locked-lesson .bfl-dashboard-lesson-body { padding: 44px 40px 42px; }
+.bfl-unlock-lock { display: grid; place-items: center; width: 94px; height: 94px; margin: 0 auto 30px; border-radius: 50%; background: #e7efd8; color: #78984e; font-size: 36px; }
+.bfl-unlock-notice { display: flex; align-items: center; gap: 16px; margin: 36px 0; padding: 15px 26px; border: 1px solid #dce3c9; border-radius: 14px; background: #f0f3e8; color: #7d8b68; font-size: 16px; line-height: 1.9; }
+.bfl-unlock-notice > i { flex-shrink: 0; font-size: 20px; }
+@media (max-width: 575.98px) {
+  .bfl-locked-lesson .bfl-dashboard-lesson-header { padding-left: 22px; }
+  .bfl-locked-lesson .bfl-dashboard-lesson-body { padding: 28px 22px; }
+  .bfl-unlock-notice { padding: 15px 18px; }
+}
+
+/* Successful simulated checkout for every membership and billing period. */
+.bfl-membership-success .modal-dialog { max-width: 870px; }
+.bfl-membership-success .bfl-dashboard-lesson-header { padding-left: 40px; }
+.bfl-membership-success .bfl-dashboard-lesson-body { padding: 44px 40px 40px; text-align: center; }
+.bfl-membership-success-icon { display: grid; place-items: center; width: 94px; height: 94px; margin: 0 auto 26px; border-radius: 50%; background: #e7efd8; color: #78984e; font-size: 36px; }
+.bfl-membership-success #bflMembershipActivated { margin: 0 0 22px; font-size: 34px; line-height: 1.4; color: #20251f; }
+.bfl-membership-success .bfl-membership-success-message { margin: 0 0 26px; }
+.bfl-membership-success .bfl-checkout-summary { text-align: left; margin-bottom: 32px; }
+.bfl-membership-success .bfl-dashboard-lesson-actions { justify-content: center; }
+.bfl-membership-success .bfl-dashboard-lesson-actions a { background: #f3cf4c; border-color: #f3cf4c; color: #19261b; }
+@media (max-width: 575.98px) {
+  .bfl-membership-success .bfl-dashboard-lesson-header { padding-left: 22px; }
+  .bfl-membership-success .bfl-dashboard-lesson-body { padding: 28px 22px; }
+  .bfl-membership-success #bflMembershipActivated { font-size: 28px; }
+}
+
+/* Curriculum lesson previews match the Training reference dialogs. */
+#bflTrainingPreview .modal-dialog { max-width: 870px; }
+#bflTrainingPreview .bfl-dashboard-lesson-header { padding: 36px 80px 30px 40px; }
+#bflTrainingPreview .bfl-dashboard-lesson-body { padding: 38px 40px 40px; }
+#bflTrainingPreview .bfl-dashboard-lesson-actions { margin-top: 36px; }
+#bflTrainingPreview .bfl-dashboard-lesson-next { color: #7b8b67; }
+@media (max-width: 575.98px) {
+ #bflTrainingPreview .bfl-dashboard-lesson-header { padding: 26px 66px 24px 22px; }
+ #bflTrainingPreview .bfl-dashboard-lesson-body { padding: 26px 22px; }
+ #bflTrainingPreview .bfl-dashboard-lesson-actions { margin-top: 28px; }
+}

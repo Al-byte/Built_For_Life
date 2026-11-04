@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="#191d19" name="theme-color"/><title>Built For Life | The huddle</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&amp;family=DM+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/css/bfl.css" rel="stylesheet"/><link rel="icon" href="../assets/images/bfl-favicon.ico" sizes="16x16 32x32 48x48 64x64"/>
+<link rel="icon" type="image/png" sizes="64x64" href="../assets/images/bfl-favicon.png"/>
+<link rel="icon" type="image/svg+xml" sizes="any" href="../assets/images/bfl-favicon.svg"/>
+</head><body class="bfl-page bfl-page--huddle">
+<!-- LEFT SIDEBAR: fixed on desktop, slide-in menu on mobile. -->
+<aside aria-labelledby="bflSidebarTitle" class="offcanvas-lg offcanvas-start bfl-sidebar" data-bs-theme="dark" id="bflSidebar" tabindex="-1">
+<button aria-label="Close menu" class="bfl-mobile-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#bflSidebar" type="button">
+<i aria-hidden="true" class="bi bi-x"></i>
+</button>
+<div class="offcanvas-body">
+<a aria-label="Built For Life home" class="bfl-brand" href="../index.html">
+<!-- Inline logo keeps this example self-contained; replace with your own logo if desired. -->
+<svg aria-hidden="true" class="bfl-brand-mark" focusable="false" viewbox="0 0 56 66">
+<path d="M0 0H56V48L28 66 0 48Z" fill="#f5d34f"></path>
+<text fill="#1b211a" font-family="Impact, 'Arial Narrow', sans-serif" font-size="25" font-weight="900" text-anchor="middle" x="28" y="36">BFL</text>
+</svg>
+<span>
+<span class="bfl-brand-name" id="bflSidebarTitle">BUILT FOR LIFE</span>
+<span class="bfl-brand-caption">TRAINING &amp; MENTORING</span>
+</span>
+</a>
+<nav aria-label="Member portal navigation" class="bfl-sidebar-nav">
+<div class="bfl-sidebar-group">
+<h2 class="bfl-sidebar-heading">Your journey</h2>
+<ul class="bfl-nav-list">
+<li><a class="bfl-nav-link" data-page="My dashboard" href="../index.html"><i aria-hidden="true" class="bi bi-house-door"></i><span>My dashboard</span></a></li>
+<li><a class="bfl-nav-link" data-page="Our curriculum" href="curriculum.html"><i aria-hidden="true" class="bi bi-book"></i><span>Our curriculum</span></a></li>
+<li><a class="bfl-nav-link" data-page="Weekly playbook" href="weekly-playbook.html"><i aria-hidden="true" class="bi bi-play-btn"></i><span>Weekly playbook</span></a></li>
+<li><a class="bfl-nav-link" data-page="Progress &amp; goals" href="progress-goals.html"><i aria-hidden="true" class="bi bi-bar-chart"></i><span>Progress &amp; goals</span></a></li>
+<li><a aria-current="page" class="bfl-nav-link active" data-page="The huddle" href="huddle.html"><i aria-hidden="true" class="bi bi-people"></i><span>The huddle</span></a></li>
+</ul>
+</div>
+<div class="bfl-sidebar-group">
+<h2 class="bfl-sidebar-heading">Membership</h2>
+<ul class="bfl-nav-list">
+<li><a class="bfl-nav-link" data-page="Plans &amp; membership" href="plans-membership.html"><i aria-hidden="true" class="bi bi-credit-card"></i><span>Plans &amp; membership</span></a></li>
+<li><a class="bfl-nav-link" data-page="Help &amp; FAQs" href="help-faqs.html"><i aria-hidden="true" class="bi bi-question-circle"></i><span>Help &amp; FAQs</span></a></li>
+</ul>
+</div>
+</nav>
+<div class="bfl-sidebar-footer d-none d-lg-block">
+<i aria-hidden="true" class="bi bi-shield-check"></i>
+<p>Stronger on the field.<br/>Better prepared for life.</p>
+</div>
+</div>
+</aside>
+<div class="bfl-main">
+<!-- TOP NAVIGATION -->
+<header class="bfl-topbar">
+<!-- Desktop breadcrumb -->
+<div aria-label="Breadcrumb" class="bfl-breadcrumb d-none d-lg-flex">
+<a href="../index.html">Member portal</a>
+<i aria-hidden="true" class="bi bi-chevron-right"></i>
+<span class="js-page-name">The huddle</span>
+</div>
+<!-- Mobile hamburger + current page -->
+<div class="d-flex d-lg-none align-items-center gap-4">
+<button aria-controls="bflSidebar" aria-label="Open menu" class="bfl-menu-button" data-bs-target="#bflSidebar" data-bs-toggle="offcanvas" type="button">
+<i aria-hidden="true" class="bi bi-list"></i>
+</button>
+<span class="bfl-current-page js-page-name">The huddle</span>
+</div>
+<div class="bfl-top-actions">
+<span class="bfl-private"><i aria-hidden="true" class="bi bi-lock"></i>Private prototype</span>
+<button aria-label="Notifications" class="bfl-icon-button" data-bs-toggle="modal" data-bs-target="#bflNotificationsModal" aria-haspopup="dialog" type="button">
+<i aria-hidden="true" class="bi bi-bell"></i><span class="bfl-notice-dot"></span>
+</button>
+<!-- Avatar shown in desktop screenshot, hidden on mobile -->
+<div class="d-none d-lg-block">
+<a aria-label="My account" class="bfl-avatar" href="account.html">JC</a>
+</div>
+</div>
+</header>
+<!-- THE HUDDLE: private browser-local community prototype. -->
+<main class="bfl-content" id="mainContent">
+<div class="bfl-eyebrow">Built For Life / Member portal</div>
+<div class="bfl-huddle-intro">
+<div>
+<h1 class="bfl-page-heading">Better, together.</h1>
+<p class="bfl-huddle-subtitle">A place for encouragement, accountability, and purposeful conversations.</p>
+</div>
+<button class="bfl-huddle-start" data-bs-target="#bflNewPostModal" data-bs-toggle="modal" type="button">Start a conversation <i aria-hidden="true" class="bi bi-plus-lg"></i></button>
+</div>
+<div class="bfl-huddle-alert" role="note"><i aria-hidden="true" class="bi bi-people"></i><span>Private community mockup. Posts and replies stay in your browser. Use fictional names and details.</span></div>
+<div class="bfl-huddle-layout">
+<section aria-label="Community conversations" class="bfl-huddle-feed">
+<div aria-label="Filter conversations" class="bfl-huddle-tabs" role="tablist">
+<button aria-selected="true" class="bfl-huddle-tab" data-filter="all" id="bflTabAll" role="tab" type="button">All conversations</button>
+<button aria-selected="false" class="bfl-huddle-tab" data-filter="announcements" id="bflTabAnnouncements" role="tab" type="button">Announcements</button>
+<button aria-selected="false" class="bfl-huddle-tab" data-filter="weekly-challenge" id="bflTabChallenges" role="tab" type="button">Weekly challenge</button>
+</div>
+<div aria-live="polite" id="bflPostList"></div>
+</section>
+<aside aria-label="Community guidance" class="bfl-huddle-aside">
+<section aria-labelledby="bflStandardsTitle" class="bfl-huddle-standards">
+<p class="bfl-huddle-overline">Our community standard</p>
+<h2 id="bflStandardsTitle">Show up with purpose.</h2>
+<ul>
+<li><i aria-hidden="true" class="bi bi-heart"></i><span>Encourage effort and growth.</span></li>
+<li><i aria-hidden="true" class="bi bi-shield-check"></i><span>Respect people and protect privacy.</span></li>
+<li><i aria-hidden="true" class="bi bi-people"></i><span>Share experiences. Listen to others.</span></li>
+<li><i aria-hidden="true" class="bi bi-flag"></i><span>Ask for help when you need it.</span></li>
+</ul>
+</section>
+<section aria-labelledby="bflWeeklyConversationTitle" class="bfl-huddle-prompt">
+<p class="bfl-huddle-overline">This week’s conversation</p>
+<h2 id="bflWeeklyConversationTitle">Gifts are the starting point.</h2>
+<p>What is one action that turns your potential into production?</p>
+<button class="bfl-huddle-join" id="bflJoinConversation" type="button">Join the conversation <i aria-hidden="true" class="bi bi-arrow-right"></i></button>
+</section>
+</aside>
+</div>
+</main>
+<!-- Shared BFL footer -->
+<footer class="bfl-page-footer" role="contentinfo">
+<p>© 2026 Built For Life™ Training &amp; Mentoring</p>
+<p class="bfl-page-footer-tagline"><i aria-hidden="true" class="bi bi-shield-check"></i> Athletics Serving a Greater Purpose.</p>
+</footer>
+</div>
+<div aria-hidden="true" aria-labelledby="bflNewPostTitle" class="modal fade bfl-huddle-modal" id="bflNewPostModal" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered"><div class="modal-content">
+<form id="bflPostForm">
+<div class="modal-header border-0 px-4 pt-4"><h2 class="modal-title fs-4" id="bflNewPostTitle">Start a conversation</h2><button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button></div>
+<div class="modal-body px-4">
+<p class="small text-secondary mb-3">This is a browser-only demo. Please use fictional details.</p>
+<div class="mb-3"><label class="form-label" for="bflPostCategory">Conversation type</label><select class="form-select" id="bflPostCategory"><option value="general">General conversation</option><option value="weekly-challenge">Weekly challenge</option></select></div>
+<div class="mb-3"><label class="form-label" for="bflPostTitle">Title</label><input class="form-control" id="bflPostTitle" maxlength="120" minlength="3" placeholder="What's on your mind?" required=""/></div>
+<div class="mb-2"><label class="form-label" for="bflPostBody">Your message</label><textarea class="form-control" id="bflPostBody" maxlength="1200" minlength="5" placeholder="Share a question, encouragement, or reflection..." required="" rows="5"></textarea></div>
+</div>
+<div class="modal-footer border-0 px-4 pb-4"><button class="btn btn-outline-secondary" data-bs-dismiss="modal" type="button">Cancel</button><button class="btn btn-primary px-4" type="submit">Post conversation</button></div>
+</form>
+</div></div>
+</div>
+<div class="toast-container position-fixed bottom-0 end-0 p-3 bfl-toast-container"><div aria-live="polite" class="toast bfl-huddle-toast" id="bflHuddleToast" role="status"><div class="d-flex"><div class="toast-body" id="bflHuddleToastText"></div><button aria-label="Dismiss" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" type="button"></button></div></div></div>
+<div class="modal fade bfl-notifications-modal bfl-reply-modal" id="bflReplyModal" tabindex="-1" aria-labelledby="bflReplyTitle" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered"><form class="modal-content" id="bflReplyForm">
+<header class="bfl-notifications-header"><p class="bfl-notifications-eyebrow">The huddle</p><h2 id="bflReplyTitle">Add your voice.</h2><button class="bfl-notifications-close" type="button" data-bs-dismiss="modal" aria-label="Close"><i class="bi bi-x-lg" aria-hidden="true"></i></button></header>
+<div class="bfl-reply-body">
+<p class="bfl-reply-context">Replying to: <strong id="bflReplyTopic">What does showing up look like this week?</strong></p>
+<label for="bflReplyText">Your demo reply</label>
+<textarea id="bflReplyText" name="reply" required minlength="2" maxlength="700" placeholder="Share encouragement or one action you’ll take."></textarea>
+<p id="bflReplyError" role="status" hidden></p>
+<button class="bfl-notifications-playbook" type="submit">Save demo reply <i class="bi bi-chat" aria-hidden="true"></i></button>
+</div></form></div></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="../assets/js/pages/huddle.js" type="module"></script></body></html>

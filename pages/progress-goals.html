@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="#191d19" name="theme-color"/><title>Built For Life | Progress &amp; goals</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&amp;family=DM+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/css/bfl.css" rel="stylesheet"/><link rel="icon" href="../assets/images/bfl-favicon.ico" sizes="16x16 32x32 48x48 64x64"/>
+<link rel="icon" type="image/png" sizes="64x64" href="../assets/images/bfl-favicon.png"/>
+<link rel="icon" type="image/svg+xml" sizes="any" href="../assets/images/bfl-favicon.svg"/>
+</head><body class="bfl-page bfl-page--progress">
+<!-- LEFT SIDEBAR: fixed on desktop, slide-in menu on mobile. -->
+<aside aria-labelledby="bflSidebarTitle" class="offcanvas-lg offcanvas-start bfl-sidebar" data-bs-theme="dark" id="bflSidebar" tabindex="-1">
+<button aria-label="Close menu" class="bfl-mobile-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#bflSidebar" type="button">
+<i aria-hidden="true" class="bi bi-x"></i>
+</button>
+<div class="offcanvas-body">
+<a aria-label="Built For Life home" class="bfl-brand" href="../index.html">
+<!-- Inline logo keeps this example self-contained; replace with your own logo if desired. -->
+<svg aria-hidden="true" class="bfl-brand-mark" focusable="false" viewbox="0 0 56 66">
+<path d="M0 0H56V48L28 66 0 48Z" fill="#f5d34f"></path>
+<text fill="#1b211a" font-family="Impact, 'Arial Narrow', sans-serif" font-size="25" font-weight="900" text-anchor="middle" x="28" y="36">BFL</text>
+</svg>
+<span>
+<span class="bfl-brand-name" id="bflSidebarTitle">BUILT FOR LIFE</span>
+<span class="bfl-brand-caption">TRAINING &amp; MENTORING</span>
+</span>
+</a>
+<nav aria-label="Member portal navigation" class="bfl-sidebar-nav">
+<div class="bfl-sidebar-group">
+<h2 class="bfl-sidebar-heading">Your journey</h2>
+<ul class="bfl-nav-list">
+<li><a class="bfl-nav-link" data-page="My dashboard" href="../index.html"><i aria-hidden="true" class="bi bi-house-door"></i><span>My dashboard</span></a></li>
+<li><a class="bfl-nav-link" data-page="Our curriculum" href="curriculum.html"><i aria-hidden="true" class="bi bi-book"></i><span>Our curriculum</span></a></li>
+<li><a class="bfl-nav-link" data-page="Weekly playbook" href="weekly-playbook.html"><i aria-hidden="true" class="bi bi-play-btn"></i><span>Weekly playbook</span></a></li>
+<li><a aria-current="page" class="bfl-nav-link active" data-page="Progress &amp; goals" href="progress-goals.html"><i aria-hidden="true" class="bi bi-bar-chart"></i><span>Progress &amp; goals</span></a></li>
+<li><a class="bfl-nav-link" data-page="The huddle" href="huddle.html"><i aria-hidden="true" class="bi bi-people"></i><span>The huddle</span><span aria-label="New activity" class="bfl-unread"></span></a></li>
+</ul>
+</div>
+<div class="bfl-sidebar-group">
+<h2 class="bfl-sidebar-heading">Membership</h2>
+<ul class="bfl-nav-list">
+<li><a class="bfl-nav-link" data-page="Plans &amp; membership" href="plans-membership.html"><i aria-hidden="true" class="bi bi-credit-card"></i><span>Plans &amp; membership</span></a></li>
+<li><a class="bfl-nav-link" data-page="Help &amp; FAQs" href="help-faqs.html"><i aria-hidden="true" class="bi bi-question-circle"></i><span>Help &amp; FAQs</span></a></li>
+</ul>
+</div>
+</nav>
+<div class="bfl-sidebar-footer d-none d-lg-block">
+<i aria-hidden="true" class="bi bi-shield-check"></i>
+<p>Stronger on the field.<br/>Better prepared for life.</p>
+</div>
+</div>
+</aside>
+<div class="bfl-main">
+<!-- TOP NAVIGATION -->
+<header class="bfl-topbar">
+<!-- Desktop breadcrumb -->
+<div aria-label="Breadcrumb" class="bfl-breadcrumb d-none d-lg-flex">
+<a href="../index.html">Member portal</a>
+<i aria-hidden="true" class="bi bi-chevron-right"></i>
+<span class="js-page-name">Progress &amp; goals</span>
+</div>
+<!-- Mobile hamburger + current page -->
+<div class="d-flex d-lg-none align-items-center gap-4">
+<button aria-controls="bflSidebar" aria-label="Open menu" class="bfl-menu-button" data-bs-target="#bflSidebar" data-bs-toggle="offcanvas" type="button">
+<i aria-hidden="true" class="bi bi-list"></i>
+</button>
+<span class="bfl-current-page js-page-name">Progress &amp; goals</span>
+</div>
+<div class="bfl-top-actions">
+<span class="bfl-private"><i aria-hidden="true" class="bi bi-lock"></i>Private prototype</span>
+<button aria-label="Notifications" class="bfl-icon-button" data-bs-toggle="modal" data-bs-target="#bflNotificationsModal" aria-haspopup="dialog" type="button">
+<i aria-hidden="true" class="bi bi-bell"></i><span class="bfl-notice-dot"></span>
+</button>
+<!-- Avatar shown in desktop screenshot, hidden on mobile -->
+<div class="d-none d-lg-block">
+<a aria-label="My account" class="bfl-avatar" href="account.html">JC</a>
+</div>
+</div>
+</header>
+<!-- PROGRESS & GOALS: matching the two supplied screenshot sections. -->
+<main class="bfl-content" id="mainContent">
+<div class="bfl-eyebrow">Built For Life / Member portal</div>
+<div class="bfl-progress-intro">
+<div>
+<h1 class="bfl-page-heading">Small wins. Stronger habits.</h1>
+<p class="bfl-welcome">Track the work that helps you grow on the field, at school, and in life.</p>
+</div>
+<button class="bfl-outline-action" id="bflSetGoal" type="button"><span>Set a goal</span><i aria-hidden="true" class="bi bi-plus-lg"></i></button>
+</div>
+<div class="bfl-notice-panel" role="note"><i aria-hidden="true" class="bi bi-shield-check"></i>
+<span>Jordan Carter is a fictional participant. Entries stay in this browser. Use sample information only.</span>
+</div>
+<section aria-labelledby="bflCommitmentsTitle">
+<div class="bfl-progress-section-head">
+<h2 id="bflCommitmentsTitle">Your weekly commitments</h2>
+<span class="bfl-progress-hint">Tap +1 to record progress</span>
+</div>
+<div aria-live="polite" class="bfl-goal-cards" id="bflGoalCards"></div>
+</section>
+<div class="bfl-progress-lower">
+<section aria-labelledby="bflCheckinTitle" class="bfl-progress-panel">
+<div class="bfl-progress-panel-heading">
+<h2 id="bflCheckinTitle">Behavior &amp; daily check-in</h2>
+<span class="bfl-accountability-pill">Accountability</span>
+</div>
+<p class="bfl-progress-muted bfl-checkin-question">How did you show up today?</p>
+<div aria-label="How did you show up today?" class="bfl-checkin-choice-row" role="group">
+<button aria-pressed="true" class="bfl-checkin-choice" data-mood="on-track" type="button"><i aria-hidden="true" class="bi bi-emoji-smile"></i><span>On track</span></button>
+<button aria-pressed="false" class="bfl-checkin-choice" data-mood="working" type="button"><i aria-hidden="true" class="bi bi-emoji-neutral"></i><span>Working on it</span></button>
+<button aria-pressed="false" class="bfl-checkin-choice" data-mood="support" type="button"><i aria-hidden="true" class="bi bi-heart"></i><span>Need support</span></button>
+</div>
+<label class="bfl-checkin-label" for="bflCheckinNotes">One win or one thing to work on</label>
+<textarea class="bfl-checkin-textarea" id="bflCheckinNotes" placeholder="Example: I paused before reacting during practice."></textarea>
+<button class="bfl-solid-button bfl-checkin-submit" id="bflSaveCheckin" type="button">Save demo check-in <i aria-hidden="true" class="bi bi-check-lg"></i></button>
+<div class="bfl-checkin-status" id="bflCheckinStatus" role="status"></div>
+</section>
+<section aria-labelledby="bflAcademicTitle" class="bfl-progress-panel">
+<div class="bfl-progress-panel-heading">
+<h2 id="bflAcademicTitle">Academic snapshot</h2>
+<button class="bfl-grades-link" id="bflUpdateGrades" type="button">Update grades <i aria-hidden="true" class="bi bi-arrow-right"></i></button>
+</div>
+<p class="bfl-progress-muted bfl-grades-subhead">Sample grades · Self-reported progress</p>
+<div aria-live="polite" id="bflGradesList"></div>
+<h3 class="bfl-effort-title">Effort over time</h3>
+<div aria-label="Illustrative effort trend: five bars increasing over five weeks" class="bfl-chart" role="img">
+<div class="bfl-chart-item"><div class="bfl-chart-bar bfl-chart-bar--w1"></div><span>W1</span></div>
+<div class="bfl-chart-item"><div class="bfl-chart-bar bfl-chart-bar--w2"></div><span>W2</span></div>
+<div class="bfl-chart-item"><div class="bfl-chart-bar bfl-chart-bar--w3"></div><span>W3</span></div>
+<div class="bfl-chart-item"><div class="bfl-chart-bar bfl-chart-bar--w4"></div><span>W4</span></div>
+<div class="bfl-chart-item"><div class="bfl-chart-bar bfl-chart-bar--w5"></div><span>W5</span></div>
+</div>
+<p class="bfl-chart-disclaimer">Illustrative trend · Chart does not use your check-ins.</p>
+</section>
+</div>
+</main>
+<!-- Shared footer: retain on every BFL portal page -->
+<footer class="bfl-page-footer" role="contentinfo">
+<p>© 2026 Built For Life™ Training &amp; Mentoring</p>
+<p class="bfl-page-footer-tagline"><i aria-hidden="true" class="bi bi-shield-check"></i> Athletics Serving a Greater Purpose.</p>
+</footer>
+</div>
+<!-- All forms are prototype-only. Real youth records require a secure backend. -->
+<div class="modal fade bfl-goal-dialog" id="bflGoalModal" tabindex="-1" aria-labelledby="bflGoalModalTitle" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered"><form class="modal-content" id="bflGoalForm">
+<header class="bfl-goal-dialog-header"><p>Goal &amp; accountability</p><h2 id="bflGoalModalTitle">Start with one small action.</h2><button type="button" class="bfl-goal-dialog-close" data-bs-dismiss="modal" aria-label="Close"><i class="bi bi-x-lg" aria-hidden="true"></i></button></header>
+<div class="bfl-goal-dialog-body">
+<label for="bflGoalName">What will you work on?</label><input id="bflGoalName" class="form-control" maxlength="70" placeholder="Example: Read for 15 minutes" required/>
+<label for="bflGoalCategory">Development pillar</label><select id="bflGoalCategory" class="form-select"><option>Character</option><option>Academic success</option><option>Physical development</option><option>Leadership</option></select>
+<div class="row gx-4"><div class="col-sm-6"><label for="bflGoalTarget">Weekly target (1–20)</label><input id="bflGoalTarget" class="form-control" type="number" min="1" max="20" step="1" value="5" required/></div><div class="col-sm-6"><label for="bflGoalUnit">Measure in</label><select id="bflGoalUnit" class="form-select"><option>days</option><option>times</option><option>sessions</option><option>minutes</option></select></div></div>
+<div id="bflGoalEditFields" hidden><label for="bflGoalDescription">Description</label><input class="form-control" id="bflGoalDescription" maxlength="140"/><label for="bflGoalDone">Completed</label><input class="form-control" id="bflGoalDone" type="number" min="0" max="999" value="0"/></div>
+<button type="submit" class="bfl-goal-dialog-save">Save goal <i class="bi bi-check-lg" aria-hidden="true"></i></button>
+</div></form></div></div>
+<div class="modal fade bfl-goal-dialog bfl-grade-dialog" id="bflGradeModal" tabindex="-1" aria-labelledby="bflGradeModalTitle" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered"><form class="modal-content" id="bflGradeForm">
+<header class="bfl-goal-dialog-header">
+<p>Academic snapshot</p><h2 id="bflGradeModalTitle">Progress starts with awareness.</h2>
+<button class="bfl-goal-dialog-close" type="button" data-bs-dismiss="modal" aria-label="Close"><i class="bi bi-x-lg" aria-hidden="true"></i></button>
+</header>
+<div class="bfl-goal-dialog-body">
+<p class="bfl-grade-dialog-intro">Update sample percentages. These are self-reported demo records.</p>
+<label for="bflGradeMath">Mathematics (%)</label><input class="form-control" id="bflGradeMath" type="number" min="0" max="100" step="1" required/>
+<label for="bflGradeLanguage">Language Arts (%)</label><input class="form-control" id="bflGradeLanguage" type="number" min="0" max="100" step="1" required/>
+<label for="bflGradeScience">Science (%)</label><input class="form-control" id="bflGradeScience" type="number" min="0" max="100" step="1" required/>
+<button class="bfl-goal-dialog-save" type="submit">Save sample grades <i class="bi bi-check-lg" aria-hidden="true"></i></button>
+</div></form></div></div>
+<div class="toast-container position-fixed bottom-0 end-0 p-3 bfl-toast-container"><div aria-live="polite" class="toast bfl-progress-toast" id="bflToast" role="status"><div class="d-flex"><div class="toast-body" id="bflToastBody"></div><button aria-label="Dismiss" class="btn-close btn-close-white m-auto me-2" data-bs-dismiss="toast" type="button"></button></div></div></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="../assets/js/pages/progress-goals.js" type="module"></script></body></html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="#191d19" name="theme-color"/><title>Built For Life | Plans &amp; Membership</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&amp;family=DM+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/css/bfl.css" rel="stylesheet"/><link rel="icon" href="../assets/images/bfl-favicon.ico" sizes="16x16 32x32 48x48 64x64"/>
+<link rel="icon" type="image/png" sizes="64x64" href="../assets/images/bfl-favicon.png"/>
+<link rel="icon" type="image/svg+xml" sizes="any" href="../assets/images/bfl-favicon.svg"/>
+</head><body class="bfl-page bfl-page--membership">
+<!-- LEFT SIDEBAR: fixed on desktop, slide-in menu on mobile. -->
+<aside aria-labelledby="bflSidebarTitle" class="offcanvas-lg offcanvas-start bfl-sidebar" data-bs-theme="dark" id="bflSidebar" tabindex="-1">
+<button aria-label="Close menu" class="bfl-mobile-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#bflSidebar" type="button">
+<i aria-hidden="true" class="bi bi-x"></i>
+</button>
+<div class="offcanvas-body">
+<a aria-label="Built For Life home" class="bfl-brand" href="../index.html">
+<!-- Inline logo keeps this example self-contained; replace with your own logo if desired. -->
+<svg aria-hidden="true" class="bfl-brand-mark" focusable="false" viewbox="0 0 56 66">
+<path d="M0 0H56V48L28 66 0 48Z" fill="#f5d34f"></path>
+<text fill="#1b211a" font-family="Impact, 'Arial Narrow', sans-serif" font-size="25" font-weight="900" text-anchor="middle" x="28" y="36">BFL</text>
+</svg>
+<span>
+<span class="bfl-brand-name" id="bflSidebarTitle">BUILT FOR LIFE</span>
+<span class="bfl-brand-caption">TRAINING &amp; MENTORING</span>
+</span>
+</a>
+<nav aria-label="Member portal navigation" class="bfl-sidebar-nav">
+<div class="bfl-sidebar-group">
+<h2 class="bfl-sidebar-heading">Your journey</h2>
+<ul class="bfl-nav-list">
+<li><a class="bfl-nav-link" data-page="My dashboard" href="../index.html"><i aria-hidden="true" class="bi bi-house-door"></i><span>My dashboard</span></a></li>
+<li><a class="bfl-nav-link" data-page="Our curriculum" href="curriculum.html"><i aria-hidden="true" class="bi bi-book"></i><span>Our curriculum</span></a></li>
+<li><a class="bfl-nav-link" data-page="Weekly playbook" href="weekly-playbook.html"><i aria-hidden="true" class="bi bi-play-btn"></i><span>Weekly playbook</span></a></li>
+<li><a class="bfl-nav-link" data-page="Progress &amp; goals" href="progress-goals.html"><i aria-hidden="true" class="bi bi-bar-chart"></i><span>Progress &amp; goals</span></a></li>
+<li><a class="bfl-nav-link" data-page="The huddle" href="huddle.html"><i aria-hidden="true" class="bi bi-people"></i><span>The huddle</span></a></li>
+</ul>
+</div>
+<div class="bfl-sidebar-group">
+<h2 class="bfl-sidebar-heading">Membership</h2>
+<ul class="bfl-nav-list">
+<li><a aria-current="page" class="bfl-nav-link active" data-page="Plans &amp; membership" href="plans-membership.html"><i aria-hidden="true" class="bi bi-credit-card"></i><span>Plans &amp; membership</span></a></li>
+<li><a class="bfl-nav-link" data-page="Help &amp; FAQs" href="help-faqs.html"><i aria-hidden="true" class="bi bi-question-circle"></i><span>Help &amp; FAQs</span></a></li>
+</ul>
+</div>
+</nav>
+<div class="bfl-sidebar-footer d-none d-lg-block">
+<i aria-hidden="true" class="bi bi-shield-check"></i>
+<p>Stronger on the field.<br/>Better prepared for life.</p>
+</div>
+</div>
+</aside>
+<div class="bfl-main">
+<!-- TOP NAVIGATION -->
+<header class="bfl-topbar">
+<!-- Desktop breadcrumb -->
+<div aria-label="Breadcrumb" class="bfl-breadcrumb d-none d-lg-flex">
+<a href="../index.html">Member portal</a>
+<i aria-hidden="true" class="bi bi-chevron-right"></i>
+<span class="js-page-name">Find your path</span>
+</div>
+<!-- Mobile hamburger + current page -->
+<div class="d-flex d-lg-none align-items-center gap-4">
+<button aria-controls="bflSidebar" aria-label="Open menu" class="bfl-menu-button" data-bs-target="#bflSidebar" data-bs-toggle="offcanvas" type="button">
+<i aria-hidden="true" class="bi bi-list"></i>
+</button>
+<span class="bfl-current-page js-page-name">Find your path</span>
+</div>
+<div class="bfl-top-actions">
+<span class="bfl-private"><i aria-hidden="true" class="bi bi-lock"></i>Private prototype</span>
+<button aria-label="Notifications" class="bfl-icon-button" data-bs-toggle="modal" data-bs-target="#bflNotificationsModal" aria-haspopup="dialog" type="button">
+<i aria-hidden="true" class="bi bi-bell"></i><span class="bfl-notice-dot"></span>
+</button>
+<!-- Avatar shown in desktop screenshot, hidden on mobile -->
+<div class="d-none d-lg-block">
+<a aria-label="My account" class="bfl-avatar" href="account.html">JC</a>
+</div>
+</div>
+</header>
+<!-- PLANS & MEMBERSHIP -->
+<main class="bfl-content" id="mainContent">
+<div class="bfl-eyebrow">Built For Life / Member portal</div>
+<div class="bfl-plans-intro">
+<h1 class="bfl-page-heading">Build the path that fits.</h1>
+<p class="bfl-plans-subheading">Training. Mentoring. Or the power of both.</p>
+</div>
+<div class="bfl-plans-toolbar">
+<span class="bfl-plans-notice-title">Demo pricing · Subject to program approval</span>
+<div aria-label="Billing period" class="bfl-billing-toggle" role="group">
+<button aria-pressed="true" class="bfl-billing-button active" data-period="monthly" type="button">Monthly</button>
+<button aria-pressed="false" class="bfl-billing-button" data-period="annual" type="button">Annual · 2 months saved</button>
+</div>
+</div>
+<section aria-label="Membership plans" class="bfl-plans-grid">
+<article class="bfl-plan-card" data-plan="Training">
+<div class="bfl-plan-icon"><i aria-hidden="true" class="bi bi-activity"></i></div>
+<h2>Training</h2>
+<p class="bfl-plan-description">Stronger movement. Greater confidence.</p>
+<div class="bfl-plan-price-row"><span class="bfl-plan-price" data-price="Training">$25</span><span class="bfl-plan-unit" data-unit="">/ month</span></div>
+<p class="bfl-plan-description-price" data-terms="Training">Flexible monthly demo membership</p>
+<ul class="bfl-plan-benefits">
+<li><i aria-hidden="true" class="bi bi-check-lg"></i>One training session per month</li>
+<li><i aria-hidden="true" class="bi bi-check-lg"></i>Movement &amp; athletic foundations</li>
+<li><i aria-hidden="true" class="bi bi-check-lg"></i>Training goals &amp; progress tracking</li>
+</ul>
+<div class="bfl-plan-bottom">
+<button class="bfl-plan-action" data-explore="Training" type="button">Explore Training <i aria-hidden="true" class="bi bi-arrow-right"></i></button>
+<p class="bfl-plan-footnote" data-footnote="Training">Simulated checkout · No charges</p>
+</div>
+</article>
+<article class="bfl-plan-card" data-plan="Mentoring">
+<div class="bfl-plan-icon"><i aria-hidden="true" class="bi bi-people"></i></div>
+<h2>Mentoring</h2>
+<p class="bfl-plan-description">Stronger character. A clearer purpose.</p>
+<div class="bfl-plan-price-row"><span class="bfl-plan-price" data-price="Mentoring">$25</span><span class="bfl-plan-unit" data-unit="">/ month</span></div>
+<p class="bfl-plan-description-price" data-terms="Mentoring">Flexible monthly demo membership</p>
+<ul class="bfl-plan-benefits">
+<li><i aria-hidden="true" class="bi bi-check-lg"></i>Age-group mentoring curriculum</li>
+<li><i aria-hidden="true" class="bi bi-check-lg"></i>Weekly lessons &amp; timed challenges</li>
+<li><i aria-hidden="true" class="bi bi-check-lg"></i>Academic &amp; behavior accountability</li>
+<li><i aria-hidden="true" class="bi bi-check-lg"></i>Parent resources &amp; community</li>
+</ul>
+<div class="bfl-plan-bottom">
+<button class="bfl-plan-action" data-explore="Mentoring" type="button">Explore Mentoring <i aria-hidden="true" class="bi bi-arrow-right"></i></button>
+<p class="bfl-plan-footnote" data-footnote="Mentoring">Simulated checkout · No charges</p>
+</div>
+</article>
+<article class="bfl-plan-card bfl-plan-current" data-plan="Combined">
+<span class="bfl-plan-ribbon">The complete experience</span>
+<div class="bfl-plan-icon"><i aria-hidden="true" class="bi bi-shield-check"></i></div>
+<h2>Combined</h2>
+<p class="bfl-plan-description">Develop the athlete. Build the person.</p>
+<div class="bfl-plan-price-row"><span class="bfl-plan-price" data-price="Combined">$50</span><span class="bfl-plan-unit" data-unit="">/ month</span></div>
+<p class="bfl-plan-description-price" data-terms="Combined">Flexible monthly demo membership</p>
+<ul class="bfl-plan-benefits">
+<li><i aria-hidden="true" class="bi bi-check-lg"></i>Everything in Training + Mentoring</li>
+<li><i aria-hidden="true" class="bi bi-check-lg"></i>Physical &amp; personal development</li>
+<li><i aria-hidden="true" class="bi bi-check-lg"></i>A connected weekly growth plan</li>
+<li><i aria-hidden="true" class="bi bi-check-lg"></i>Parent resources &amp; community</li>
+</ul>
+<div class="bfl-plan-bottom">
+<button class="bfl-plan-action" data-explore="Combined" type="button">Explore Combined <i aria-hidden="true" class="bi bi-arrow-right"></i></button>
+<p class="bfl-plan-footnote" data-footnote="Combined">Current demo membership</p>
+</div>
+</article>
+</section>
+<section aria-labelledby="bflCompareTitle" class="bfl-compare-card">
+<div class="bfl-compare-title-row">
+<h2 id="bflCompareTitle">Find your fit, side by side</h2>
+<span class="bfl-compare-badge">Plan comparison</span>
+</div>
+<div class="table-responsive">
+<table class="bfl-compare-table">
+<thead><tr><th scope="col">Your experience</th><th scope="col">Training</th><th scope="col">Mentoring</th><th scope="col">Combined</th></tr></thead>
+<tbody>
+<tr><th scope="row">Monthly training session</th><td aria-label="Included">✓</td><td aria-label="Not included">–</td><td aria-label="Included">✓</td></tr>
+<tr><th scope="row">Age-group mentoring lessons</th><td aria-label="Not included">–</td><td aria-label="Included">✓</td><td aria-label="Included">✓</td></tr>
+<tr><th scope="row">Weekly content &amp; reflection</th><td aria-label="Not included">–</td><td aria-label="Included">✓</td><td aria-label="Included">✓</td></tr>
+<tr><th scope="row">Physical development goals</th><td aria-label="Included">✓</td><td aria-label="Not included">–</td><td aria-label="Included">✓</td></tr>
+<tr><th scope="row">Academic &amp; behavior tracking</th><td aria-label="Not included">–</td><td aria-label="Included">✓</td><td aria-label="Included">✓</td></tr>
+<tr><th scope="row">Community &amp; parent resources</th><td aria-label="Not included">–</td><td aria-label="Included">✓</td><td aria-label="Included">✓</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<div class="bfl-plans-disclaimer" role="note">
+<i aria-hidden="true" class="bi bi-info-circle"></i>
+<p>All three options are explorable in this prototype. Plan selection updates your demo membership; feature access remains open for review. No payment processor is connected.</p>
+</div>
+</main>
+<!-- Shared BFL footer -->
+<footer class="bfl-page-footer" role="contentinfo">
+<p>© 2026 Built For Life™ Training &amp; Mentoring</p>
+<p class="bfl-page-footer-tagline"><i aria-hidden="true" class="bi bi-shield-check"></i> Athletics Serving a Greater Purpose.</p>
+</footer>
+</div>
+<!-- No payment handling: this modal only changes a browser-local demo membership. -->
+<div class="modal fade bfl-dashboard-lesson bfl-checkout-modal" id="bflExplorePlanModal" tabindex="-1" aria-labelledby="bflExplorePlanTitle" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered"><form class="modal-content" id="bflCheckoutForm">
+<header class="bfl-dashboard-lesson-header"><p class="bfl-dashboard-lesson-eyebrow">Simulated checkout · Step 1 of 2</p><h2 id="bflExplorePlanTitle">Your next step starts here.</h2><button class="bfl-dashboard-lesson-close" type="button" data-bs-dismiss="modal" aria-label="Close"><i class="bi bi-x-lg" aria-hidden="true"></i></button></header>
+<div class="bfl-dashboard-lesson-body">
+<p>Review your demo membership. No payment will be processed.</p>
+<div class="bfl-checkout-summary"><div><h3 id="bflCheckoutPlan">Training membership</h3><p id="bflCheckoutPeriod">Monthly demo billing</p></div><strong id="bflConfirmPrice">$25</strong></div>
+<label for="bflCheckoutPathway">Participant age pathway</label>
+<select class="form-select bfl-checkout-pathway" id="bflCheckoutPathway" required><option>6–8</option><option>9–11</option><option>12–14</option><option>15–17</option></select>
+<div class="bfl-checkout-payment"><i class="bi bi-credit-card" aria-hidden="true"></i><div><strong>Demo payment method</strong><div>SIMULATED •••• 0000</div><small>No card details or real charges.</small></div></div>
+<label class="bfl-checkout-ack" for="bflCheckoutAcknowledged"><input type="checkbox" id="bflCheckoutAcknowledged" required/><span>I understand this is a prototype. This confirms a demo membership only.</span></label>
+<p id="bflCheckoutError" role="status" hidden></p>
+<div class="bfl-dashboard-lesson-actions"><button type="submit" id="bflConfirmPlan">Confirm demo membership <i class="bi bi-check-lg" aria-hidden="true"></i></button><button class="bfl-lesson-back" type="button" data-bs-dismiss="modal">Keep comparing</button></div>
+<p class="bfl-checkout-charge">Amount charged today: <strong>$0.00</strong> · No recurring subscription created.</p>
+</div></form></div></div>
+<div class="toast-container position-fixed bottom-0 end-0 p-3 bfl-toast-container"><div aria-live="polite" class="toast bfl-plans-toast" id="bflPlanToast" role="status"><div class="d-flex"><div class="toast-body" id="bflPlanToastText"></div><button aria-label="Dismiss" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" type="button"></button></div></div></div>
+<div class="modal fade bfl-dashboard-lesson bfl-membership-success" id="bflMembershipSuccessModal" tabindex="-1" aria-labelledby="bflMembershipSuccessTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered"><div class="modal-content">
+    <header class="bfl-dashboard-lesson-header">
+      <p class="bfl-dashboard-lesson-eyebrow">Simulated checkout · Step 2 of 2</p>
+      <h2 id="bflMembershipSuccessTitle">You’re ready to build.</h2>
+      <button class="bfl-dashboard-lesson-close" type="button" data-bs-dismiss="modal" aria-label="Close confirmation"><i class="bi bi-x-lg" aria-hidden="true"></i></button>
+    </header>
+    <div class="bfl-dashboard-lesson-body">
+      <div class="bfl-membership-success-icon" aria-hidden="true"><i class="bi bi-check-lg"></i></div>
+      <h3 id="bflMembershipActivated">Training demo activated</h3>
+      <p class="bfl-membership-success-message">Your sample membership is updated.<br>No payment was taken. No subscription was created.</p>
+      <div class="bfl-checkout-summary"><div><h3 id="bflMembershipConfirmation"></h3><p>Demo confirmation</p></div><strong>$0.00</strong></div>
+      <div class="bfl-dashboard-lesson-actions"><a href="../index.html">Go to my dashboard <i class="bi bi-arrow-right" aria-hidden="true"></i></a></div>
+    </div>
+  </div></div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="../assets/js/pages/plans-membership.js" type="module"></script></body></html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="#191d19" name="theme-color"/>
+<title>Built For Life | My account</title>
+<!-- Bootstrap 5, Bootstrap Icons, and fonts -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&amp;family=DM+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/css/bfl.css" rel="stylesheet"/>
+<link rel="icon" href="../assets/images/bfl-favicon.ico" sizes="16x16 32x32 48x48 64x64"/>
+<link rel="icon" type="image/png" sizes="64x64" href="../assets/images/bfl-favicon.png"/>
+<link rel="icon" type="image/svg+xml" sizes="any" href="../assets/images/bfl-favicon.svg"/>
+</head>
+<body class="bfl-page bfl-page--account">
+<!-- LEFT SIDEBAR: fixed on desktop, slide-in menu on mobile. -->
+<aside aria-labelledby="bflSidebarTitle" class="offcanvas-lg offcanvas-start bfl-sidebar" data-bs-theme="dark" id="bflSidebar" tabindex="-1">
+<button aria-label="Close menu" class="bfl-mobile-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#bflSidebar" type="button">
+<i aria-hidden="true" class="bi bi-x"></i>
+</button>
+<div class="offcanvas-body">
+<a aria-label="Built For Life home" class="bfl-brand" href="../index.html">
+<!-- Inline logo keeps this example self-contained; replace with your own logo if desired. -->
+<svg aria-hidden="true" class="bfl-brand-mark" focusable="false" viewbox="0 0 56 66">
+<path d="M0 0H56V48L28 66 0 48Z" fill="#f5d34f"></path>
+<text fill="#1b211a" font-family="Impact, 'Arial Narrow', sans-serif" font-size="25" font-weight="900" text-anchor="middle" x="28" y="36">BFL</text>
+</svg>
+<span>
+<span class="bfl-brand-name" id="bflSidebarTitle">BUILT FOR LIFE</span>
+<span class="bfl-brand-caption">TRAINING &amp; MENTORING</span>
+</span>
+</a>
+<nav aria-label="Member portal navigation" class="bfl-sidebar-nav">
+<div class="bfl-sidebar-group">
+<h2 class="bfl-sidebar-heading">Your journey</h2>
+<ul class="bfl-nav-list">
+<li><a class="bfl-nav-link" data-page="My dashboard" href="../index.html"><i aria-hidden="true" class="bi bi-house-door"></i><span>My dashboard</span></a></li>
+<li><a class="bfl-nav-link" data-page="Our curriculum" href="curriculum.html"><i aria-hidden="true" class="bi bi-book"></i><span>Our curriculum</span></a></li>
+<li><a class="bfl-nav-link" data-page="Weekly playbook" href="weekly-playbook.html"><i aria-hidden="true" class="bi bi-play-btn"></i><span>Weekly playbook</span></a></li>
+<li><a class="bfl-nav-link" data-page="Progress &amp; goals" href="progress-goals.html"><i aria-hidden="true" class="bi bi-bar-chart"></i><span>Progress &amp; goals</span></a></li>
+<li><a class="bfl-nav-link" data-page="The huddle" href="huddle.html"><i aria-hidden="true" class="bi bi-people"></i><span>The huddle</span><span aria-label="New activity" class="bfl-unread"></span></a></li>
+</ul>
+</div>
+<div class="bfl-sidebar-group">
+<h2 class="bfl-sidebar-heading">Membership</h2>
+<ul class="bfl-nav-list">
+<li><a class="bfl-nav-link" data-page="Plans &amp; membership" href="plans-membership.html"><i aria-hidden="true" class="bi bi-credit-card"></i><span>Plans &amp; membership</span></a></li>
+<li><a class="bfl-nav-link" data-page="Help &amp; FAQs" href="help-faqs.html"><i aria-hidden="true" class="bi bi-question-circle"></i><span>Help &amp; FAQs</span></a></li>
+</ul>
+</div>
+</nav>
+<div class="bfl-sidebar-footer d-none d-lg-block">
+<i aria-hidden="true" class="bi bi-shield-check"></i>
+<p>Stronger on the field.<br/>Better prepared for life.</p>
+</div>
+</div>
+</aside>
+<div class="bfl-main">
+<!-- TOP NAVIGATION -->
+<header class="bfl-topbar">
+<!-- Desktop breadcrumb -->
+<div aria-label="Breadcrumb" class="bfl-breadcrumb d-none d-lg-flex">
+<a href="../index.html">Member portal</a>
+<i aria-hidden="true" class="bi bi-chevron-right"></i>
+<span class="js-page-name">My account</span>
+</div>
+<!-- Mobile hamburger + current page -->
+<div class="d-flex d-lg-none align-items-center gap-4">
+<button aria-controls="bflSidebar" aria-label="Open menu" class="bfl-menu-button" data-bs-target="#bflSidebar" data-bs-toggle="offcanvas" type="button">
+<i aria-hidden="true" class="bi bi-list"></i>
+</button>
+<span class="bfl-current-page js-page-name">My account</span>
+</div>
+<div class="bfl-top-actions">
+<span class="bfl-private"><i aria-hidden="true" class="bi bi-lock"></i>Private prototype</span>
+<button aria-label="Notifications" class="bfl-icon-button" data-bs-toggle="modal" data-bs-target="#bflNotificationsModal" aria-haspopup="dialog" type="button">
+<i aria-hidden="true" class="bi bi-bell"></i><span class="bfl-notice-dot"></span>
+</button>
+<!-- Avatar shown in desktop screenshot, hidden on mobile -->
+<div class="d-none d-lg-block">
+<a aria-label="My account" class="bfl-avatar" href="account.html">JC</a>
+</div>
+</div>
+</header>
+<!-- DEMO PAGE CONTENT: remove this <main> and insert your existing page content. -->
+<main class="bfl-content" id="mainContent">
+<div class="bfl-eyebrow">Built For Life / Member Portal</div>
+<h1 class="bfl-page-heading">Your family. Your journey.</h1>
+<p class="bfl-welcome">Manage your prototype profile and explore the sign-in experience.</p>
+<div class="row g-4 bfl-account-grid align-items-stretch">
+<div class="col-12 col-xl-7">
+<section aria-labelledby="accountDetailsTitle" class="bfl-account-card">
+<div class="bfl-account-identity">
+<span aria-hidden="true" class="bfl-account-identity-badge">JC</span>
+<div>
+<h2 class="bfl-account-name" id="accountDetailsTitle">Jordan Carter · Fictional participant</h2>
+<p class="bfl-account-identity-note" id="bflDemoIdentityNote">Parent demo · No real account</p>
+</div>
+</div>
+<div class="bfl-account-row">
+<label class="bfl-account-label" for="bflAgePathway">Age pathway</label>
+<select aria-label="Choose demo age pathway" class="form-select bfl-account-select" id="bflAgePathway">
+<option value="6–8">6–8</option>
+<option value="9–11">9–11</option>
+<option value="12–14">12–14</option>
+<option value="15–17">15–17</option>
+</select>
+</div>
+<div class="bfl-account-row">
+<span class="bfl-account-label">Demo membership</span>
+<span class="bfl-account-value">Combined</span>
+</div>
+<div class="bfl-account-row">
+<span class="bfl-account-label">Payment status</span>
+<span class="bfl-account-value gold">Simulation only</span>
+</div>
+<div class="bfl-account-row">
+<span class="bfl-account-label">Demo role</span>
+<span class="bfl-account-value" id="bflDemoRole">Parent</span>
+</div>
+<div class="bfl-account-actions">
+<button class="bfl-account-switch" id="bflSwitchRole" type="button">
+                Switch demo role <i aria-hidden="true" class="bi bi-people"></i>
+</button>
+<button class="bfl-account-outline" data-bs-target="#bflSignOutModal" data-bs-toggle="modal" type="button">
+                Sign out <i aria-hidden="true" class="bi bi-box-arrow-right"></i>
+</button>
+</div>
+</section>
+</div>
+<div class="col-12 col-xl-5">
+<section aria-labelledby="prototypeControlsTitle" class="bfl-account-card">
+<p class="bfl-account-eyebrow">Prototype controls</p>
+<h2 class="bfl-account-side-title" id="prototypeControlsTitle">A safe space to explore.</h2>
+<p class="bfl-account-side-copy">Your changes use this browser’s local storage. Demo roles share the same sample profile and do not have separate permissions.</p>
+<p class="bfl-account-side-copy">No real youth records, account credentials, subscriptions, or card information are collected.</p>
+<button class="bfl-account-outline bfl-account-reset" id="bflResetDemoData" type="button">
+              Reset demo data <i aria-hidden="true" class="bi bi-arrow-repeat"></i>
+</button>
+<p aria-live="polite" class="bfl-demo-status" id="bflDemoStatus" role="status"></p>
+</section>
+</div>
+</div>
+</main>
+<!-- Shared footer: retain on every BFL portal page -->
+<footer class="bfl-page-footer" role="contentinfo">
+<p>© 2026 Built For Life™ Training &amp; Mentoring</p>
+<p class="bfl-page-footer-tagline"><i aria-hidden="true" class="bi bi-shield-check"></i> Athletics Serving a Greater Purpose.</p>
+</footer>
+</div>
+<!-- The prototype has no real authentication session to sign out of. -->
+<div aria-hidden="true" aria-labelledby="bflSignOutModalTitle" class="modal fade" id="bflSignOutModal" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header">
+<h2 class="modal-title fs-5" id="bflSignOutModalTitle">Prototype sign-out</h2>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body">This is a local prototype. No real account session exists yet, so there is nothing to sign out of.</div>
+<div class="modal-footer">
+<button class="btn btn-dark" data-bs-dismiss="modal" type="button">Got it</button>
+</div>
+</div>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="../assets/js/pages/account.js" type="module"></script></body>
+</html>
